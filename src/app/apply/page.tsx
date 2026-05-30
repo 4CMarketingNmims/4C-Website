@@ -1,10 +1,9 @@
 export default function ApplyPage() {
   return (
-    <div className="w-full h-screen">
+    <div className="pt-20">
       <iframe
         src="https://tally.so/r/yPorpB"
-        width="100%"
-        height="100%"
+        className="w-full h-[calc(100vh-80px)]"
         frameBorder="0"
         title="4C Core Applications"
       />
