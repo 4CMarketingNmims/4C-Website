@@ -77,56 +77,43 @@ export default function TeamPage() {
         </Carousel>
       </section>
 
-
 <section id="mentors" className="mb-24">
   <div className="text-center mb-12">
-    <h2 className="text-3xl md:text-4xl font-headline font-bold">Advisory</h2>
-    <p className="text-lg text-foreground/80 mt-2">Our guiding force.</p>
+    <h2 className="text-3xl md:text-4xl font-headline font-bold">
+      Advisory
+    </h2>
+    <p className="text-lg text-foreground/80 mt-2">
+      Our guiding force.
+    </p>
   </div>
-        <Carousel
-  plugins={[
-    Autoplay({
-      delay: 3000,
-      stopOnInteraction: true,
-    })
-  ]}
-  opts={{
-    align: 'start',
-    loop: true,
-  }}
-  className="w-full"
->
-  <CarouselContent>
-    {MENTORS.map((member, index) => (
-      <CarouselItem
-        key={index}
-        className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-      >
-        <TeamCard {...member} />
-      </CarouselItem>
-    ))}
-  </CarouselContent>
 
-  <CarouselPrevious className="hidden sm:flex" />
-  <CarouselNext className="hidden sm:flex" />
-</Carousel>
-            opts={{
-              align: 'start',
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {MENTORS.map((member, index) => (
-                <CarouselItem key={index}>
-                  <TeamCard {...member} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex" />
-          </Carousel>
-        </div>
+  <Carousel
+    plugins={[
+      Autoplay({
+        delay: 3000,
+        stopOnInteraction: true,
+      }),
+    ]}
+    opts={{
+      align: 'start',
+      loop: true,
+    }}
+    className="w-full"
+  >
+    <CarouselContent>
+      {MENTORS.map((member, index) => (
+        <CarouselItem
+          key={index}
+          className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+        >
+          <TeamCard {...member} />
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+
+    <CarouselPrevious className="hidden sm:flex" />
+    <CarouselNext className="hidden sm:flex" />
+  </Carousel>
 </section>
 
 
