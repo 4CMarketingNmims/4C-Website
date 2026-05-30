@@ -1,7 +1,14 @@
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import Script from 'next/script';
+import FormLoader from '@/components/ui/form-loader';
 
 export default function ApplyPage() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <div className="min-h-screen">
       <div className="max-w-5xl mx-auto px-6 py-8">
@@ -43,6 +50,7 @@ export default function ApplyPage() {
         {/* Form Container */}
         <div
           className="
+            relative
             rounded-3xl
             overflow-hidden
             border
@@ -52,18 +60,25 @@ export default function ApplyPage() {
             shadow-2xl
           "
         >
+          {!loaded && <FormLoader />}
+
           <iframe
-            src="https://tally.so/embed/yPorpB?hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy"
+            data-tally-src="https://tally.so/embed/yPorpB?hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="eager"
             width="100%"
             height="800"
             frameBorder="0"
             marginHeight={0}
             marginWidth={0}
             title="4C Core Interviews 2026-27"
+            onLoad={() => setLoaded(true)}
           />
         </div>
 
+        <Script
+          src="https://tally.so/widgets/embed.js"
+          strategy="afterInteractive"
+        />
       </div>
     </div>
   );
