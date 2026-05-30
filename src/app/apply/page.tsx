@@ -1,13 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 import FormLoader from '@/components/ui/form-loader';
 
 export default function ApplyPage() {
-  const [loaded, setLoaded] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -60,7 +68,7 @@ export default function ApplyPage() {
             shadow-2xl
           "
         >
-          {!loaded && <FormLoader />}
+          {showLoader && <FormLoader />}
 
           <iframe
             data-tally-src="https://tally.so/embed/yPorpB?hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -71,7 +79,6 @@ export default function ApplyPage() {
             marginHeight={0}
             marginWidth={0}
             title="4C Core Interviews 2026-27"
-            onLoad={() => setLoaded(true)}
           />
         </div>
 
