@@ -14,13 +14,15 @@ export default function LayoutWrapper({
 
   const isApplyPage = pathname.startsWith('/apply');
 
-  if (isApplyPage) {
-    return (
-      <>
-        <main>{children}</main>
-      </>
-    );
-  }
+if (isApplyPage) {
+  return (
+    <AuroraBackground>
+      <main className="relative z-10">
+        {children}
+      </main>
+    </AuroraBackground>
+  );
+}
 
   return (
     <AuroraBackground>
