@@ -157,34 +157,48 @@ export default function TeamPage() {
 </section>
 
       <section id="core-team">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold">Core Team</h2>
-          <p className="text-lg text-foreground/80 mt-2">The dedicated members making it all happen.</p>
-        </div>
-        <Carousel
-          plugins={[
-            Autoplay({
-              delay: 2500,
-              stopOnInteraction: true,
-            })
-          ]}
-          opts={{
-            align: 'start',
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {CORE_MEMBERS.map((member, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                <TeamCard {...member} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex" />
-          <CarouselNext className="hidden sm:flex" />
-        </Carousel>
-      </section>
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-headline font-bold">
+      Core Team
+    </h2>
+
+    <p className="text-lg text-foreground/80 mt-2">
+      Recruitment for the 2026–27 Core Team is now open.
+    </p>
+  </div>
+
+  <div className="max-w-3xl mx-auto">
+    <div className="glass-card p-10 text-center">
+      <h3 className="text-2xl font-bold text-white mb-4">
+        Join the next generation of 4C
+      </h3>
+
+      <p className="text-foreground/70 mb-8">
+        Be a part of one of the most dynamic committees at MPSTME.
+        Applications for the 2026–27 Core Team are now live.
+      </p>
+
+      <a
+        href="/apply"
+        className="
+          inline-flex
+          items-center
+          justify-center
+          px-8
+          py-4
+          rounded-xl
+          bg-accent
+          text-white
+          font-semibold
+          transition-all
+          duration-300
+          hover:scale-105
+        "
+      >
+        Apply for Core →
+      </a>
     </div>
+  </div>
+</section>    </div>
   );
 }
