@@ -70,8 +70,7 @@ export function Header() {
       <Link
         href={link.href}
         key={link.label}
-        className="text-lg font-headline transition-colors hover:text-accent text-center w-48 py-3 px-6 rounded-lg hover:bg-white/5 block mx-auto"
-        onClick={() => setIsSheetOpen(false)}
+className="text-base lg:text-lg font-headline transition-colors hover:text-accent text-center py-2 px-3 lg:px-4 rounded-lg hover:bg-white/5 block whitespace-nowrap"        onClick={() => setIsSheetOpen(false)}
       >
         {link.label}
       </Link>
@@ -86,11 +85,13 @@ export function Header() {
       )}
     >
        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mt-4 flex h-16 items-center justify-between glass-card px-6">
-          <Link href="/" className="text-2xl font-bold font-headline text-white">
+<div className="mt-4 flex h-16 items-center justify-between glass-card px-4 lg:px-6">
+  <Link href="/" className="text-2xl font-bold font-headline text-white">
             <Image src="/4clogo.webp" alt="4C Logo" width={60} height={60} className="h-[1.5em] w-auto inline align-middle drop-shadow-lg" priority />
           </Link>
-          <nav className="hidden md:flex items-center space-x-8">{navItems}</nav>
+          <nav className="hidden md:flex items-center gap-3 lg:gap-5">
+  {navItems}
+</nav>
           <div className="md:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
