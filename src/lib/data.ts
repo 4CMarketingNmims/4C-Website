@@ -62,19 +62,23 @@ export const EVENTS_DATA = [
 ];
 
 export const SUPER_CORE_MEMBERS = [
-    { name: 'Karan Bedi', title: 'President', image: '/team/SuperCore/Karan_no_bg.png' },
-    { name: 'Anjani Sai ', title: 'Secretary', image: '/team/SuperCore/Anjani_no_bg.png' },
-    { name: 'Ritwik Sharma', title: 'Vice President', image: '/team/SuperCore/Ritwik_no_bg.png' },
-    { name: 'Neerav Reddy', title: 'Vice President', image: '/team/SuperCore/Neerav_no_bg.png' },
-    { name: 'Vansh Patel', title: 'Vice President', image: '/team/SuperCore/Vansh_no_bg.png' },
-    { name: 'Sneha Darbarwar', title: 'Vice President', image: '/team/SuperCore/Sneha_no_bg.png' },
-    { name: 'Mithil Gala', title: 'Vice President', image: '/team/SuperCore/Mithil_no_bg.png' },
+  { name: 'Aryan Thakkar', title: 'President', image: '' },
+  { name: 'Krish Sarkar', title: 'Secretary', image: '' },
+  { name: 'Shawn Mendes', title: 'Vice President of Relations', image: '' },
+  { name: 'Madhav Sahi', title: 'Vice President of Outreach', image: '' },
+  { name: 'Prerna Chauhan', title: 'Vice President of Social Media', image: '' },
+  { name: 'Pratit Dedhia', title: 'Vice President of Operations', image: '' },
+  { name: 'Sylborn Furtado', title: 'Vice President of Creatives', image: '' },
 ];
 
 export const MENTORS = [
-    { name: 'Hardik Nagpal', title: 'Advisory', image: '/team/Advisory/Hardik_no_bg.png' },
-    { name: 'Salonee Surve', title: 'Advisory', image: '/team/Advisory/Salone_no_bg.png' },
-    { name: 'Tej Bachhav', title: 'Advisory', image: '/team/Advisory/Tej_no_bg.png' },
+  { name: 'Karan Bedi', title: 'Advisory', image: '/team/SuperCore/Karan_no_bg.png' },
+  { name: 'Anjani Sai', title: 'Advisory', image: '/team/SuperCore/Anjani_no_bg.png' },
+  { name: 'Ritwik Sharma', title: 'Advisory', image: '/team/SuperCore/Ritwik_no_bg.png' },
+  { name: 'Neerav Reddy', title: 'Advisory', image: '/team/SuperCore/Neerav_no_bg.png' },
+  { name: 'Vansh Patel', title: 'Advisory', image: '/team/SuperCore/Vansh_no_bg.png' },
+  { name: 'Sneha Darbarwar', title: 'Advisory', image: '/team/SuperCore/Sneha_no_bg.png' },
+  { name: 'Mithil Gala', title: 'Advisory', image: '/team/SuperCore/Mithil_no_bg.png' },
 ];
 
 export const CORE_MEMBERS = [
