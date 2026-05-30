@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 
 export default function ApplyPage() {
   return (
@@ -54,7 +53,7 @@ export default function ApplyPage() {
           "
         >
           <iframe
-            data-tally-src="https://tally.so/embed/yPorpB?hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            src="https://tally.so/embed/yPorpB?hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy"
             width="100%"
             height="800"
@@ -65,10 +64,6 @@ export default function ApplyPage() {
           />
         </div>
 
-        <Script
-          src="https://tally.so/widgets/embed.js"
-          strategy="afterInteractive"
-        />
       </div>
     </div>
   );
