@@ -1,8 +1,3 @@
-export const CREW = [
-  { name: 'Nishika Shah', title: 'Crew', image: '/team/Crew/Nishika_no_bg.png' },
-  { name: 'Mridulika Mukerji', title: 'Crew', image: '/team/Crew/Mridulika_no_bg.png' },
-  { name: 'Tanay Shah', title: 'Crew', image: '/team/Crew/Tanay_no_bg.png' },
-];
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/events', label: 'Events' },
