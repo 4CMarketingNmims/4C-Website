@@ -1,9 +1,23 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function ApplyPage() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://tally.so/widgets/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
 
       {/* Aurora Background */}
       <div className="absolute inset-0 z-0">
@@ -13,9 +27,9 @@ export default function ApplyPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(30,145,254,0.13),transparent_60%)]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-6">
 
-        {/* Back Button */}
+        {/* Return Button */}
         <Link
           href="/"
           className="
@@ -27,27 +41,46 @@ export default function ApplyPage() {
             py-3
             rounded-2xl
             text-white
+            hover:bg-white/10
             hover:scale-105
             transition-all
+            duration-300
             mb-6
           "
         >
           <Image
             src="/4clogo.webp"
-            alt="4C"
+            alt="4C Logo"
             width={32}
             height={32}
           />
-          <span>Back to 4C</span>
+          <span className="font-medium">
+            Return to 4C
+          </span>
         </Link>
 
-        {/* Form Container */}
-        <div className="glass-card rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+        {/* Embedded Tally Form */}
+        <div
+          className="
+            rounded-3xl
+            overflow-hidden
+            backdrop-blur-xl
+            border
+            border-white/10
+            bg-white/[0.03]
+            shadow-2xl
+          "
+        >
           <iframe
-            src="https://tally.so/r/yPorpB"
-            className="w-full h-[92vh]"
+            data-tally-src="https://tally.so/embed/yPorpB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="800"
             frameBorder="0"
-            title="4C Core Applications"
+            marginHeight={0}
+            marginWidth={0}
+            title="4C Core Interviews 2026-27"
+            className="w-full"
           />
         </div>
 
