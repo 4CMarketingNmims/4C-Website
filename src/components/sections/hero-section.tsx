@@ -54,27 +54,44 @@ export function HeroSection() {
   }, [displayText, isTyping, currentWordIndex]);
 
   return (
-    <motion.section 
-      ref={heroRef}
-      style={{ scale, y, opacity }}
-      className="relative min-h-screen flex items-center justify-center bg-background text-white overflow-hidden"
-    >
-      {/* Enhanced Aurora Background for Hero */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(68,154,249,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(98,91,253,0.12),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(30,145,254,0.13),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(51,110,249,0.08),transparent_70%)]" />
-      </div>
+    <motion.section
+  ref={heroRef}
+  style={{ scale, y, opacity }}
+  className="
+    relative
+    min-h-screen
+    flex
+    items-center
+    justify-center
+    text-white
+    overflow-hidden
+    pt-28
+  "
+>
+      
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center min-h-[85vh] relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 60, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="glass-card w-full max-w-5xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl rounded-3xl border border-white/20 backdrop-blur-xl relative overflow-hidden"
-        >
+className="
+glass-card
+w-full
+max-w-5xl
+p-6
+sm:p-8
+md:p-12
+lg:p-16
+rounded-3xl
+relative
+overflow-hidden
+border
+border-white/10
+bg-black/10
+backdrop-blur-sm
+shadow-[0_0_60px_rgba(68,154,249,0.08)]
+"        >
           {/* Floating Background Elements */}
           <div className="absolute top-4 left-4 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-primary/10 rounded-full blur-xl animate-pulse" />
           <div className="absolute top-8 right-6 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-accent/10 rounded-full blur-xl animate-pulse delay-1000" />
