@@ -133,14 +133,14 @@ export function HeroSection() {
             >
               <MovingBorderButton
                 as={Link}
-                href="https://unstop.com/college-fests/wings-and-roots-narsee-monjee-institute-of-management-studies-nmims-mumbai-385490"
+                href="https://tally.so/r/yPorpB"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-slate-900/90 hover:bg-slate-800/90 text-white font-bold text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4"
                 containerClassName="w-fit mx-auto"
                 borderClassName="bg-[radial-gradient(var(--aurora-blue)_40%,transparent_60%)]"
               >
-                Register for Wings and Roots! <MoveRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                Apply for Core <MoveRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </MovingBorderButton>
             </motion.div>
           </div>
