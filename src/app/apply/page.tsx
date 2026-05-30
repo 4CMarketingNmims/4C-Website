@@ -5,7 +5,6 @@ import Script from "next/script";
 export default function ApplyPage() {
   return (
     <div className="min-h-screen">
-
       <div className="max-w-5xl mx-auto px-6 py-8">
 
         {/* Return Button */}
@@ -29,16 +28,17 @@ export default function ApplyPage() {
             mb-8
           "
         >
+          <span className="text-lg font-medium">
+            ← Return to
+          </span>
+
           <Image
             src="/4clogo.webp"
             alt="4C"
-            width={32}
-            height={32}
+            width={40}
+            height={40}
+            className="h-8 w-auto"
           />
-
-          <span className="font-medium text-lg">
-            Return to 4C
-          </span>
         </Link>
 
         {/* Form Container */}
@@ -70,7 +70,6 @@ export default function ApplyPage() {
           strategy="afterInteractive"
         />
       </div>
-
     </div>
   );
 }
