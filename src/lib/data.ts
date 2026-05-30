@@ -80,6 +80,11 @@ export const MENTORS = [
   { name: 'Sneha Darbarwar', title: 'Advisory', image: '/team/SuperCore/Sneha_no_bg.png' },
   { name: 'Mithil Gala', title: 'Advisory', image: '/team/SuperCore/Mithil_no_bg.png' },
 ];
+export const CREW = [
+  { name: 'Arnav Jain', title: 'Crew', image: '' },
+  { name: 'Shaivi Mehta', title: 'Crew', image: '' },
+  { name: 'Nishant Das', title: 'Crew', image: '' },
+];
 
 export const CORE_MEMBERS = [
     { name: 'Corperate Relations & Marketing', title: 'Core Team', image: '/team/Core/CRM_no_bg.png' },
