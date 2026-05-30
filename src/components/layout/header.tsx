@@ -70,8 +70,7 @@ export function Header() {
       <Link
         href={link.href}
         key={link.label}
-className="text-base lg:text-lg font-headline transition-colors hover:text-accent text-center py-2 px-3 lg:px-4 rounded-lg hover:bg-white/5 block whitespace-nowrap"        onClick={() => setIsSheetOpen(false)}
-      >
+className="text-lg font-headline transition-colors hover:text-accent"      >
         {link.label}
       </Link>
     );
@@ -89,7 +88,7 @@ className="text-base lg:text-lg font-headline transition-colors hover:text-accen
   <Link href="/" className="text-2xl font-bold font-headline text-white">
             <Image src="/4clogo.webp" alt="4C Logo" width={60} height={60} className="h-[1.5em] w-auto inline align-middle drop-shadow-lg" priority />
           </Link>
-          <nav className="hidden md:flex items-center gap-3 lg:gap-5">
+          <nav className="hidden md:flex items-center space-x-6">
   {navItems}
 </nav>
           <div className="md:hidden">
