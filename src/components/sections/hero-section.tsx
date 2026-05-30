@@ -133,7 +133,7 @@ export function HeroSection() {
             >
               <MovingBorderButton
                 as={Link}
-                href="https://tally.so/r/yPorpB"
+                href="/apply"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-slate-900/90 hover:bg-slate-800/90 text-white font-bold text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4"
