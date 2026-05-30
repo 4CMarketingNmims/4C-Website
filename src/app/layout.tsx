@@ -1,3 +1,4 @@
+import LayoutWrapper from '@/components/layout/layout-wrapper';
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
@@ -36,11 +37,9 @@ export default function RootLayout({
           spaceGrotesk.variable
         )}
       >
-        <AuroraBackground>
-          <Header />
-          <main className="relative z-10">{children}</main>
-          <Footer />
-        </AuroraBackground>
+        <LayoutWrapper>
+          {children}
+        </LayoutWrapper>
         <Toaster />
       </body>
     </html>
