@@ -1,149 +1,166 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { Button } from '@/components/ui/button';
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin } from 'lucide-react';
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
-});
+  Mail,
+  MapPin,
+  Phone,
+  MessageCircle,
+} from 'lucide-react';
 
 export function ContactSection() {
-  const { toast } = useToast();
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values),
-    })
-      .then(async (res) => {
-        if (res.ok) {
-          toast({
-            title: 'Message Sent!',
-            description: "Thanks for reaching out. We'll get back to you soon.",
-          });
-          form.reset();
-        } else {
-          const data = await res.json();
-          toast({
-            title: 'Error',
-            description: data.error || 'Failed to send message.',
-            variant: 'destructive',
-          });
-        }
-      })
-      .catch(() => {
-        toast({
-          title: 'Error',
-          description: 'Failed to send message.',
-          variant: 'destructive',
-        });
-      });
-  }
-
   return (
     <section id="contact-us" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold">Get In Touch</h2>
-          <p className="text-lg text-foreground/80 mt-2">We&apos;d love to hear from you.</p>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold">
+            Get In Touch
+          </h2>
+          <p className="text-lg text-foreground/80 mt-2">
+            We'd love to hear from you.
+          </p>
         </div>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2 glass-card p-6">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your Name" {...field} className="bg-white/10 border-white/20"/>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="your.email@example.com" {...field} className="bg-white/10 border-white/20"/>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea placeholder="Tell us what's on your mind..." {...field} className="bg-white/10 border-white/20 min-h-[120px]" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" size="lg" className="w-full px-8 bg-accent hover:bg-accent/90">Send Message</Button>
-              </form>
-            </Form>
-          </div>
-          <div className="glass-card p-6 flex flex-col justify-center space-y-6">
-            <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-accent mt-0.5"/>
-                <div>
-                    <h3 className="font-headline text-base font-semibold">Email</h3>
-                    <a href="" className="text-foreground/80 hover:text-accent text-sm break-all">contact@4cnmims.in</a>
-                </div>
+
+        <div className="max-w-5xl mx-auto space-y-6">
+
+          {/* Aryan */}
+          <div className="glass-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h3 className="text-xl font-headline font-semibold">
+                Aryan Thakkar
+              </h3>
+              <p className="text-foreground/70">
+                President
+              </p>
             </div>
-            <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-accent mt-0.5"/>
-                <div>
-                    <h3 className="font-headline text-base font-semibold">Phone</h3>
-                    <p className="text-foreground/80 text-sm">+91 93581 72251</p>
-                    <p className="text-foreground/80 text-sm">+91 70216 45731</p>
-                </div>
-            </div>
-            <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-accent mt-0.5"/>
-                <div>
-                    <h3 className="font-headline text-base font-semibold">Address</h3>
-                    <p className="text-foreground/80 text-sm leading-relaxed">
-                    4C - MPSTME, Bhakti Vedant Marg, opp. Cooper Hospital, <br/>Vile Parle West, Mumbai, Maharashtra<br/>400056</p>
-                </div>
+
+            <div className="flex gap-3">
+              <a
+                href="https://wa.me/919820448705"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-accent hover:bg-accent/90 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
+
+              <a
+                href="tel:+919820448705"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition-all"
+              >
+                <Phone className="w-4 h-4" />
+                Call
+              </a>
             </div>
           </div>
+
+          {/* Krish */}
+          <div className="glass-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h3 className="text-xl font-headline font-semibold">
+                Krish Sarkar
+              </h3>
+              <p className="text-foreground/70">
+                Secretary
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              <a
+                href="https://wa.me/919892721055"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-accent hover:bg-accent/90 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
+
+              <a
+                href="tel:+919892721055"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition-all"
+              >
+                <Phone className="w-4 h-4" />
+                Call
+              </a>
+            </div>
+          </div>
+
+          {/* Madhav */}
+          <div className="glass-card p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h3 className="text-xl font-headline font-semibold">
+                Madhav Sahi
+              </h3>
+              <p className="text-foreground/70">
+                Vice President Outreach
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              <a
+                href="https://wa.me/919870215599"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-accent hover:bg-accent/90 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
+
+              <a
+                href="tel:+919870215599"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition-all"
+              >
+                <Phone className="w-4 h-4" />
+                Call
+              </a>
+            </div>
+          </div>
+
+          {/* Email & Address */}
+          <div className="glass-card p-6">
+            <div className="space-y-6">
+
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-accent mt-1" />
+                <div>
+                  <h3 className="font-headline text-base font-semibold">
+                    Email
+                  </h3>
+                  <a
+                    href="mailto:4c.nmims@gmail.com"
+                    className="text-foreground/80 hover:text-accent transition-colors"
+                  >
+                    4c.nmims@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-accent mt-1" />
+                <div>
+                  <h3 className="font-headline text-base font-semibold">
+                    Address
+                  </h3>
+                  <p className="text-foreground/80 leading-relaxed">
+                    4C - MPSTME,
+                    <br />
+                    Bhakti Vedant Marg,
+                    <br />
+                    Opp. Cooper Hospital,
+                    <br />
+                    Vile Parle West,
+                    <br />
+                    Mumbai, Maharashtra 400056
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
