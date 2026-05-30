@@ -19,14 +19,25 @@ export default function LayoutWrapper({
     return (
       <AuroraBackground>
         <motion.main
-          key={pathname}
-          className="relative z-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.35 }}
-        >
-          {children}
-        </motion.main>
+  key={pathname}
+  className="relative z-10"
+  initial={{
+  opacity: 0,
+  y: 20,
+  filter: "blur(6px)",
+}}
+animate={{
+  opacity: 1,
+  y: 0,
+  filter: "blur(0px)",
+}}
+transition={{
+  duration: 0.65,
+  ease: [0.22, 1, 0.36, 1],
+}}
+>
+  {children}
+</motion.main>
       </AuroraBackground>
     );
   }
@@ -36,14 +47,25 @@ export default function LayoutWrapper({
       <Header />
 
       <motion.main
-        key={pathname}
-        className="relative z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.35 }}
-      >
-        {children}
-      </motion.main>
+  key={pathname}
+  className="relative z-10"
+ initial={{
+  opacity: 0,
+  y: 20,
+  filter: "blur(6px)",
+}}
+animate={{
+  opacity: 1,
+  y: 0,
+  filter: "blur(0px)",
+}}
+transition={{
+  duration: 0.65,
+  ease: [0.22, 1, 0.36, 1],
+}}
+>
+  {children}
+</motion.main>
 
       <Footer />
     </AuroraBackground>
