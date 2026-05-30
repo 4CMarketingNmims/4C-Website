@@ -84,11 +84,11 @@ className="text-lg font-headline transition-colors hover:text-accent"      >
       )}
     >
        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-<div className="mt-4 flex h-16 items-center justify-between glass-card px-4 lg:px-6">
+<div className="mt-4 flex h-16 items-center justify-between glass-card px-6">
   <Link href="/" className="text-2xl font-bold font-headline text-white">
             <Image src="/4clogo.webp" alt="4C Logo" width={60} height={60} className="h-[1.5em] w-auto inline align-middle drop-shadow-lg" priority />
           </Link>
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-10 ml-16">
   {navItems}
 </nav>
           <div className="md:hidden">
