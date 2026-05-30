@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   { href: '/team', label: 'Our Team' },
   { href: '/#sponsors', label: 'Sponsors' },
   { href: '/about', label: 'About Us' },
+  { href: '/#contact-us', label: 'Contact Us' },
 ];
 
 export const EVENTS_DATA = [
