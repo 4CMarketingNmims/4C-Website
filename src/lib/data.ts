@@ -64,11 +64,11 @@ export const EVENTS_DATA = [
 export const SUPER_CORE_MEMBERS = [
   { name: 'Aryan Thakkar', title: 'President', image: '' },
   { name: 'Krish Sarkar', title: 'Secretary', image: '' },
-  { name: 'Shawn Mendes', title: 'Vice President of Relations', image: '' },
-  { name: 'Madhav Sahi', title: 'Vice President of Outreach', image: '' },
-  { name: 'Prerna Chauhan', title: 'Vice President of Social Media', image: '' },
-  { name: 'Pratit Dedhia', title: 'Vice President of Operations', image: '' },
-  { name: 'Sylborn Furtado', title: 'Vice President of Creatives', image: '' },
+  { name: 'Shawn Mendes', title: 'Vice President', image: '' },
+  { name: 'Madhav Sahi', title: 'Vice President', image: '' },
+  { name: 'Prerna Chauhan', title: 'Vice President', image: '' },
+  { name: 'Pratit Dedhia', title: 'Vice President', image: '' },
+  { name: 'Sylborn Furtado', title: 'Vice President', image: '' },
 ];
 
 export const MENTORS = [
