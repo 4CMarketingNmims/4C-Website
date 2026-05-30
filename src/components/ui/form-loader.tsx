@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function FormLoader() {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/80 backdrop-blur-md z-20">
+    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-background/80 backdrop-blur-md">
       <Image
         src="/4clogo.webp"
         alt="4C"
@@ -14,7 +14,11 @@ export default function FormLoader() {
         priority
       />
 
-      <p className="mt-4 text-white/80 text-lg">
+      <h3 className="mt-6 text-xl font-semibold text-white">
+        4C Core Recruitment 2026–27
+      </h3>
+
+      <p className="mt-2 text-white/70">
         Loading Application Portal...
       </p>
     </div>
