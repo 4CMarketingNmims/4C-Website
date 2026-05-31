@@ -4,11 +4,9 @@ import Image from 'next/image';
 import { SPONSORS } from '@/lib/data';
 
 export function SponsorsSection() {
-  const third = Math.ceil(SPONSORS.length / 3);
-
-  const row1 = SPONSORS.slice(0, third);
-  const row2 = SPONSORS.slice(third, third * 2);
-  const row3 = SPONSORS.slice(third * 2);
+  const row1 = SPONSORS.slice(0, 4);
+  const row2 = SPONSORS.slice(4, 8);
+  const row3 = SPONSORS.slice(8, 12);
 
   const SponsorRow = ({
     sponsors,
@@ -51,7 +49,7 @@ export function SponsorsSection() {
                 hover:scale-105
                 hover:border-accent/40
                 hover:shadow-xl
-                hover:shadow-accent/10
+                hover:shadow-blue-500/10
               "
             >
               <div className="relative w-full h-full">
@@ -61,12 +59,9 @@ export function SponsorsSection() {
                   fill
                   className="
                     object-contain
-                    opacity-80
-                    grayscale
                     transition-all
                     duration-500
-                    group-hover:grayscale-0
-                    group-hover:opacity-100
+                    group-hover:scale-105
                   "
                 />
               </div>
@@ -83,13 +78,14 @@ export function SponsorsSection() {
 
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">
-            Trusted Sponsors & Partners
+            Sponsors & Partners
           </h2>
 
           <p className="text-lg text-foreground/80 mt-3 max-w-4xl mx-auto">
             Proudly supported by sponsors and partners from our past editions
-            and flagship initiatives. We look forward to building meaningful
-            collaborations with organizations that share our vision.
+            and flagship initiatives. We’re always open to collaborating with
+            organizations that share our vision for innovation, leadership and
+            community impact.
           </p>
 
           <div className="w-24 h-[2px] bg-accent mx-auto mt-8 rounded-full" />
@@ -101,28 +97,9 @@ export function SponsorsSection() {
           <SponsorRow sponsors={row3} />
         </div>
 
-        <div className="text-center mt-12">
-          <a
-            href="#contact"
-            className="
-              inline-flex
-              items-center
-              px-8
-              py-4
-              rounded-xl
-              bg-accent
-              text-white
-              font-semibold
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:shadow-xl
-              hover:shadow-accent/20
-            "
-          >
-            Partner With 4C →
-          </a>
-        </div>
+        <p className="text-center text-foreground/60 mt-10">
+          Interested in collaborating with 4C? We'd love to hear from you.
+        </p>
 
       </div>
     </section>
