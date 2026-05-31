@@ -14,6 +14,19 @@ export function EventsSection() {
   return (
     <section className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Section Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold">
+            Featured Event
+          </h2>
+
+          <p className="text-lg text-foreground/80 mt-2">
+            The flagship experience of 4C.
+          </p>
+        </div>
+
+        {/* Event Card */}
         <div className="glass-card max-w-5xl mx-auto overflow-hidden rounded-3xl border border-white/10">
           <div className="grid lg:grid-cols-2 items-center">
 
@@ -27,13 +40,9 @@ export function EventsSection() {
             </div>
 
             <div className="p-8 lg:p-12">
-              <p className="text-accent uppercase tracking-[0.3em] text-sm mb-4">
-                Flagship Event
-              </p>
-
-              <h2 className="text-4xl md:text-5xl font-headline font-bold mb-4">
+              <h3 className="text-4xl md:text-5xl font-headline font-bold mb-4">
                 {featuredEvent.name}
-              </h2>
+              </h3>
 
               <p className="text-lg text-foreground/80 mb-8">
                 {featuredEvent.description}
@@ -49,6 +58,7 @@ export function EventsSection() {
 
           </div>
         </div>
+
       </div>
     </section>
   );
