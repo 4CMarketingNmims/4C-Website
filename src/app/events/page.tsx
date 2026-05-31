@@ -30,20 +30,6 @@ export default function EventsPage() {
         {/* Featured Event */}
         {featuredEvent && (
           <section className="mb-24">
-            <div className="text-center mb-8">
-              <h2 className="text-sm uppercase tracking-[0.3em] text-accent mb-3">
-                Featured Event
-              </h2>
-
-              <h3 className="text-4xl md:text-5xl font-headline font-bold">
-                Wings & Roots 2025
-              </h3>
-
-              <p className="text-foreground/70 mt-3 text-lg">
-                Our flagship leadership and marketing conclave.
-              </p>
-            </div>
-
             <div className="flex justify-center">
               <CardContainer className="inter-var w-full max-w-5xl">
                 <CardBody className="glass-card relative group/card hover:shadow-lg hover:shadow-blue-500/[0.05] rounded-xl overflow-hidden border border-white/20 transition-all duration-500">
@@ -85,6 +71,7 @@ export default function EventsPage() {
                       </Link>
                     </CardItem>
                   </div>
+
                 </CardBody>
               </CardContainer>
             </div>
@@ -137,8 +124,8 @@ export default function EventsPage() {
                     </CardItem>
 
                     <CardItem translateZ="50">
-                      <span className="text-accent/70 font-semibold">
-                        Gallery Coming Soon
+                      <span className="text-accent/80 font-semibold">
+                        Media Gallery Coming Soon
                       </span>
                     </CardItem>
                   </div>
