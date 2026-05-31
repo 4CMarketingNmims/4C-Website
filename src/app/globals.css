@@ -75,6 +75,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -84,17 +85,25 @@
   from {
     transform: translateX(-50%);
   }
+
   to {
     transform: translateX(0);
   }
 }
 
 .marquee-left {
-  animation: marquee-left 30s linear infinite;
+  animation: marquee-left 45s linear infinite;
+  will-change: transform;
 }
 
 .marquee-right {
-  animation: marquee-right 30s linear infinite;
+  animation: marquee-right 45s linear infinite;
+  will-change: transform;
+}
+
+.marquee-left:hover,
+.marquee-right:hover {
+  animation-play-state: paused;
 }
 .animated-light {
   position: absolute;
