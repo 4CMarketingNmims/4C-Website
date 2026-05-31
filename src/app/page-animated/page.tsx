@@ -1,5 +1,4 @@
 import { ContactSection } from "@/components/sections/contact-section";
-import { EventsSection } from "@/components/sections/events-section";
 import { HeroSectionAnimated } from "@/components/sections/hero-section-animated";
 import { SponsorsSection } from "@/components/sections/sponsors-section";
 import { WhatWeDoSection } from "@/components/sections/what-we-do-section";
