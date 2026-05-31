@@ -23,18 +23,21 @@ export function Header() {
 
   useEffect(() => {
     const controlNavbar = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY < lastScrollY || currentScrollY < 100) {
-        // Scrolling up or at top
-        setIsVisible(true);
-      } else {
-        // Scrolling down
-        setIsVisible(false);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
+  if (window.location.hash) {
+    setIsVisible(true);
+    return;
+  }
+
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY < lastScrollY || currentScrollY < 100) {
+    setIsVisible(true);
+  } else {
+    setIsVisible(false);
+  }
+
+  setLastScrollY(currentScrollY);
+};
 
     window.addEventListener('scroll', controlNavbar);
     return () => window.removeEventListener('scroll', controlNavbar);
