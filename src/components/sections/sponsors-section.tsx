@@ -4,9 +4,17 @@ import Image from 'next/image';
 import { SPONSORS } from '@/lib/data';
 
 export function SponsorsSection() {
-  const row1 = SPONSORS.slice(0, 4);
-  const row2 = SPONSORS.slice(4, 8);
-  const row3 = SPONSORS.slice(8, 12);
+  const row1 = SPONSORS;
+
+  const row2 = [
+    ...SPONSORS.slice(4),
+    ...SPONSORS.slice(0, 4),
+  ];
+
+  const row3 = [
+    ...SPONSORS.slice(8),
+    ...SPONSORS.slice(0, 8),
+  ];
 
   const SponsorRow = ({
     sponsors,
@@ -20,14 +28,12 @@ export function SponsorsSection() {
       ...sponsors,
       ...sponsors,
       ...sponsors,
-      ...sponsors,
-      ...sponsors,
     ];
 
     return (
       <div className="overflow-hidden w-full">
         <div
-          className={`flex gap-6 min-w-max ${
+          className={`flex gap-5 min-w-max ${
             reverse ? 'marquee-right' : 'marquee-left'
           }`}
         >
@@ -40,16 +46,16 @@ export function SponsorsSection() {
                 flex
                 items-center
                 justify-center
-                p-6
-                h-32
-                w-60
+                p-5
+                h-28
+                w-52
                 flex-shrink-0
                 transition-all
                 duration-500
-                hover:scale-105
+                hover:scale-[1.03]
                 hover:border-accent/40
-                hover:shadow-xl
-                hover:shadow-blue-500/10
+                hover:shadow-lg
+                hover:shadow-accent/10
               "
             >
               <div className="relative w-full h-full">
@@ -76,16 +82,15 @@ export function SponsorsSection() {
     <section id="sponsors" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-14">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">
             Sponsors & Partners
           </h2>
 
-          <p className="text-lg text-foreground/80 mt-3 max-w-4xl mx-auto">
-            Proudly supported by sponsors and partners from our past editions
-            and flagship initiatives. We’re always open to collaborating with
-            organizations that share our vision for innovation, leadership and
-            community impact.
+          <p className="text-lg text-foreground/80 mt-4 max-w-4xl mx-auto leading-relaxed">
+            Proudly supported by sponsors and partners from previous editions
+            of our flagship initiatives. We look forward to building meaningful
+            collaborations with organizations that share our vision.
           </p>
 
           <div className="w-24 h-[2px] bg-accent mx-auto mt-8 rounded-full" />
@@ -97,7 +102,7 @@ export function SponsorsSection() {
           <SponsorRow sponsors={row3} />
         </div>
 
-        <p className="text-center text-foreground/60 mt-10">
+        <p className="text-center text-foreground/60 mt-12">
           Interested in collaborating with 4C? We'd love to hear from you.
         </p>
 
