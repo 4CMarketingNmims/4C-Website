@@ -18,11 +18,12 @@ export default function EventsPage() {
       <div className="pt-32 pb-24 container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <h1 className="text-4xl md:text-5xl font-headline font-bold">
             Our Events
           </h1>
-          <p className="text-xl text-foreground/80 mt-2">
+
+          <p className="text-xl text-foreground/80 mt-3">
             Explore our workshops, events, and conferences.
           </p>
         </div>
@@ -31,25 +32,26 @@ export default function EventsPage() {
         {featuredEvent && (
           <section className="mb-24">
             <div className="flex justify-center">
-              <CardContainer className="inter-var w-full max-w-5xl">
-                <CardBody className="glass-card relative group/card hover:shadow-lg hover:shadow-blue-500/[0.05] rounded-xl overflow-hidden border border-white/20 transition-all duration-500">
+              <CardContainer className="inter-var w-full max-w-6xl">
+                <CardBody className="glass-card overflow-hidden rounded-2xl border border-white/20 hover:shadow-lg hover:shadow-blue-500/[0.05] transition-all duration-500">
 
                   <CardItem translateZ="50" className="w-full">
-                    <div className="relative aspect-[16/7]">
+                    <div className="relative aspect-[16/6]">
                       <Image
                         src={featuredEvent.images[0]}
                         alt={featuredEvent.name}
                         fill
                         className="object-cover"
+                        priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     </div>
                   </CardItem>
 
-                  <div className="p-8">
+                  <div className="p-8 md:p-10">
                     <CardItem
                       translateZ="60"
-                      className="text-3xl font-headline font-bold mb-3 text-white"
+                      className="text-3xl md:text-4xl font-headline font-bold text-white mb-4"
                     >
                       {featuredEvent.name}
                     </CardItem>
@@ -57,7 +59,7 @@ export default function EventsPage() {
                     <CardItem
                       as="p"
                       translateZ="40"
-                      className="text-foreground/70 text-lg mb-6"
+                      className="text-lg text-foreground/70 mb-8 max-w-3xl"
                     >
                       {featuredEvent.description}
                     </CardItem>
@@ -65,9 +67,9 @@ export default function EventsPage() {
                     <CardItem translateZ="50">
                       <Link
                         href={`/events/${featuredEvent.slug}`}
-                        className="text-accent font-semibold text-lg hover:underline"
+                        className="inline-flex items-center text-accent font-semibold text-lg hover:underline"
                       >
-                        View Event Gallery →
+                        View Media Gallery →
                       </Link>
                     </CardItem>
                   </div>
@@ -92,8 +94,8 @@ export default function EventsPage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {otherEvents.map((event) => (
-              <CardContainer key={event.slug} className="inter-var">
-                <CardBody className="glass-card relative group/card hover:shadow-lg hover:shadow-blue-500/[0.03] rounded-xl overflow-hidden border border-white/20 transition-all duration-500">
+              <CardContainer key={event.slug} className="inter-var h-full">
+                <CardBody className="glass-card flex flex-col h-full rounded-xl overflow-hidden border border-white/20 hover:shadow-lg hover:shadow-blue-500/[0.03] transition-all duration-500">
 
                   <CardItem translateZ="50" className="w-full">
                     <div className="relative aspect-video">
@@ -107,10 +109,10 @@ export default function EventsPage() {
                     </div>
                   </CardItem>
 
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <CardItem
                       translateZ="60"
-                      className="text-xl font-headline font-bold mb-2 text-white"
+                      className="text-xl font-headline font-bold mb-3 text-white"
                     >
                       {event.name}
                     </CardItem>
@@ -118,14 +120,17 @@ export default function EventsPage() {
                     <CardItem
                       as="p"
                       translateZ="40"
-                      className="text-foreground/70 mb-4"
+                      className="text-foreground/70 mb-6"
                     >
                       {event.description}
                     </CardItem>
 
-                    <CardItem translateZ="50">
+                    <CardItem
+                      translateZ="50"
+                      className="mt-auto"
+                    >
                       <span className="text-accent/80 font-semibold">
-                        Media Gallery Coming Soon
+                        Event Archive Coming Soon
                       </span>
                     </CardItem>
                   </div>
