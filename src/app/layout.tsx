@@ -19,8 +19,30 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: '4C: Marketing Cell of NMIMS',
-  description: 'The Marketing Cell.',
+  title: '4C NMIMS | Marketing Cell of MPSTME NMIMS',
+  description:
+    'Official website of 4C NMIMS. Explore events, team members, sponsors and initiatives.',
+
+  openGraph: {
+    title: '4C NMIMS',
+    description:
+      'Official website of 4C NMIMS.',
+    url: 'https://4cnmims.in',
+    siteName: '4C NMIMS',
+    images: [
+      {
+        url: 'https://4cnmims.in/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://4cnmims.in/og-image.png'],
+  },
 };
 
 export default function RootLayout({
