@@ -1,10 +1,4 @@
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Team',
-  description:
-    'Meet the leadership, advisory and core members of 4C NMIMS.',
-};
 'use client';
 import Image from 'next/image';
 import {
