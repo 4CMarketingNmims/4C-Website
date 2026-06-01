@@ -23,10 +23,10 @@ const contacts = [
 
 export function ContactSection() {
   return (
-    <section id="contact-us" className="py-24">
+    <section id="contact-us" className="pt-16 pb-12 md:pt-20 md:pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="text-3xl md:text-4xl font-headline font-bold">
             Get In Touch
           </h2>
