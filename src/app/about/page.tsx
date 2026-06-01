@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'Learn about the journey, mission, vision and legacy of 4C NMIMS, the Marketing Cell of MPSTME NMIMS.',
+};
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Timeline } from "@/components/ui/timeline";
