@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Events',
+  description:
+    'Explore flagship events conducted by 4C NMIMS including Wings & Roots, Roulette and DeBattle.',
+};
 import { EVENTS_DATA } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
