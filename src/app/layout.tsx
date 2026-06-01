@@ -3,10 +3,7 @@ import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
-import { AuroraBackground } from '@/components/ui/aurora-background';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,8 +16,70 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: '4C: Marketing Cell of NMIMS',
-  description: 'The Marketing Cell.',
+  metadataBase: new URL('https://4cnmims.in'),
+
+  title: {
+    default: '4C NMIMS | Marketing Cell of MPSTME NMIMS',
+    template: '%s | 4C NMIMS',
+  },
+
+  description:
+    'Official website of 4C NMIMS, the Marketing Cell of MPSTME NMIMS. Explore flagship events, student leadership initiatives, sponsors, team members, and opportunities for growth, networking, and innovation.',
+
+  keywords: [
+    '4C NMIMS',
+    'Marketing Cell',
+    'MPSTME',
+    'NMIMS',
+    'Marketing Committee',
+    'Student Committee',
+    'Wings and Roots',
+    'Roulette',
+    'DeBattle',
+    'Marketing Cell of MPSTME',
+  ],
+
+  authors: [
+    {
+      name: '4C NMIMS',
+    },
+  ],
+
+  alternates: {
+    canonical: 'https://4cnmims.in',
+  },
+
+  openGraph: {
+    title: '4C NMIMS | Marketing Cell of MPSTME NMIMS',
+    description:
+      'Official website of 4C NMIMS. Explore our events, team, sponsors, and initiatives.',
+    url: 'https://4cnmims.in',
+    siteName: '4C NMIMS',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: '4C NMIMS',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: '4C NMIMS | Marketing Cell of MPSTME NMIMS',
+    description:
+      'Official website of 4C NMIMS. Explore our events, team, sponsors, and initiatives.',
+    images: ['/og-image.png'],
+  },
+
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
