@@ -79,10 +79,10 @@ export function SponsorsSection() {
   };
 
   return (
-    <section id="sponsors" className="py-24">
+    <section id="sponsors" className="pt-16 pb-12 md:pt-20 md:pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">
             Sponsors & Partners
           </h2>
