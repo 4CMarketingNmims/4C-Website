@@ -3,7 +3,7 @@ import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 export function WhoAreWeSection() {
   return (
-    <section id="who-we-are" className="py-24">
+    <section id="who-we-are" className="pt-16 pb-12 md:pt-20 md:pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <CardContainer className="inter-var w-full">
           <CardBody className="glass-card relative group/card hover:shadow-sm hover:shadow-blue-500/[0.005] w-full h-auto rounded-xl p-8 md:p-12 border border-white/20 transition-all duration-700 ease-out">
