@@ -12,7 +12,7 @@ export function EventsSection() {
   if (!featuredEvent) return null;
 
   return (
-    <section className="py-16">
+    <section className="pt-16 pb-12 md:pt-20 md:pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Heading */}
