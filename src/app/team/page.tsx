@@ -120,43 +120,43 @@ export default function TeamPage() {
 
 <section id="crew" className="mb-24">
   <div className="text-center mb-12">
-    <h2 className="text-3xl md:text-4xl font-headline font-bold">Crew</h2>
-    <p className="text-lg text-foreground/80 mt-2">The backbone of our operations.</p>
+    <h2 className="text-3xl md:text-4xl font-headline font-bold">
+      Crew
+    </h2>
+    <p className="text-lg text-foreground/80 mt-2">
+      The backbone of our operations.
+    </p>
   </div>
-        {/* Desktop grid */}
-        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {CREW.map((member, index) => (
-            <TeamCard key={index} {...member} />
-          ))}
-        </div>
-        {/* Mobile carousel */}
-        <div className="sm:hidden">
-          <Carousel
-            plugins={[
-              Autoplay({
-                delay: 2500,
-                stopOnInteraction: true,
-              })
-            ]}
-            opts={{
-              align: 'start',
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {CREW.map((member, index) => (
-                <CarouselItem key={index}>
-                  <TeamCard {...member} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex" />
-          </Carousel>
-        </div>
-</section>
 
+  <Carousel
+    plugins={[
+      Autoplay({
+        delay: 3000,
+        stopOnInteraction: true,
+      }),
+    ]}
+    opts={{
+      align: "start",
+      loop: true,
+    }}
+    className="w-full"
+  >
+    <CarouselContent>
+      {CREW.map((member, index) => (
+        <CarouselItem
+          key={index}
+          className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+        >
+          <TeamCard {...member} />
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+
+    <CarouselPrevious className="hidden sm:flex" />
+    <CarouselNext className="hidden sm:flex" />
+  </Carousel>
+</section>
+      
       <section id="core-team">
   <div className="text-center mb-12">
     <h2 className="text-3xl md:text-4xl font-headline font-bold">
