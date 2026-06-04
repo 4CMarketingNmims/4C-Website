@@ -79,6 +79,7 @@ export const CREW = [
   { name: 'Arnav Jain', title: 'Crew', image: '' },
   { name: 'Shaivi Mehta', title: 'Crew', image: '' },
   { name: 'Nishant Das', title: 'Crew', image: '' },
+  { name: 'Ritwik Goyal', title: 'Crew', image: '' },
 ];
 
 export const CORE_MEMBERS = [
