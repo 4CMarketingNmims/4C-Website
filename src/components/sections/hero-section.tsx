@@ -150,12 +150,12 @@ shadow-[0_0_60px_rgba(68,154,249,0.08)]
             >
               <MovingBorderButton
                 as={Link}
-                href="/apply"
+                href="/team#results"
                 className="bg-slate-900/90 hover:bg-slate-800/90 text-white font-bold text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4"
                 containerClassName="w-fit mx-auto"
                 borderClassName="bg-[radial-gradient(var(--aurora-blue)_40%,transparent_60%)]"
               >
-                Apply for Core <MoveRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                View Core Recruitment Results <MoveRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </MovingBorderButton>
             </motion.div>
           </div>
