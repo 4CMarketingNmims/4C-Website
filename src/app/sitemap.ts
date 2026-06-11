@@ -3,19 +3,19 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://4cnmims.in',
+      url: 'https://www.4cnmims.in',
       lastModified: new Date(),
     },
     {
-      url: 'https://4cnmims.in/events',
+      url: 'https://www.4cnmims.in/events',
       lastModified: new Date(),
     },
     {
-      url: 'https://4cnmims.in/team',
+      url: 'https://www.4cnmims.in/team',
       lastModified: new Date(),
     },
     {
-      url: 'https://4cnmims.in/about',
+      url: 'https://www.4cnmims.in/about',
       lastModified: new Date(),
     },
   ];
