@@ -103,7 +103,7 @@ export default function RootLayout({
   id="organization-schema"
   type="application/ld+json"
   dangerouslySetInnerHTML={{
-    __html: JSON.stringify({{
+    __html: JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: '4C NMIMS',
