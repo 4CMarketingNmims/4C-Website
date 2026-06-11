@@ -260,11 +260,11 @@ export default function TeamPage() {
               ) : (
                 <div className="flex-1 flex flex-col items-center justify-center">
                   <p className="text-accent font-semibold tracking-wide">
-                    COMING SOON
+                    CLASSIFIED
                   </p>
 
                   <p className="text-foreground/50 mt-2">
-                    Results Awaited
+                    COMING SOON
                   </p>
                 </div>
               )}
