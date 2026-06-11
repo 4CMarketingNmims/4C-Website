@@ -157,30 +157,29 @@ export default function TeamPage() {
   </Carousel>
 </section>
       
-      <section id="core-team">
+<section id="results">
   <div className="text-center mb-12">
     <h2 className="text-3xl md:text-4xl font-headline font-bold">
-      Core Team
+      Core Recruitment Results
     </h2>
 
     <p className="text-lg text-foreground/80 mt-2">
-      Recruitment for the 2026–27 Core Team is now open.
+      Department-wise results for the 2026–27 tenure.
     </p>
   </div>
 
   <div className="max-w-3xl mx-auto">
     <div className="glass-card p-10 text-center">
       <h3 className="text-2xl font-bold text-white mb-4">
-        Join the next generation of 4C
+        Results Are Live
       </h3>
 
       <p className="text-foreground/70 mb-8">
-        Be a part of one of the most dynamic committees at MPSTME.
-        Applications for the 2026–27 Core Team are now live.
+        Explore department-wise selections and stay tuned as more results are announced.
       </p>
 
       <a
-        href="/apply"
+        href="#"
         className="
           inline-flex
           items-center
@@ -196,10 +195,11 @@ export default function TeamPage() {
           hover:scale-105
         "
       >
-        Apply for Core →
+        Technicals Results →
       </a>
     </div>
   </div>
-</section>    </div>
+</section>
+    </div>
   );
 }
