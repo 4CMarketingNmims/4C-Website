@@ -33,7 +33,7 @@ const DEPARTMENTS = [
     subHeads: [" Shaurrya Khandar ", " Tanushka Shah "],
   },
    {
-    initials: "L&A",
+    initials: "LA",
     name: "Logistics & Administration",
     revealed: false,
     heads: [" Arnav Dhakad ", " Swayam Shah "],
