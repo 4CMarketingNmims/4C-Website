@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://4cnmims.in'),
+  metadataBase: new URL('https://www.4cnmims.in'),
 
   title: {
     default: '4C NMIMS | Marketing Cell of NMIMS MPSTME',
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: 'https://4cnmims.in',
+    canonical: 'https://www.4cnmims.in',
   },
 
   openGraph: {
-    title: '4C NMIMS | Marketing Cell of MPSTME NMIMS',
+    title: '4C NMIMS | Marketing Cell of NMIMS MPSTME',
     description:
       'Official website of 4C NMIMS. Explore our events, team, sponsors, and initiatives.',
-    url: 'https://4cnmims.in',
+    url: 'https://www.4cnmims.in',
     siteName: '4C NMIMS',
     locale: 'en_IN',
     type: 'website',
@@ -103,18 +103,22 @@ export default function RootLayout({
   id="organization-schema"
   type="application/ld+json"
   dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: '4C NMIMS',
-      alternateName: 'Marketing Cell of MPSTME',
-      url: 'https://4cnmims.in',
-      logo: 'https://4cnmims.in/apple-icon.png',
-      sameAs: [
-        'https://www.instagram.com/4cnmims/',
-        'https://www.linkedin.com/company/4c-nmims/',
-      ],
-    }),
+    __html: JSON.stringify({{
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: '4C NMIMS',
+  alternateName: 'Marketing Cell of NMIMS MPSTME',
+  url: 'https://www.4cnmims.in',
+  logo: 'https://www.4cnmims.in/apple-icon.png',
+  sameAs: [
+    'https://www.instagram.com/4cnmims/',
+    'https://www.linkedin.com/company/4c-nmims/',
+  ],
+  department: {
+    '@type': 'Organization',
+    name: 'Marketing Cell of NMIMS MPSTME',
+  },
+}),
   }}
 />
         <Script
@@ -125,7 +129,7 @@ export default function RootLayout({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: '4C NMIMS',
-      url: 'https://4cnmims.in',
+      url: 'https://www.4cnmims.in',
     }),
   }}
 />
