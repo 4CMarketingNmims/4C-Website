@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -98,6 +99,36 @@ export default function RootLayout({
         <LayoutWrapper>
           {children}
         </LayoutWrapper>
+        <Script
+  id="organization-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: '4C NMIMS',
+      alternateName: 'Marketing Cell of MPSTME',
+      url: 'https://4cnmims.in',
+      logo: 'https://4cnmims.in/apple-icon.png',
+      sameAs: [
+        'https://www.instagram.com/4cnmims/',
+        'https://www.linkedin.com/company/4c-nmims/',
+      ],
+    }),
+  }}
+/>
+        <Script
+  id="website-schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: '4C NMIMS',
+      url: 'https://4cnmims.in',
+    }),
+  }}
+/>
         <Toaster />
       </body>
     </html>
