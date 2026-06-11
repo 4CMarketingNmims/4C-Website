@@ -19,13 +19,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://4cnmims.in'),
 
   title: {
-    default: '4C NMIMS | Marketing Cell of MPSTME NMIMS',
+    default: '4C NMIMS | Marketing Cell of NMIMS MPSTME',
     template: '%s | 4C NMIMS',
   },
 
   description:
-    'Official website of 4C NMIMS, the Marketing Cell of MPSTME NMIMS. Explore flagship events, student leadership initiatives, sponsors, team members, and opportunities for growth, networking, and innovation.',
-
+  'Official website of 4C NMIMS, the Marketing Cell of MPSTME. Explore flagship events, competitions, sponsors, initiatives, and the people driving them.',
   keywords: [
     '4C NMIMS',
     'Marketing Cell',
