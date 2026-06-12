@@ -21,7 +21,7 @@ const DEPARTMENTS = [
    {
     initials: "DC",
     name: "Digital Creatives",
-    revealed: false,
+    revealed: true,
     heads: [" Rithika Hodage ", " Seetansh "],
     subHeads: [" Parv ", " Shreya Bhuia "],
   },
@@ -56,7 +56,7 @@ const DEPARTMENTS = [
   {
     initials: "SMCW",
     name: "Social Media & Content Writing",
-    revealed: false,
+    revealed: true,
     heads: [" Disha Hemani ", " Henisha Vadhan "],
     subHeads: [" Krishi Jain ", " Sanika "],
   },
