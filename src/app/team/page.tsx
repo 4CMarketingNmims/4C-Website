@@ -214,7 +214,7 @@ export default function TeamPage() {
   </Carousel>
 </section>
       
-<section id="results">
+<section id="results" className="mb-24">
   <div className="text-center mb-12">
     <h2 className="text-3xl md:text-4xl font-headline font-bold">
       Core Recruitment Results
