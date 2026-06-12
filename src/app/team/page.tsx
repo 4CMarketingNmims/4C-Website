@@ -28,7 +28,7 @@ const DEPARTMENTS = [
     {
     initials: "IHC",
     name: "In-House Creatives",
-    revealed: false,
+    revealed: true,
     heads: [" Grisha Joshi ", " Sonakshi Prasad "],
     subHeads: [" Shaurrya Khandar ", " Tanushka Shah "],
   },
@@ -42,7 +42,7 @@ const DEPARTMENTS = [
     {
     initials: "P",
     name: "Photography",
-    revealed: false,
+    revealed: true,
     heads: [" Maanas Vinze ", " Yash Jain "],
     subHeads: [" Sachin Kumar ", " Vedang Mane "],
   },
