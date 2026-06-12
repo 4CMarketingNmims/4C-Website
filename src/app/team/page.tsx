@@ -57,8 +57,8 @@ const DEPARTMENTS = [
     initials: "SMCW",
     name: "Social Media & Content Writing",
     revealed: false,
-    heads: ["", ""],
-    subHeads: ["", ""],
+    heads: [" Disha Hemani ", " Henisha Vadhan "],
+    subHeads: [" Krishi Jain ", " Sanika "],
   },
   {
     initials: "T&R",
