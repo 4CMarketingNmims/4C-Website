@@ -35,7 +35,7 @@ const DEPARTMENTS = [
    {
     initials: "LA",
     name: "Logistics & Administration",
-    revealed: false,
+    revealed: true,
     heads: [" Arnav Dhakad ", " Swayam Shah "],
     subHeads: [" Bhavya Dadhich ", " Palak Dave ", " Rahan Kakadiya "],
   },
@@ -63,7 +63,7 @@ const DEPARTMENTS = [
   {
     initials: "T&R",
     name: "Technicals & Research",
-    revealed: false,
+    revealed: true,
     heads: ["Aryan Kanungo", "Vir Dharia"],
     subHeads: ["Ridhi Singh", " Ashwin Upadhyay "],
   },
