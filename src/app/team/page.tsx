@@ -14,9 +14,9 @@ const DEPARTMENTS = [
   {
     initials: "CRM",
     name: "Corporate Relations & Marketing",
-    revealed: false,
-    heads: ["", ""],
-    subHeads: ["", ""],
+    revealed: true,
+    heads: [" Arya Desai ", " Keval Shah "],
+    subHeads: [" Anushka Ghughe ", " Neil Kheterpal ", " Prisha Shah "],
   },
    {
     initials: "DC",
@@ -49,9 +49,9 @@ const DEPARTMENTS = [
     {
     initials: "PR",
     name: "Public Relations",
-    revealed: false,
-    heads: ["", ""],
-    subHeads: ["", ""],
+    revealed: true,
+    heads: [" Aniha Khajanchi ", " Kapeesh Godiyal "],
+    subHeads: [" Ashwini Doshi ", " Tarun Tiwari "],
   },
   {
     initials: "SMCW",
