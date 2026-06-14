@@ -68,45 +68,43 @@ const DEPARTMENTS = [
     subHeads: ["Ridhi Singh", " Ashwin Upadhyay "],
   },
 ];
-function TeamCard({ name, title, image }: { name: string; title: string; image: string }) {
+function TeamCard({
+  name,
+  title,
+  image,
+}: {
+  name: string;
+  title: string;
+  image: string;
+}) {
   return (
-<div className="glass-card h-[430px] p-6 flex flex-col items-center text-center">
-  <div className="w-24 h-24 rounded-full border-2 border-accent bg-accent/10 flex items-center justify-center mb-5 text-2xl font-bold text-accent shrink-0">
-    {department.initials}
-  </div>
+    <div className="p-1 h-full">
+      <div className="glass-card overflow-hidden text-center p-6 h-full flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/[0.05] max-w-[250px] w-full mx-auto">
+        {image ? (
+          <div className="relative w-36 h-56 rounded-xl overflow-hidden mb-4 border-2 border-accent p-2 bg-black/10">
+            <Image
+              src={image}
+              alt={name}
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20 rounded-xl" />
+          </div>
+        ) : (
+          <div className="w-24 h-24 rounded-full border-2 border-accent bg-accent/10 flex items-center justify-center mb-4 text-3xl font-bold text-accent">
+            {name.charAt(0)}
+          </div>
+        )}
 
-  <h3 className="text-xl font-bold text-white h-16 flex items-center justify-center mb-4 shrink-0">
-    {department.name}
-  </h3>
+        <h3 className="text-xl font-headline font-bold text-white">
+          {name}
+        </h3>
 
-  {department.revealed ? (
-    <div className="flex-1 flex flex-col justify-start space-y-3 text-sm text-foreground/80">
-      <div>
-        <p className="font-semibold text-white">Heads</p>
-        {department.heads?.map((head, i) => (
-          <p key={i}>{head}</p>
-        ))}
-      </div>
-
-      <div>
-        <p className="font-semibold text-white">Sub Heads</p>
-        {department.subHeads?.map((subHead, i) => (
-          <p key={i}>{subHead}</p>
-        ))}
+        <p className="text-accent">
+          {title}
+        </p>
       </div>
     </div>
-  ) : (
-    <div className="flex-1 flex flex-col items-center justify-center">
-      <p className="text-accent font-semibold tracking-wide">
-        CLASSIFIED
-      </p>
-
-      <p className="text-foreground/50 mt-2">
-        COMING SOON
-      </p>
-    </div>
-  )}
-</div>
   );
 }
 export default function TeamPage() {
