@@ -59,7 +59,7 @@ export const EVENTS_DATA = [
 export const SUPER_CORE_MEMBERS = [
   { name: 'Aryan Thakkar', title: 'President', image: '' },
   { name: 'Krish Sarkar', title: 'Secretary', image: '' },
-
+  { name: 'Yash Jain', title: 'Vice President', image: '' },
   { name: 'Madhav Sahi', title: 'Vice President', image: '' },
   { name: 'Prerna Chauhan', title: 'Vice President', image: '' },
   { name: 'Pratit Dedhia', title: 'Vice President', image: '' },
