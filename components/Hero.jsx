@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import styles from './Hero.module.css';
 
@@ -9,6 +10,7 @@ export default function Hero() {
   const headingRef = useRef(null);
   const descRef = useRef(null);
   const statsRef = useRef(null);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -25,8 +27,8 @@ export default function Hero() {
       .from(
         headingRef.current.children,
         {
-          y: 60,
           opacity: 0,
+          y: 60,
           stagger: 0.08,
           duration: 0.7,
         },
@@ -35,8 +37,8 @@ export default function Hero() {
       .from(
         descRef.current,
         {
-          y: 30,
           opacity: 0,
+          y: 30,
           duration: 0.6,
         },
         '-=0.3'
@@ -44,26 +46,49 @@ export default function Hero() {
       .from(
         statsRef.current.children,
         {
-          y: 30,
           opacity: 0,
+          y: 30,
           stagger: 0.08,
           duration: 0.5,
         },
         '-=0.2'
+      )
+      .from(
+        scrollRef.current,
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.5,
+        },
+        '-=0.2'
       );
+
+    gsap.to(scrollRef.current, {
+      y: 10,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut',
+      duration: 1,
+    });
   }, []);
 
   return (
     <section className={styles.hero}>
 
-      <div className={styles.grid} />
+      <div className={styles.grid}></div>
 
-      <img
-        ref={logoRef}
-        src="/logo-transparent.png"
-        alt="4C"
-        className={styles.logo}
-      />
+      <div className={styles.glow}></div>
+
+      <div ref={logoRef} className={styles.logoWrapper}>
+        <Image
+          src="/logo-transparent.png"
+          alt="4C"
+          width={180}
+          height={180}
+          priority
+          className={styles.logo}
+        />
+      </div>
 
       <div ref={headingRef} className={styles.heading}>
         <span>THE MARKETING CELL</span>
@@ -71,10 +96,15 @@ export default function Hero() {
       </div>
 
       <p ref={descRef} className={styles.description}>
-        Creating the campaigns, events and experiences that shape campus life.
+        The creative force behind NMIMS MPSTME's biggest marketing experiences.
       </p>
 
       <div ref={statsRef} className={styles.stats}>
+
+        <div>
+          <h2>2008</h2>
+          <p>Established</p>
+        </div>
 
         <div>
           <h2>100+</h2>
@@ -82,13 +112,13 @@ export default function Hero() {
         </div>
 
         <div>
-          <h2>17</h2>
-          <p>Years</p>
+          <h2>2400+</h2>
+          <p>Participants</p>
         </div>
 
         <div>
-          <h2>2400+</h2>
-          <p>Participants</p>
+          <h2>930+</h2>
+          <p>Teams</p>
         </div>
 
         <div>
@@ -98,8 +128,8 @@ export default function Hero() {
 
       </div>
 
-      <div className={styles.scroll}>
-        Scroll
+      <div ref={scrollRef} className={styles.scroll}>
+        ↓ Scroll
       </div>
 
     </section>
