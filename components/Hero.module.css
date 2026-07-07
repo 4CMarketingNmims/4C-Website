@@ -98,26 +98,27 @@
   }
 
   .massiveText {
-    /* Keep it in one line, but maybe tune the font-size slightly if needed */
-    font-size: 15vw; 
+    flex-direction: column;
+    font-size: 25vw;
+    line-height: 1;
   }
 
   .heroLogo {
-    height: 1.1em;
+    height: 1em;
     width: auto;
-    margin-left: 0.02em;
-    margin-right: 0.02em;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 10px 0;
+    transform: none;
   }
 
   .bottomZone {
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 1rem 2rem 1rem;
     margin-top: 4rem;
+    width: 100%;
   }
 
   .subtitle {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
     text-align: center;
+    width: 100%;
   }
 }

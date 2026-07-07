@@ -1,13 +1,13 @@
 export const brand = {
   name: '4C',
   full: 'Connect · Collect · Commence · Contest',
-  tagline: 'The marketing cell of NMIMS MPSTME.',
+  tagline: 'The marketing committee behind every campaign on campus.',
 };
 
 export const site = {
   brand: '4C',
   full: 'Connect · Collect · Commence · Contest',
-  tagline: 'The marketing cell of NMIMS MPSTME.',
+  tagline: 'The marketing committee behind every campaign on campus.',
 };
 
 export const nav = [
@@ -34,7 +34,7 @@ export const heroSection = {
 export const whatIsSection = {
   titlePrefix: 'WHAT IS',
   logoSrc: '/4clogo.png',
-  paragraph: "4C is the college's marketing cell — four functions, Connect, Collect, Commence, and Contest, working as one team. We plan the strategy, design the identity, and run the outreach behind every major event on campus, from the first conversation with an organizing team to the campaign that fills the room.",
+  paragraph: "4C is the college's marketing committee — four functions, Connect, Collect, Commence, and Contest, working as one team. We plan the strategy, design the identity, and run the outreach behind every major event on campus, from the first conversation with an organizing team to the campaign that fills the room.",
   rotatingWords: ['CONNECT', 'COLLECT', 'COMMENCE', 'CONTEST'],
   imageSrc: '/whatis.jpg'
 };
@@ -266,8 +266,8 @@ export const footerHeroSection = {
   marqueeText: "LET'S CONNECT — LET'S CONNECT — LET'S CONNECT — LET'S CONNECT — LET'S CONNECT — ",
   bigEmail: "contact@4cnmims.in",
   contacts: [
-    { name: "Aryan Thakkar", role: "President", phone: "+91 9820448705", email: "contact@4cnmims.in" },
-    { name: "Krish Sarkar", role: "Secretary", phone: "+91 9892721055", email: "contact@4cnmims.in" },
+    { name: "Aryan Thakkar", role: "President", phone: "+91 9163794042", email: "contact@4cnmims.in" },
+    { name: "Krish Sarkar", role: "Secretary", phone: "+91 9892721055", email: "marketing@4cnmims.in" },
     { name: "Madhav Sahi", role: "VP  Outreach", phone: "+91 9870215599", email: "outreach@4cnmims.in" },
   ],
   emails: [
