@@ -14,10 +14,10 @@ const timelineData = [
       "Commence — Taking action that matters"
     ],
     images: [
-      { src: "/wnr/wnr-01.jpg", style: { top: '5%', left: '5%', width: '55%', zIndex: 1, transform: 'rotate(-3deg)' } },
-      { src: "/wnr/wnr-02.jpg", style: { top: '25%', right: '5%', width: '45%', zIndex: 2, transform: 'rotate(4deg)' } },
-      { src: "/wnr/wnr-06.jpg", style: { top: '50%', left: '10%', width: '60%', zIndex: 3, transform: 'rotate(-2deg)' } },
-      { src: "/wnr/wnr-04.jpg", style: { top: '75%', right: '0%', width: '50%', zIndex: 4, transform: 'rotate(2deg)' } }
+      { src: "/WNR/wnr-01.jpg", style: { top: '5%', left: '5%', width: '55%', zIndex: 1, transform: 'rotate(-3deg)' } },
+      { src: "/WNR/wnr-02.jpg", style: { top: '25%', right: '5%', width: '45%', zIndex: 2, transform: 'rotate(4deg)' } },
+      { src: "/WNR/wnr-06.jpg", style: { top: '50%', left: '10%', width: '60%', zIndex: 3, transform: 'rotate(-2deg)' } },
+      { src: "/WNR/wnr-04.jpg", style: { top: '75%', right: '0%', width: '50%', zIndex: 4, transform: 'rotate(2deg)' } }
     ]
   },
   {
@@ -31,10 +31,10 @@ const timelineData = [
       "Tech Integration"
     ],
     images: [
-      { src: "/wnr/wnr-10.jpg", style: { top: '2%', right: '5%', width: '60%', zIndex: 1, transform: 'rotate(2deg)' } },
-      { src: "/wnr/wnr-11.jpg", style: { top: '30%', left: '0%', width: '50%', zIndex: 2, transform: 'rotate(-4deg)' } },
-      { src: "/wnr/wnr-12.jpg", style: { top: '55%', right: '10%', width: '55%', zIndex: 3, transform: 'rotate(3deg)' } },
-      { src: "/wnr/wnr-13.jpg", style: { top: '75%', left: '5%', width: '45%', zIndex: 4, transform: 'rotate(-1deg)' } }
+      { src: "/WNR/wnr-10.jpg", style: { top: '2%', right: '5%', width: '60%', zIndex: 1, transform: 'rotate(2deg)' } },
+      { src: "/WNR/wnr-11.jpg", style: { top: '30%', left: '0%', width: '50%', zIndex: 2, transform: 'rotate(-4deg)' } },
+      { src: "/WNR/wnr-12.jpg", style: { top: '55%', right: '10%', width: '55%', zIndex: 3, transform: 'rotate(3deg)' } },
+      { src: "/WNR/wnr-13.jpg", style: { top: '75%', left: '5%', width: '45%', zIndex: 4, transform: 'rotate(-1deg)' } }
     ]
   },
   {
@@ -48,10 +48,10 @@ const timelineData = [
       "Innovation Lab"
     ],
     images: [
-      { src: "/wnr/wnr-16.jpg", style: { top: '5%', left: '5%', width: '50%', zIndex: 1, transform: 'rotate(-2deg)' } },
-      { src: "/wnr/wnr-17.jpg", style: { top: '25%', right: '0%', width: '60%', zIndex: 2, transform: 'rotate(4deg)' } },
-      { src: "/wnr/wnr-18.jpg", style: { top: '50%', left: '0%', width: '45%', zIndex: 3, transform: 'rotate(-3deg)' } },
-      { src: "/wnr/wnr-20.jpg", style: { top: '70%', right: '5%', width: '55%', zIndex: 4, transform: 'rotate(1deg)' } }
+      { src: "/WNR/wnr-16.jpg", style: { top: '5%', left: '5%', width: '50%', zIndex: 1, transform: 'rotate(-2deg)' } },
+      { src: "/WNR/wnr-17.jpg", style: { top: '25%', right: '0%', width: '60%', zIndex: 2, transform: 'rotate(4deg)' } },
+      { src: "/WNR/wnr-18.jpg", style: { top: '50%', left: '0%', width: '45%', zIndex: 3, transform: 'rotate(-3deg)' } },
+      { src: "/WNR/wnr-20.jpg", style: { top: '70%', right: '5%', width: '55%', zIndex: 4, transform: 'rotate(1deg)' } }
     ]
   }
 ];
