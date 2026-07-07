@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -6,205 +6,153 @@ import { gsap } from "gsap";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
-
   const heroRef = useRef(null);
-  const glowRef = useRef(null);
-  const logoRef = useRef(null);
-  const headingRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const badgeRef = useRef(null);
-  const scrollRef = useRef(null);
 
   useEffect(() => {
-
     const ctx = gsap.context(() => {
-
       const tl = gsap.timeline({
-        defaults:{
-          ease:"power4.out"
-        }
+        defaults: {
+          ease: "power4.out",
+        },
       });
 
-      tl.from(heroRef.current,{
-        opacity:0,
-        duration:.4
+      tl.from(`.${styles.badge}`, {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
       })
+        .from(
+          `.${styles.titleLine}`,
+          {
+            y: 90,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 1,
+          },
+          "-=0.35"
+        )
+        .from(
+          `.${styles.description}`,
+          {
+            y: 35,
+            opacity: 0,
+            duration: 0.8,
+          },
+          "-=0.55"
+        )
+        .from(
+          `.${styles.meta}`,
+          {
+            y: 24,
+            opacity: 0,
+            duration: 0.6,
+          },
+          "-=0.45"
+        )
+        .from(
+          `.${styles.logoWrapper}`,
+          {
+            opacity: 0,
+            scale: 0.82,
+            rotate: -10,
+            duration: 1.2,
+          },
+          "-=1"
+        )
+        .from(
+          `.${styles.scroll}`,
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.7,
+          },
+          "-=0.35"
+        );
+    }, heroRef);
 
-      .from(
-        glowRef.current,
-        {
-          scale:.65,
-          opacity:0,
-          duration:1.8
-        },
-        0
-      )
-
-      .from(
-        logoRef.current,
-        {
-          y:50,
-          opacity:0,
-          scale:.85,
-          duration:1
-        },
-        .2
-      )
-
-      .from(
-        headingRef.current.children,
-        {
-          opacity:0,
-          y:70,
-          stagger:.1,
-          duration:.8
-        },
-        .45
-      )
-
-      .from(
-        subtitleRef.current,
-        {
-          opacity:0,
-          y:30,
-          duration:.7
-        },
-        .95
-      )
-
-      .from(
-        badgeRef.current,
-        {
-          opacity:0,
-          y:20,
-          duration:.6
-        },
-        1.15
-      )
-
-      .from(
-        scrollRef.current,
-        {
-          opacity:0,
-          y:15,
-          duration:.5
-        },
-        1.3
-      );
-
-      gsap.to(glowRef.current,{
-        scale:1.08,
-        repeat:-1,
-        yoyo:true,
-        ease:"sine.inOut",
-        duration:6
-      });
-
-      gsap.to(logoRef.current,{
-        y:-10,
-        repeat:-1,
-        yoyo:true,
-        ease:"sine.inOut",
-        duration:3
-      });
-
-      gsap.to(scrollRef.current,{
-        y:10,
-        repeat:-1,
-        yoyo:true,
-        ease:"sine.inOut",
-        duration:1.2
-      });
-
-    },heroRef);
-
-    return ()=>ctx.revert();
-
-  },[]);
+    return () => ctx.revert();
+  }, []);
 
   return (
+    <section className={styles.hero} ref={heroRef}>
+      <div className={styles.grid}></div>
+      <div className={styles.glowOne}></div>
+      <div className={styles.glowTwo}></div>
+      <div className={styles.noise}></div>
 
-<section
-className={styles.hero}
-ref={heroRef}
->
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <span className={styles.badge}>
+            Official Student Committee
+          </span>
 
-<div className={styles.grid}></div>
+          <div className={styles.heading}>
+            <div className={styles.titleLine}>
+              THE OFFICIAL
+            </div>
 
-<div className={styles.noise}></div>
+            <div className={styles.titleLine}>
+              MARKETING
+            </div>
 
-<div
-className={styles.glow}
-ref={glowRef}
-/>
+            <div className={styles.titleLine}>
+              COMMITTEE
+            </div>
 
-<div className={styles.container}>
+            <div className={styles.titleLine}>
+              OF NMIMS MPSTME
+            </div>
+          </div>
 
-<div
-className={styles.logoWrapper}
-ref={logoRef}
->
+          <p className={styles.description}>
+            Where future marketers create,
+            compete and lead.
+          </p>
 
-<Image
-src="/4c-logo.png"
-alt="4C NMIMS"
-width={220}
-height={220}
-priority
-className={styles.logo}
-/>
+          <div className={styles.meta}>
+            <span className={styles.metaLabel}>
+              Established
+            </span>
 
-</div>
+            <span className={styles.metaDivider}></span>
 
-<div
-className={styles.heading}
-ref={headingRef}
->
+            <span className={styles.metaYear}>
+              2008
+            </span>
+          </div>
+        </div>
 
-<h2>THE OFFICIAL</h2>
+        <div className={styles.right}>
+          <div className={styles.logoWrapper}>
+            <div className={styles.logoGlow}></div>
 
-<h1>MARKETING COMMITTEE</h1>
+            <div className={styles.logoRing}></div>
 
-<h3>OF NMIMS MPSTME</h3>
+            <div className={styles.logo}>
+              <Image
+                src="/4c-logo.png"
+                alt="4C NMIMS"
+                fill
+                priority
+                sizes="(max-width:768px) 220px, 420px"
+              />
+            </div>
 
-</div>
+            <div className={styles.floatingOrb}></div>
+            <div className={styles.floatingOrbSmall}></div>
+          </div>
+        </div>
+      </div>
 
-<p
-className={styles.subtitle}
-ref={subtitleRef}
->
+      <div className={styles.scroll}>
+        <span className={styles.scrollText}>
+          Scroll
+        </span>
 
-Where future marketers create,
-compete and lead.
-
-</p>
-
-<div
-className={styles.badge}
-ref={badgeRef}
->
-
-<span>ESTABLISHED</span>
-
-<strong>2008</strong>
-
-</div>
-
-</div>
-
-<div
-className={styles.scroll}
-ref={scrollRef}
->
-
-<div className={styles.scrollLine}></div>
-
-<span>SCROLL TO DISCOVER</span>
-
-</div>
-
-</section>
-
+        <div className={styles.scrollMouse}>
+          <span></span>
+        </div>
+      </div>
+    </section>
   );
-
 }
