@@ -41,7 +41,7 @@ export default function Home() {
       {/* Solid background wrapper to cover up the overflowing LiquidEther background */}
       <div style={{ position: 'relative', zIndex: 2, backgroundColor: '#1a1a1a' }}>
         <WhatIs4C />
-        <Mission />
+        {/* Impact Section */}
         <FlagshipEvent />
         <Sponsors />
       </div>
