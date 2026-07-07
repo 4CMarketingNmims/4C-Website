@@ -132,7 +132,7 @@ npm run genkit:watch
 └── tsconfig.json       # TypeScript configuration
 ```
 
-## 🎨 Key Features Breakdown
+## 🎨 Key Features Breakdown 
 
 ### Pages
 
