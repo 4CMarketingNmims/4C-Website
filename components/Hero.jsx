@@ -81,7 +81,7 @@ export default function Hero() {
 
       <div ref={logoRef} className={styles.logoWrapper}>
         <Image
-          src="/logo-transparent.png"
+          src="/4c-logo.png"
           alt="4C"
           width={180}
           height={180}
