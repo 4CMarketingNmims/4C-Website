@@ -10,7 +10,7 @@ export default function Hero() {
   const headingRef = useRef(null);
   const descRef = useRef(null);
   const statsRef = useRef(null);
-  const scrollRef = useRef(null);
+  const scrollRef = useRef(null); 
 
   useEffect(() => {
     const tl = gsap.timeline({
