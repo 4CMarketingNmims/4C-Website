@@ -1,0 +1,135 @@
+.section {
+  position: relative;
+  min-height: 80vh;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10vh 4vw;
+  cursor: default;
+}
+
+.layout {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8vw;
+}
+
+.textBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+}
+
+.massiveTitle {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 120px);
+  line-height: 0.85;
+  color: #FA003F;
+  text-transform: uppercase;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.body {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(20px, 3vw, 48px);
+  line-height: 1.5;
+  color: var(--paper);
+  margin: 0;
+}
+
+.logoBlock {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: none !important; /* Hide default cursor so custom cursor shines */
+}
+
+.punchLogo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 60px rgba(139, 0, 0, 0.4));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logoBlock:hover .punchLogo {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Floating Custom Cursor */
+.floatingBtn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* So it doesn't block underlying hovers */
+  background-color: #FA003F; /* Requested blood red */
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 40px; /* Reduced to be slightly smaller than 72px but punchy */
+  padding: 20px 48px;
+  border-radius: 12px; /* Rectangular pill like the nav */
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0.8); /* Clean, flat scale */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth and flat, no bounce */
+  white-space: nowrap;
+  letter-spacing: -0.02em; /* Same tight spacing as headers */
+  text-transform: uppercase;
+  box-shadow: none; /* No shadow effect */
+  line-height: 1;
+}
+
+.floatingBtnVisible {
+  opacity: 1;
+  transform: scale(1); /* Snaps cleanly to full size without tilt */
+}
+
+/* Mobile-only static button */
+.mobileGalleryBtn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 10vh;
+  }
+  .textBlock {
+    align-items: center;
+  }
+  .logoBlock {
+    justify-content: center;
+  }
+  .floatingBtn {
+    display: none; /* Custom cursors usually don't make sense on touch devices */
+  }
+  .mobileGalleryBtn {
+    display: inline-block;
+    background-color: #FA003F;
+    color: #ffffff;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    margin-top: 32px;
+  }
+}
