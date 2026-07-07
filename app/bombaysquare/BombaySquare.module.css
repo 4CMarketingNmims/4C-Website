@@ -1,0 +1,743 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 139, 61, 0.18), transparent 24%),
+    linear-gradient(135deg, #05070a 0%, #121824 45%, #070b12 100%);
+  color: #f8efe2;
+  padding: 104px 24px 40px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 112px 40px 48px;
+  }
+}
+
+.hero {
+  max-width: 1240px;
+  margin: 0 auto 36px;
+  display: grid;
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 28px;
+  }
+}
+
+.heroCopy,
+.heroCard,
+.mapPanel,
+.detailPanel,
+.explore {
+  background: rgba(7, 10, 16, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(16px);
+}
+
+.heroCopy {
+  border-radius: 28px;
+  padding: 32px;
+}
+
+.heroCard {
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #ff8b3d;
+  margin: 0 0 10px;
+}
+
+.hero h1,
+.panelHeader h3,
+.sectionHeader h3,
+.detailPanel h3 {
+  margin: 0;
+  font-family: 'Archivo Black', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.02;
+  max-width: 640px;
+}
+
+.lead {
+  margin: 16px 0 0;
+  color: rgba(248, 239, 226, 0.76);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+.heroPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(248, 239, 226, 0.9);
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cardLabel,
+.badge,
+.cardCategory {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #7ed4ff;
+}
+
+.heroCard h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.heroCard p {
+  margin: 0;
+  color: rgba(248, 239, 226, 0.74);
+  line-height: 1.7;
+}
+
+.actionLink {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #05070a;
+  background: linear-gradient(135deg, #ff8b3d, #ffd36f);
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.actionLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 139, 61, 0.24);
+}
+
+.showcase {
+  max-width: 1240px;
+  margin: 0 auto 36px;
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 960px) {
+  .showcase {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.mapPanel,
+.detailPanel,
+.explore {
+  border-radius: 28px;
+  padding: 24px;
+}
+
+.panelHeader,
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panelHeader h3,
+.sectionHeader h3 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.mapFrame {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.mapSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mapBase {
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1;
+}
+
+.mapRoute {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.mapNode {
+  fill: #ff8b3d;
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 2;
+}
+
+.mapSection {
+  position: relative;
+  background:
+    radial-gradient(circle at top, rgba(212, 168, 83, 0.16), transparent 42%),
+    linear-gradient(180deg, #05080f 0%, #060b15 100%);
+  padding: 5rem 0 5.5rem;
+  overflow: hidden;
+}
+
+.mapSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.025), transparent 60%);
+  pointer-events: none;
+}
+
+.mapSection::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100% 24px, 24px 100%;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.45), transparent 85%);
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.mapHeading {
+  text-align: center;
+  margin-bottom: 2.25rem;
+  padding: 0 1.5rem;
+}
+
+.mapEyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: rgba(212, 168, 83, 0.5);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.mapTitle {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #e8dcc8;
+  margin-bottom: 1rem;
+}
+
+.mapSubtitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(232, 220, 200, 0.56);
+  letter-spacing: 0.04em;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.mapBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  border-radius: 999px;
+  background: rgba(212, 168, 83, 0.08);
+  color: #f5e3b6;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  box-shadow: 0 0 24px rgba(212, 168, 83, 0.12);
+}
+
+.mapFilterRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.mapFilterButton {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  background: transparent;
+  color: rgba(232, 220, 200, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mapFilterButton:hover {
+  transform: translateY(-1px);
+  border-color: rgba(212, 168, 83, 0.45);
+  color: #d4a853;
+}
+
+.mapStage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem 1.5rem;
+}
+
+.mapPerspective {
+  perspective: 1800px;
+  perspective-origin: 50% 30%;
+  width: min(100%, 680px);
+}
+
+.mapWorld {
+  position: relative;
+  filter: drop-shadow(0 70px 100px rgba(0, 0, 0, 0.88));
+}
+
+.mapWorldHalo {
+  position: absolute;
+  inset: -20px -12px -18px;
+  background: radial-gradient(ellipse 70% 50% at 50% 60%, rgba(212, 168, 83, 0.1), transparent 70%);
+  pointer-events: none;
+  transform: translateZ(-30px);
+}
+
+.mapWorld::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.03);
+}
+
+.mapPlate {
+  position: absolute;
+  inset: 8px 12px 24px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+  transform: translateZ(-24px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.mapPlateGlow {
+  position: absolute;
+  inset: 12px 20px 32px;
+  border-radius: 22px;
+  background: radial-gradient(circle at 20% 20%, rgba(212,168,83,0.16), transparent 55%);
+  pointer-events: none;
+  transform: translateZ(-22px);
+}
+
+.mapCanvas3d {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 480 / 660;
+  max-height: 82vh;
+  border-radius: 20px;
+  overflow: visible;
+}
+
+.mapSvgStage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(34deg);
+  transform-origin: 50% 12%;
+  transform-style: preserve-3d;
+}
+
+.mapSvgArt {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mapMarkersFlat {
+  position: absolute;
+  inset: 0;
+}
+
+.mapLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(212, 168, 83, 0.4);
+}
+
+.marker3d {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.marker3dDot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--marker);
+  box-shadow: 0 0 10px var(--marker);
+}
+
+.marker3dCard {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 10px 6px 6px;
+  border-radius: 10px;
+  background: rgba(5, 8, 15, 0.94);
+  border: 1px solid var(--marker);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.marker3dCard img {
+  width: 34px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.marker3dCard strong {
+  display: block;
+  font-size: 0.72rem;
+  color: #f8efe2;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+.marker3dCard span {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--marker);
+  letter-spacing: 0.14em;
+  font-family: 'DM Mono', monospace;
+}
+
+.mapMarker {
+  cursor: pointer;
+}
+
+.mapMarkerRing {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.12));
+}
+
+.mapPulse {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.18));
+}
+
+.mapCore {
+  transform-origin: center;
+}
+
+.mapMarker:hover .mapCore {
+  transform: scale(1.18);
+}
+
+.mapLegend {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1rem;
+  width: min(92%, 700px);
+}
+
+.mapLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(5, 8, 15, 0.82);
+  border: 1px solid rgba(212, 168, 83, 0.16);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.mapLegendItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 168, 83, 0.26);
+  background: rgba(8, 13, 20, 0.9);
+}
+
+.mapLegendDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.mapLegendText {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: rgba(232, 220, 200, 0.45);
+}
+
+.mapMarkers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.marker {
+  pointer-events: auto;
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(6, 9, 14, 0.84);
+  color: #f8efe2;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.marker:hover {
+  transform: translateY(-2px);
+}
+
+.markerActive {
+  border-color: var(--marker);
+  color: var(--marker);
+}
+
+.markerDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--marker);
+}
+
+.marker:nth-of-type(1) {
+  top: 53%;
+  left: 16%;
+}
+
+.marker:nth-of-type(2) {
+  top: 30%;
+  right: 10%;
+}
+
+.marker:nth-of-type(3) {
+  top: 64%;
+  right: 16%;
+}
+
+.marker:nth-of-type(4) {
+  top: 18%;
+  left: 58%;
+}
+
+.detailPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.detailPanel h3 {
+  font-size: 1.6rem;
+}
+
+.detailText {
+  margin: 0;
+  color: rgba(248, 239, 226, 0.78);
+  line-height: 1.75;
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(248, 239, 226, 0.55);
+}
+
+.statBlock strong {
+  font-size: 1rem;
+  color: #ffd36f;
+}
+
+.explore {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.filterButton {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(248, 239, 226, 0.84);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filterButtonActive {
+  background: rgba(255, 139, 61, 0.16);
+  color: #ffd36f;
+  border-color: rgba(255, 139, 61, 0.3);
+}
+
+.cardGrid {
+  display: grid;
+  gap: 14px;
+}
+
+@media (min-width: 720px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  gap: 14px;
+  text-align: left;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 139, 61, 0.3);
+}
+
+.cardActive {
+  border-color: rgba(255, 139, 61, 0.42);
+  background: rgba(255, 139, 61, 0.1);
+}
+
+.cardAccent {
+  width: 8px;
+  height: 100%;
+  min-height: 70px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.cardBody h4 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.cardBody p {
+  margin: 0;
+  color: rgba(248, 239, 226, 0.74);
+  line-height: 1.65;
+  font-size: 0.94rem;
+}
+
+.footer {
+  max-width: 1240px;
+  margin: 24px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(248, 239, 226, 0.57);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .heroCopy,
+  .heroCard,
+  .mapPanel,
+  .detailPanel,
+  .explore {
+    padding: 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

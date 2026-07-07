@@ -1,0 +1,159 @@
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6vh 4vw 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.mainGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  width: 100%;
+  margin: 0 auto 40px auto;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 400px;
+}
+
+.logo {
+  height: clamp(40px, 6vw, 80px);
+  object-fit: contain;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(18px, 1.5vw, 24px);
+  color: var(--paper-dim);
+  line-height: 1.6;
+}
+
+.socialsRow {
+  display: flex;
+  gap: 16px;
+}
+
+.socialBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.socialBox svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.socialBox:hover {
+  background: var(--brand-color);
+  color: #fff;
+  transform: translateY(-8px);
+}
+.socialBox:hover[style*="#ffffff"] {
+  color: var(--ink); /* Specifically for X logo if brand color is set to white */
+}
+.socialBox:hover svg {
+  transform: scale(1.15);
+}
+
+.linksCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0px; /* Reduced to tightly pack links */
+}
+
+.navLink {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(20px, 3vw, 40px);
+  text-transform: uppercase;
+  color: var(--paper);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px; /* Reduced vertical padding */
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
+  background-color: var(--hover-color, var(--cyan));
+  color: var(--ink);
+  transform: translateX(-8px);
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--paper-faint);
+  width: 100%;
+}
+
+.copyInfo { display: flex; flex-direction: column; gap: 6px; }
+.legal { display: flex; gap: 24px; }
+.legal a { color: inherit; text-decoration: none; }
+.legal a:hover { color: var(--paper); text-decoration: underline; }
+
+.stretchySection {
+  background: var(--ink); color: var(--paper);
+  height: 42vh; padding: 0 6vw; margin: 0;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  overflow: hidden;
+}
+
+.stretchText {
+  display: flex; justify-content: space-around; width: 100%;
+  font-size: clamp(70px, 18vw, 280px); line-height: 0.72; margin: 0;
+  background: linear-gradient(115deg, var(--cyan), var(--blue) 50%, var(--purple) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-transform: uppercase; letter-spacing: -0.02em;
+  transform-origin: top center;
+  pointer-events: none; user-select: none; will-change: transform;
+}
+
+@media (max-width: 900px) {
+  .mainGrid { 
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 60px; 
+  }
+  .linkList { align-items: flex-start; }
+  .navLink:hover { transform: translateX(8px); }
+  .bottomBar { 
+    flex-direction: column; 
+    gap: 20px; 
+    align-items: flex-start; 
+  }
+}
+
+@media (max-width: 600px) {
+  .stretchySection { height: 24vh; }
+}

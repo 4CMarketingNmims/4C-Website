@@ -1,0 +1,123 @@
+.section {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.massiveTextWrapper {
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  padding: 6rem 0 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.massiveText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 14.5vw;
+  line-height: 0.8;
+  letter-spacing: -0.11em;
+  color: #d4d4d4;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.heroLogo {
+  height: 1.1em;
+  width: auto;
+  object-fit: contain;
+  margin-left: 0.02em;
+  margin-right: 0.02em;
+  transform: translateY(0.1em); /* push down to align with baseline */
+}
+
+
+
+.bottomZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem 2rem 2rem;
+  /* Centered padding */
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  /* Made bigger */
+  font-weight: 500;
+  color: white;
+  max-width: 800px;
+  line-height: 1.3;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+}
+
+.ctaWrapper {
+  margin-top: 1rem;
+}
+
+.heroContactBtn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--cyan, #00e5ff);
+  color: var(--ink, #000);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.heroContactBtn:hover {
+  transform: translateY(-5px);
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .massiveTextWrapper {
+    padding: 8rem 0 0 0;
+    /* More padding for mobile nav */
+  }
+
+  .massiveText {
+    /* Keep it in one line, but maybe tune the font-size slightly if needed */
+    font-size: 15vw; 
+  }
+
+  .heroLogo {
+    height: 1.1em;
+    width: auto;
+    margin-left: 0.02em;
+    margin-right: 0.02em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .bottomZone {
+    padding: 0 2rem 2rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .subtitle {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    text-align: center;
+  }
+}
