@@ -1,57 +1,105 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { gsap } from 'gsap';
-import { heroSection } from '@/data/site';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  const textRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const iconRef = useRef(null);
+  const logoRef = useRef(null);
+  const headingRef = useRef(null);
+  const descRef = useRef(null);
+  const statsRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-
-      // Massive text slams up
-      tl.fromTo(
-        textRef.current,
-        { yPercent: 100, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 1.4 }
-      )
-      // Reveal subtitle
-      .fromTo(
-        subtitleRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 },
-        '-=0.8'
-      );
+    const tl = gsap.timeline({
+      defaults: {
+        ease: 'power3.out',
+      },
     });
 
-    return () => ctx.revert();
+    tl.from(logoRef.current, {
+      opacity: 0,
+      scale: 0.85,
+      duration: 0.8,
+    })
+      .from(
+        headingRef.current.children,
+        {
+          y: 60,
+          opacity: 0,
+          stagger: 0.08,
+          duration: 0.7,
+        },
+        '-=0.4'
+      )
+      .from(
+        descRef.current,
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+        },
+        '-=0.3'
+      )
+      .from(
+        statsRef.current.children,
+        {
+          y: 30,
+          opacity: 0,
+          stagger: 0.08,
+          duration: 0.5,
+        },
+        '-=0.2'
+      );
   }, []);
 
-  const subtitleText = heroSection?.subtitle || "Where creativity meets technology to redefine marketing for the digital age.";
-
   return (
-    <section className={styles.section} id="hero">
-      
-      {/* Top Section: Massive Text Flush to Top */}
-      <div className={styles.massiveTextWrapper}>
-        <h1 className={styles.massiveText} ref={textRef}>
-          {heroSection.titlePrefix}<img src={heroSection.logoSrc} alt="4C" className={styles.heroLogo} />{heroSection.titleSuffix}
-        </h1>
+    <section className={styles.hero}>
+
+      <div className={styles.grid} />
+
+      <img
+        ref={logoRef}
+        src="/logo-transparent.png"
+        alt="4C"
+        className={styles.logo}
+      />
+
+      <div ref={headingRef} className={styles.heading}>
+        <span>THE MARKETING CELL</span>
+        <span>OF NMIMS MPSTME</span>
       </div>
 
-      {/* Bottom Section: Subtitle */}
-      <div className={styles.bottomZone}>
-        <div className={styles.subtitleClip}>
-          <p className={styles.subtitle} ref={subtitleRef}>
-            {subtitleText}
-          </p>
+      <p ref={descRef} className={styles.description}>
+        Creating the campaigns, events and experiences that shape campus life.
+      </p>
+
+      <div ref={statsRef} className={styles.stats}>
+
+        <div>
+          <h2>100+</h2>
+          <p>Members</p>
         </div>
+
+        <div>
+          <h2>17</h2>
+          <p>Years</p>
+        </div>
+
+        <div>
+          <h2>2400+</h2>
+          <p>Participants</p>
+        </div>
+
+        <div>
+          <h2>370+</h2>
+          <p>Universities</p>
+        </div>
+
+      </div>
+
+      <div className={styles.scroll}>
+        Scroll
       </div>
 
     </section>
