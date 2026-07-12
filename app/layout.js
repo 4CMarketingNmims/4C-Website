@@ -10,7 +10,7 @@ export const metadata = {
     default: '4C NMIMS | Marketing Cell of NMIMS MPSTME',
   },
   description:
-    "4C is the college's marketing committee — Connect, Collect, Commence, Contest. Strategy, design, and outreach for every department event.",
+    "4C is the college's marketing committee — Connect, Collect, Commence, Contest. Strategy and design for every department event.",
 };
 
 export default function RootLayout({ children }) {

@@ -1,41 +1,25 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
-import { gsap } from 'gsap';
 import { flagshipSection } from '@/data/site';
 import styles from './FlagshipEvent.module.css';
 
+const FLAGSHIP_STATS = [
+  { value: '2400+', label: 'Participants' },
+  { value: '930+', label: 'Teams' },
+  { value: '370+', label: 'Universities' },
+];
+
 export default function FlagshipEvent() {
-  const cursorRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    // Initialize GSAP positioning
-    if (cursorRef.current) {
-      gsap.set(cursorRef.current, { xPercent: -50, yPercent: -50 });
-    }
-  }, []);
-
-  const handleMouseMove = (e) => {
-    if (cursorRef.current && isHovered) {
-      gsap.to(cursorRef.current, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.3,
-        ease: 'power2.out',
-      });
-    }
-  };
-
   return (
-    <section className={styles.section} id="flagship" onMouseMove={handleMouseMove}>
+    <section className={styles.section} id="flagship">
       <div className={styles.layout}>
         
-        {/* Left Side: Logo Punch */}
-        <Link href="/wingsandroots" className={styles.logoBlock}
-           onMouseEnter={() => setIsHovered(true)}
-           onMouseLeave={() => setIsHovered(false)}>
+        {/* Left Side: Logo Punch - click to view gallery */}
+        <Link href="/wingsandroots" className={styles.logoBlock}>
            <img src="/events/Wings and Roots (2).png" alt="Contest Logo" className={styles.punchLogo} />
+           <div className={styles.galleryOverlay}>
+             <span className={styles.galleryOverlayBtn}>VIEW GALLERY</span>
+           </div>
         </Link>
 
         {/* Right Side: Content */}
@@ -44,20 +28,23 @@ export default function FlagshipEvent() {
            <p className={styles.body}>
              A competition that challenges students to solve real world business and marketing problems.
            </p>
+
+           {/* Stats */}
+           <div className={styles.statsRow}>
+             {FLAGSHIP_STATS.map((stat) => (
+               <div key={stat.label} className={styles.statItem}>
+                 <span className={styles.statValue}>{stat.value}</span>
+                 <span className={styles.statLabel}>{stat.label}</span>
+               </div>
+             ))}
+           </div>
+
            {/* Mobile Only Button */}
            <Link href="/wingsandroots" className={styles.mobileGalleryBtn}>
              VIEW GALLERY!
            </Link>
         </div>
 
-      </div>
-
-      {/* Floating Custom Cursor */}
-      <div 
-        ref={cursorRef} 
-        className={`${styles.floatingBtn} ${isHovered ? styles.floatingBtnVisible : ''}`}
-      >
-        VIEW GALLERY!
       </div>
     </section>
   );

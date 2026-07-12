@@ -39,7 +39,7 @@ export default function TeamGroup({ label, members, alt }) {
         <span className={styles.groupLine} />
       </div>
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} ${members.length === 7 ? styles.sevenGrid : ''}`}>
         {members.map((m) => (
           <div key={m.name} className={styles.card}>
             <div className={styles.avatar}>{initials(m.name)}</div>

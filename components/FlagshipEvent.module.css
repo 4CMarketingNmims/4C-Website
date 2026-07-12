@@ -49,11 +49,12 @@
 }
 
 .logoBlock {
+  position: relative;
   flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  cursor: none !important; /* Hide default cursor so custom cursor shines */
+  cursor: pointer;
 }
 
 .punchLogo {
@@ -69,33 +70,74 @@
   transform: scale(1.05) rotate(2deg);
 }
 
-/* Floating Custom Cursor */
-.floatingBtn {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* So it doesn't block underlying hovers */
-  background-color: #FA003F; /* Requested blood red */
+/* Static click-to-view overlay (replaces the old cursor-following button) */
+.galleryOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.logoBlock:hover .galleryOverlay {
+  opacity: 1;
+}
+
+.galleryOverlayBtn {
+  background-color: #FA003F;
   color: #ffffff;
   font-family: 'Archivo', sans-serif;
   font-weight: 900;
-  font-size: 40px; /* Reduced to be slightly smaller than 72px but punchy */
-  padding: 20px 48px;
-  border-radius: 12px; /* Rectangular pill like the nav */
-  z-index: 100;
-  opacity: 0;
-  transform: scale(0.8); /* Clean, flat scale */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth and flat, no bounce */
+  font-size: clamp(20px, 2.2vw, 32px);
+  padding: 18px 40px;
+  border-radius: 12px;
   white-space: nowrap;
-  letter-spacing: -0.02em; /* Same tight spacing as headers */
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  box-shadow: none; /* No shadow effect */
   line-height: 1;
+  transform: translateY(8px);
+  transition: transform 0.3s ease;
 }
 
-.floatingBtnVisible {
-  opacity: 1;
-  transform: scale(1); /* Snaps cleanly to full size without tilt */
+.logoBlock:hover .galleryOverlayBtn {
+  transform: translateY(0);
+}
+
+/* Stats Row */
+.statsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  margin-top: 40px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.statValue {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1;
+  color: var(--paper);
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(12px, 1vw, 14px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.55);
 }
 
 /* Mobile-only static button */
@@ -115,8 +157,17 @@
   .logoBlock {
     justify-content: center;
   }
-  .floatingBtn {
-    display: none; /* Custom cursors usually don't make sense on touch devices */
+  .galleryOverlay {
+    display: none; /* Hover overlay doesn't make sense on touch devices; mobile button below covers this */
+  }
+  .statsRow {
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .statItem {
+    align-items: center;
   }
   .mobileGalleryBtn {
     display: inline-block;

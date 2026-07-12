@@ -1,6 +1,6 @@
 .section {
   padding: 12vh 4vw 24vh; /* Added heavy bottom padding to prevent cards from getting stuck at the bottom */
-  background: var(--blue);
+  background: #0b1e4d;
   position: relative;
 }
 

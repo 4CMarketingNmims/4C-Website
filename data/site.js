@@ -25,10 +25,14 @@ export const bars = [
 ];
 
 export const heroSection = {
-  titlePrefix: 'VR',
   logoSrc: '/4clogo.png',
-  titleSuffix: 'NMIMS',
-  subtitle: 'Where creativity meets technology to redefine marketing for the digital age.',
+  titleLines: ['The Marketing Cell', 'Of NMIMS MPSTME'],
+  subtitle: "The creative force behind NMIMS MPSTME's biggest marketing experiences.",
+  stats: [
+    { value: '2008', label: 'Established' },
+    { value: '100+', label: 'Members' },
+    { value: '1000+', label: 'Alumni' },
+  ],
 };
 
 export const whatIsSection = {
@@ -80,7 +84,7 @@ export const flagshipSection = {
 
 export const sponsorsSection = {
   titleLines: ['BACKED BY', 'THE BEST'],
-  baseLogoCount: 12,
+  baseLogoCount: 15,
   logoPathPrefix: '/sponsors/',
   totalSlots: 52,
   emptySlots: [13, 37],
@@ -128,54 +132,49 @@ export const teamGroups = [
         name: 'Aryan Thakkar',
         role: 'President',
         image: '/team/aryan-thakkar1.jpeg',
+        contact: ['+91 98204 48705', 'thakkararyan@icloud.com'],
       },
       {
         name: 'Krish Sarkar',
         role: 'Secretary',
         image: '/team/krish-sarkar.jpeg',
+        contact: ['9892721055', 'krishsarkar03@gmail.com'],
       },
       {
         name: 'Pratit Dedhia',
         role: 'Vice President - Operations',
         image: '/team/pratit-dedhia.jpeg',
+        contact: ['7021536282', 'dedhia.pratit@gmail.com'],
       },
       {
         name: 'Prerna Chauhan',
         role: 'Vice President - Social Media',
         image: '/team/prerna-chauhan.jpeg',
+        contact: ['9813933827', 'Prerna04chauhan@gmail.com'],
       },
       {
         name: 'Yash Jain',
-        role: 'Vice President',
+        role: 'Vice President - CRM',
         image: '/team/yash-jain.jpeg',
+        contact: ['9922755112', 'Yashjain2026@gmail.com'],
       },
       {
         name: 'Madhav Sahi',
         role: 'Vice President - Outreach',
         image: '/team/madhav-sahi.jpeg',
+        contact: ['9870215599', 'madhavsahi19@gmail.com'],
       },
       {
         name: 'Sylborn Furtado',
         role: 'Vice President - Creatives',
         image: '/team/sylborn-furtado.jpeg',
+        contact: ['8767448856', 'sylbornfurtado@gmail.com'],
       },
     ],
   },
 ];
 
 export const coreDepartments = [
-  {
-    code: 'T&R',
-    name: 'Technicals & Research',
-    heads: ['Aryan Kanungo', 'Vir Dharia'],
-    subHeads: ['Ridhi Singh', 'Ashwin Upadhyay'],
-  },
-  {
-    code: 'SMCW',
-    name: 'Social Media & Content Writing',
-    heads: ['Disha Hemani', 'Henisha Vadhan'],
-    subHeads: ['Krishi Jain', 'Sanika'],
-  },
   {
     code: 'CRM',
     name: 'Corporate Relations & Marketing',
@@ -189,10 +188,24 @@ export const coreDepartments = [
     subHeads: ['Parv', 'Shreya Bhuia'],
   },
   {
+    code: 'P',
+    name: 'Photography',
+    heads: ['Maanas Vinze', 'Yash Jain'],
+    subHeads: ['Sachin Kumar', 'Vedang Mane'],
+  },
+  {
     code: 'IHC',
     name: 'In-House Creatives',
     heads: ['Grisha Joshi', 'Sonakshi Prasad'],
     subHeads: ['Shaurrya Khandar', 'Tanushka Shah'],
+  },
+  {
+    code: 'CORE',
+    name: 'Core Team',
+    isCoreMessage: true,
+    coverImage: '/team/core-team-cover.jpg',
+    message:
+      "The pillars every department leans on — the steady core that keeps 4C's teams aligned, on schedule, and moving as one.",
   },
   {
     code: 'LA',
@@ -201,16 +214,22 @@ export const coreDepartments = [
     subHeads: ['Bhavya Dadhich', 'Palak Dave', 'Rahan Kakadiya'],
   },
   {
-    code: 'P',
-    name: 'Photography',
-    heads: ['Maanas Vinze', 'Yash Jain'],
-    subHeads: ['Sachin Kumar', 'Vedang Mane'],
-  },
-  {
     code: 'PR',
     name: 'Public Relations',
     heads: ['Aniha Khajanchi', 'Kapeesh Godiyal'],
     subHeads: ['Ashwini Doshi', 'Tarun Tiwari'],
+  },
+  {
+    code: 'SMCW',
+    name: 'Social Media & Content Writing',
+    heads: ['Disha Hemani', 'Henisha Vadhan'],
+    subHeads: ['Krishi Jain', 'Sanika'],
+  },
+  {
+    code: 'T&R',
+    name: 'Technicals & Research',
+    heads: ['Aryan Kanungo', 'Vir Dharia'],
+    subHeads: ['Ridhi Singh', 'Ashwin Upadhyay'],
   },
 ];
 
@@ -263,7 +282,7 @@ export const events = [
 ];
 
 export const footerHeroSection = {
-  marqueeText: "LET'S CONNECT — LET'S CONNECT — LET'S CONNECT — LET'S CONNECT — LET'S CONNECT — ",
+  marqueeText: "Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence ",
   bigEmail: "contact@4cnmims.in",
   contacts: [
     { name: "Aryan Thakkar", role: "President", phone: "+91 9163794042", email: "contact@4cnmims.in" },
@@ -297,21 +316,40 @@ export const footerSection = {
 };
 export const previousHistory = [
   {
+    year: "AY 2025-26",
+    superCore: [
+      { role: "President", names: "Karan Bedi" },
+      { role: "Secretary", names: "Anjani Sai" },
+      { role: "Vice Presidents", names: "Ritwik Sharma, Neerav Reddy, Vansh Patel, Mithil Gala, Sneha Darbarwar" },
+      { role: "Advisory", names: "Tej Bachhav, Hardik Nagpal, Salonee Surve" }
+    ],
+    core: [
+      { dept: "PR", text: "Heads: Harsh Pujara, Sneha Waghode | Subheads: Cheshta Modi, Nishant Parwani, Ritunjay Deo" },
+      { dept: "DC", text: "Head: Krish Sarkar | Subheads: Ritwik Goyal, Shaurya Jaiswal, Sylborn Furtado, Tanish Manglunia" },
+      { dept: "SMCW", text: "Heads: Amol, Prerna Chauhan | Subheads: Shaivi Mehta, Gari Ghadage" },
+      { dept: "LA", text: "Heads: Aryan Thakkar, Aadit Patil | Subheads: Pratit Dedhia, Mahir Veera" },
+      { dept: "CRM", text: "Heads: Shawn Mendes, Thejovati | Subheads: Pranjal Thakur, Apar Yadav" },
+      { dept: "Photography", text: "Head: Nishant | Subheads: Anunay Gandhi, Arnav Jain" },
+      { dept: "IHC", text: "Head: Ritwik Goyal | Subhead: Krishhma Veera" },
+      { dept: "Technicals", text: "Head: Arth Agrawal" }
+    ]
+  },
+  {
     year: "AY 2024-25",
     superCore: [
       { role: "President", names: "Hardik Nagpal" },
-      { role: "VPs", names: "Saomik Sahu, Tej Bachhav" },
       { role: "Secretary", names: "Salonee Surve" },
+      { role: "VP", names: "Saomik Sahu, Tej Bachhav" },
       { role: "Coordinator", names: "Anushka Naik" },
-      { role: "Advisory", names: "no name on IG, only photos" }
+      { role: "Advisory", names: "Tatvam Mittal, Shwetha Iyer, Umang Sharma, Dhruvi Mehta, Shantanu Sinha" }
     ],
     core: [
-      { dept: "SMCW", text: "Heads-Tanay Shah & Nishika Shah | Subbies: Jhanvi Katariya, Ayaan Sayyed" },
-      { dept: "PR", text: "Heads-Ritwik Sharma & Manasvi Achraya | Subbies: Arnav Rathod, Madhav Sahi" },
-      { dept: "LA", text: "Heads-Yuvanesh Gopinath & Shrey Doda | Subbies: Mithil Gala, Shreya Shah, Praneel Bohra" },
-      { dept: "Editorial", text: "Aditya Tomar & Jui Bhosale-Head | Subbies: Hrishikesh Kunde" },
-      { dept: "DC", text: "Heads-Neerav Reddy,Tejas Parekh | Subbies: Vansh Patel" },
-      { dept: "CR", text: "Heads- Tirth Mehta, Anjani Mallad Sai | Subbies: Sneha Darbar, Mridulika Mukherji" }
+      { dept: "SMCW", text: "Heads: Tanay Shah & Nishika Shah | Subheads: Jhanvi Katariya, Ayaan Sayyed" },
+      { dept: "PR", text: "Heads: Ritwik Sharma & Manasvi Achraya | Subheads: Arnav Rathod, Madhav Sahi" },
+      { dept: "LA", text: "Heads: Yuvanesh Gopinath & Shrey Doda | Subheads: Mithil Gala, Shreya Shah, Praneel Bohra" },
+      { dept: "Editorial", text: "Aditya Tomar & Jui Bhosale-Head | Subheads: Hrishikesh Kunde" },
+      { dept: "DC", text: "Heads: Neerav Reddy, Tejas Parekh | Subheads: Vansh Patel" },
+      { dept: "CR", text: "Heads: Tirth Mehta, Anjani Mallad Sai | Subheads: Sneha Darbar, Mridulika Mukherji" }
     ]
   },
   {
@@ -323,14 +361,14 @@ export const previousHistory = [
       { role: "Advisory", names: "Pragaya Ratan, Sadhika Verma, Priyal Maniar, Ananya Singh Nirwan, Anushka Chaubey, Nidhi Kumbhat, Vidula Laghate" }
     ],
     core: [
-      { dept: "Editorial", text: "Heads- Nishita, Sarvagaya & Soumya | Subbies: Yatharth" },
-      { dept: "Photo", text: "Heads-Nitya" },
-      { dept: "Logi", text: "Heads- Khushi & Hardik | Subbies: Tanay, Perraz, Viraj" },
-      { dept: "Corporate Relations", text: "Heads-Salonee | Subbies: Riya & Sujal" },
-      { dept: "PR", text: "Heads-Anushka & Soumik | Subbies: Kayan & Muzzammil" },
-      { dept: "IHC", text: "Heads-Jiya " },
-      { dept: "DC", text: "Heads- Siddhesh Jhawar | Subbies: Dinkar Joshi & Malav Gotecha" },
-      { dept: "SMCW", text: "Heads-Krishna Pande | Subbies: Romana Dokadia & Aaryaki Patil" },
+      { dept: "Editorial", text: "Heads: Nishita, Sarvagaya & Soumya | Subheads: Yatharth" },
+      { dept: "Photo", text: "Heads: Nitya" },
+      { dept: "Logi", text: "Heads: Khushi & Hardik | Subheads: Tanay, Perraz, Viraj" },
+      { dept: "Corporate Relations", text: "Heads: Salonee | Subheads: Riya & Sujal" },
+      { dept: "PR", text: "Heads: Anushka & Soumik | Subheads: Kayan & Muzzammil" },
+      { dept: "IHC", text: "Heads: Jiya " },
+      { dept: "DC", text: "Heads- Siddhesh Jhawar | Subheads: Dinkar Joshi & Malav Gotecha" },
+      { dept: "SMCW", text: "Heads-Krishna Pande | Subheads: Romana Dokadia & Aaryaki Patil" },
       { dept: "Crew", text: "Anushka Mirajkar, Bilal Serkhel, Samruddh Kamath, Herchelle Nandwana" }
     ]
   }

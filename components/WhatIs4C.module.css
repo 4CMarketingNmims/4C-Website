@@ -1,11 +1,10 @@
 .wrap {
-  padding: 16vh 4vw;
+  padding: 6vh 4vw 16vh;
   background: var(--ink);
   position: relative;
   min-height: 100vh;
-  /* Ensure the section fills the screen for a clean pin */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .layout {

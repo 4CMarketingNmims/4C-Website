@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 999;
+  z-index: 100;
 }
 
 .navBar {
@@ -14,28 +14,23 @@
   align-items: center;
   justify-content: center;
   
-  /* Initial un-stuck state */
-  background-color: transparent;
-  backdrop-filter: none;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  padding: 3rem 2rem;
+  /* Initial state: a visible, highlighted grey bar */
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 2rem;
   
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navBar.stuck {
-  background-color: rgba(26, 26, 26, 0.85); /* Cohesive with #1a1a1a background */
+  background-color: rgba(20, 20, 20, 0.92); /* Solid dark bar once pinned to top */
   backdrop-filter: blur(16px);
   border-top: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.5rem 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Cohesive depth */
-}
-
-.navBarOpen {
-  backdrop-filter: none !important;
-  background-color: transparent !important;
 }
 
 .navLogo {
@@ -62,17 +57,13 @@
   pointer-events: auto;
 }
 
-.desktopLinkRow {
+.linkRow {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1400px;
-  gap: 2.5rem;
-}
-
-.mobileLinkRow {
-  display: none;
+  max-width: 1280px;
+  gap: 0.9rem;
 }
 
 .link {
@@ -82,11 +73,11 @@
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 0.75rem;
+  border-radius: 0.6rem;
   
   /* Initial un-stuck state */
-  font-size: 1.75rem;
-  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  padding: 0.7rem 1.3rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, color 0.2s;
 }
 
@@ -112,15 +103,7 @@
   cursor: pointer;
   z-index: 200;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.navBar.stuck .hamburger {
-  left: auto;
   right: 2rem;
-  transform: none;
 }
 
 .bar {
@@ -132,88 +115,47 @@
 }
 
 .open1 {
-  transform: translateY(10px) rotate(45deg);
+  transform: translateY(5px) rotate(45deg);
 }
 
 .open2 {
-  opacity: 0;
+  transform: translateY(-5px) rotate(-45deg);
 }
 
-.open3 {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-@media (max-width: 1400px) {
-  .desktopLinkRow {
-    gap: 1.5rem;
-  }
-  .link {
-    font-size: 1.4rem;
-    padding: 0.75rem 1rem;
-  }
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .hamburger {
     display: flex;
-    padding: 20px;
-    margin: -20px;
   }
   
-  .desktopLinkRow {
-    display: none;
+  .linkRow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(26, 26, 26, 0.98);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100; /* Behind hamburger */
   }
   
-  .navBar.stuck {
-    padding: 3rem 2rem;
+  .menuOpen {
+    opacity: 1;
+    pointer-events: auto;
   }
-}
-
-/* Premium Full-Screen Portal Menu */
-.mobileMenuPortal {
-  position: fixed;
-  top: -50vh;
-  left: -50vw;
-  right: -50vw;
-  bottom: -50vh;
-  background-color: rgba(10, 10, 10, 0.98);
-  backdrop-filter: blur(24px);
-  z-index: 998; /* Just behind the stickyWrap (999) so navbar logo and hamburger are visible */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portalOpen {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.portalLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  text-align: center;
-}
-
-.portalLink {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 8vw, 3rem); /* Massive typography */
-  letter-spacing: 0.02em;
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portalOpen .portalLink {
-  opacity: 1;
-  transform: translateY(0);
+  
+  .link {
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
+  }
+  
+  .navBar.stuck .link {
+    font-size: 2.5rem; /* Keep them massive in the menu */
+    padding: 1rem 2rem; /* Override stuck padding so it's vertically centered */
+  }
 }

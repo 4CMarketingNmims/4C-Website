@@ -20,11 +20,6 @@ if (pathname === '/wingsandroots' || pathname === '/contact') return null;
         </div>
       </div>
 
-      {/* Big Mail ID */}
-      <div className={styles.mailContainer}>
-        <a href={`mailto:${footerHeroSection.bigEmail}`} className={styles.bigMail}>{footerHeroSection.bigEmail}</a>
-      </div>
-
       {/* Contacts Roster */}
       <div className={styles.rosterContainer}>
         <div className={styles.roster}>

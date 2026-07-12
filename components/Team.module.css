@@ -87,6 +87,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 1101px) {
+  .eightGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
 /* --- Previous Core History Styles --- */
 
 .historyContainer {

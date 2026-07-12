@@ -84,11 +84,6 @@ export default function Footer() {
             <p>© {new Date().getFullYear()} {site.brand} — Marketing Committee. All rights reserved.</p>
             <p>{footerSection.builtBy}</p>
           </div>
-          <div className={styles.legal}>
-            {footerSection.legalLinks.map((link, idx) => (
-              <Link key={idx} href={link.href}>{link.label}</Link>
-            ))}
-          </div>
         </div>
       </footer>
     </div>

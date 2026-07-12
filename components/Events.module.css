@@ -81,3 +81,15 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+.textShield {
+  background: rgba(0, 0, 0, 0.85); /* Deep, solid black tint to mask out the background lines */
+  backdrop-filter: blur(12px);     /* Beautifully blurs anything passing directly behind it */
+  -webkit-backdrop-filter: blur(12px);
+  padding: 32px;                   /* Gives the text comfortable breathing room */
+  border-radius: 16px;             /* Smooth modern corners */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* A very faint premium edge line */
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8);  /* Deep drop-shadow to separate it from the background artwork */
+  position: relative;
+  z-index: 50;                     /* Forces it completely above all background patterns */
+  width: 100%;                     /* Ensures it fills its side of the layout nicely */
+}

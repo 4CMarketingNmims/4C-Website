@@ -29,15 +29,14 @@ export default function Home() {
         />
       </div>
 
-      <div style={{ minHeight: '65vh', display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 1 }}>
-        <Hero />
-        <div style={{ flex: 1 }} /> {/* Pushes Nav down */}
-      </div>
-      
+      {/* Hero sizes its own box to (100vh - Nav's known height) via a plain
+          CSS calc() in Hero.module.css, so Hero + Nav always add up to
+          exactly one screen with Nav flush on the bottom edge. Nav is a
+          plain sibling here (not nested inside Hero) so its sticky range
+          spans the whole page instead of just the first screen. */}
+      <Hero />
       <Nav />
-      
-      <div style={{ height: '25vh', position: 'relative', zIndex: 1 }} />
-      
+
       {/* Solid background wrapper to cover up the overflowing LiquidEther background */}
       <div style={{ position: 'relative', zIndex: 2, backgroundColor: '#1a1a1a' }}>
         <WhatIs4C />

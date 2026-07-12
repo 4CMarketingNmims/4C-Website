@@ -13,15 +13,27 @@ export default function Sponsors() {
   // Create a massive, messy array of blocks
   let elements = [];
   const totalSlots = sponsorsSection.totalSlots;
+  let lastLogoSrc = null;
 
   for(let i=0; i<totalSlots; i++) {
     // Only a tiny couple of holes to keep it semi-messy, mostly filled in
     if (sponsorsSection.emptySlots.includes(i)) {
       elements.push({ type: 'empty', id: i });
-    } else {
-      const logoSrc = baseLogos[i % baseLogos.length];
-      elements.push({ type: 'logo', src: logoSrc, id: i });
+      lastLogoSrc = null; // an empty gap breaks any repeat streak
+      continue;
     }
+
+    // Pick a logo, skipping ahead if it would repeat the immediately
+    // preceding tile (avoids the same logo landing next to itself).
+    let offset = 0;
+    let logoSrc = baseLogos[i % baseLogos.length];
+    while (logoSrc === lastLogoSrc && offset < baseLogos.length - 1) {
+      offset += 1;
+      logoSrc = baseLogos[(i + offset) % baseLogos.length];
+    }
+
+    elements.push({ type: 'logo', src: logoSrc, id: i });
+    lastLogoSrc = logoSrc;
   }
 
   const handleMouseMove = (e) => {

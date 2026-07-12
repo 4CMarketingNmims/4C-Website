@@ -55,12 +55,9 @@ export default function Team() {
   return (
     <div ref={root}>
       <PageHeader
-        eyebrow="The team"
-        title="SUPER CORE AND CORE DEPARTMENTS"
-        body="Meet the people behind the scenes who make 4C possible."
+        eyebrow="Meet the people who make 4C possible"
+        title="The Team: 26-27"
       />
-
-      {/* Intro section containing the committee breakdown was removed here */}
 
       {teamGroups.map((group, i) => (
         <section
@@ -68,7 +65,22 @@ export default function Team() {
           className={`${styles.group} ${i % 2 === 1 ? styles.groupOdd : ''}`}
         >
           <p className={styles.groupLabel}>{group.label}</p>
-          <div className={styles.groupGrid}>
+          <div className={`${styles.groupGrid} ${group.id === 'lead' ? styles.eightGrid : ''}`}>
+            {group.id === 'lead' && (
+              <div data-flip-card>
+                <FlipCard
+                  member={{
+                    name: 'The Super Core',
+                    role: '',
+                    image: '/team/super-core-cover.jpg',
+                    coverOnly: true,
+                    introCopy:
+                      'The guiding force behind the committee — steering strategy, decisions, and direction for every campaign 4C runs.',
+                  }}
+                  groupLabel={group.label}
+                />
+              </div>
+            )}
             {group.members.map((m) => (
               <div key={m.name} data-flip-card>
                 <FlipCard member={m} groupLabel={group.label} />
@@ -79,14 +91,6 @@ export default function Team() {
       ))}
 
       <section className={styles.coreSection}>
-        <div className={styles.coreHeader}>
-          <p className={styles.coreEyebrow}>Core team</p>
-          <h2 className={styles.coreTitle}>DEPARTMENT CARDS</h2>
-          <p className={styles.coreCopy}>
-            Hover or tap each card to turn it and see the heads and sub heads for each department.
-          </p>
-        </div>
-
         <CoreDepartmentDeck departments={coreDepartments} />
         
         <div className={styles.historyContainer}>
@@ -94,7 +98,7 @@ export default function Team() {
             className={styles.historyToggleBtn}
             onClick={() => setShowHistory(!showHistory)}
           >
-            {showHistory ? 'HIDE PREVIOUS CORE' : 'VIEW PREVIOUS CORE (23-25)'}
+            {showHistory ? 'HIDE PREVIOUS CORE' : 'VIEW PREVIOUS CORE (23-26)'}
           </button>
           
           {showHistory && (
@@ -105,21 +109,27 @@ export default function Team() {
                   
                   <div className={styles.historyDataGrid}>
                     <div className={styles.historyCol}>
-                      <h4 className={styles.historySubTitle}>Super Core</h4>
-                      {yr.superCore.map((sc, i) => (
-                        <p key={i} className={styles.historyText}>
-                          <span className={styles.historyHighlight}>{sc.role}:</span> {sc.names}
-                        </p>
-                      ))}
+                      <h4 className={styles.historySubTitle}>Super Core:</h4>
+                      {yr.superCore.map((sc, i) => {
+                        const cleanRole = sc.role ? sc.role.replace(/\s*-\s*/g, ': ') : '';
+                        return (
+                          <p key={i} className={styles.historyText}>
+                            <span className={styles.historyHighlight}>{cleanRole}:</span> {sc.names}
+                          </p>
+                        );
+                      })}
                     </div>
                     
                     <div className={styles.historyCol}>
-                      <h4 className={styles.historySubTitle}>Core Departments</h4>
-                      {yr.core.map((c, i) => (
-                        <p key={i} className={styles.historyText}>
-                          <span className={styles.historyHighlight}>{c.dept}:</span> {c.text}
-                        </p>
-                      ))}
+                      <h4 className={styles.historySubTitle}>Core Departments:</h4>
+                      {yr.core.map((c, i) => {
+                        const cleanDept = c.dept ? c.dept.replace(/\s*-\s*/g, ': ') : '';
+                        return (
+                          <p key={i} className={styles.historyText}>
+                            <span className={styles.historyHighlight}>{cleanDept}:</span> {c.text}
+                          </p>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

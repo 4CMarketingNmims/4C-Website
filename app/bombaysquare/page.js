@@ -9,7 +9,7 @@ import Nav from '@/components/Nav';
 import styles from './BombaySquare.module.css';
 
 // The 3D map needs a WebGL context, so it's loaded client-side only.
-const MapScene3D = dynamic(() => import('./MapScene3D'), {
+const MapScene3D = dynamic(() => import('./Mapscene3d'), {
   ssr: false,
   loading: () => <div className={styles.mapLoading}>Loading map…</div>,
 });
