@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import Link from "next/link";
 import styles from "./RecruitmentLanding.module.css";
 
@@ -24,9 +24,7 @@ export default function RecruitmentLanding() {
           </h1>
 
           <p className={styles.description}>
-            Join the Official Marketing Cell of NMIMS MPSTME and work alongside
-            passionate students to create campaigns, experiences, events and
-            ideas that leave a lasting impact on campus.
+            Join The Marketing Cell of NMIMS MPSTME and help shape the campaigns, events and experiences that define campus life.
           </p>
 
           <Link href="/recruitment" className={styles.button}>
@@ -62,12 +60,9 @@ export default function RecruitmentLanding() {
         <div className={styles.right}>
           <div className={styles.logoGlow}></div>
 
-          <Image
-  src="/4c-logo.png"
+          <img
+  src="/4clogo.png"
   alt="4C Logo"
-  fill
-  priority
-  sizes="50vw"
   className={styles.logo}
 />
         </div>
