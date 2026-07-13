@@ -63,13 +63,13 @@ export default function RecruitmentLanding() {
           <div className={styles.logoGlow}></div>
 
           <Image
-            src="/4c-logo.png"
-            alt="4C Logo"
-            width={700}
-            height={700}
-            priority
-            className={styles.logo}
-          />
+  src="/4c-logo.png"
+  alt="4C Logo"
+  fill
+  priority
+  sizes="50vw"
+  className={styles.logo}
+/>
         </div>
       </div>
     </section>
