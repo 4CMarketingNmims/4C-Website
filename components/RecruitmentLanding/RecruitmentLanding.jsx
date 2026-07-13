@@ -24,11 +24,11 @@ export default function RecruitmentLanding() {
           </h1>
 
           <p className={styles.description}>
-            Join The Marketing Cell of NMIMS MPSTME and help shape the campaigns, events and experiences that define campus life.
+Join the Marketing Cell of NMIMS MPSTME and create campaigns, experiences and events that leave a lasting impact on campus.
           </p>
 
           <Link href="/recruitment" className={styles.button}>
-            Start Your Application
+            Apply Now
             <svg
               width="18"
               height="18"
