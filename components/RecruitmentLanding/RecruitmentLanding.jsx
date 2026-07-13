@@ -7,18 +7,13 @@ import styles from "./RecruitmentLanding.module.css";
 export default function RecruitmentLanding() {
   return (
     <section className={styles.hero}>
-
       <div className={styles.backgroundGlow}></div>
-      <div className={styles.backgroundGrid}></div>
+      <div className={styles.grid}></div>
 
       <div className={styles.container}>
-
-        {/* LEFT */}
-
-        <div className={styles.content}>
-
+        <div className={styles.left}>
           <div className={styles.badge}>
-            <span className={styles.badgeDot}></span>
+            <span></span>
             Executive Recruitment 2026–27
           </div>
 
@@ -34,74 +29,49 @@ export default function RecruitmentLanding() {
             ideas that leave a lasting impact on campus.
           </p>
 
-          <div className={styles.actions}>
-
-            <Link
-              href="/recruitment"
-              className={styles.primaryButton}
+          <Link href="/recruitment" className={styles.button}>
+            Start Your Application
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
             >
-              Start Your Application
-
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M5 12H19"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-
-                <path
-                  d="M13 6L19 12L13 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-
-            </Link>
-
-          </div>
+              <path
+                d="M5 12H19"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M13 6L19 12L13 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </Link>
 
           <p className={styles.note}>
             No prior experience required.
             <br />
             Just curiosity and the willingness to learn.
           </p>
-
         </div>
 
-        {/* RIGHT */}
-
-        <div className={styles.visual}>
-
+        <div className={styles.right}>
           <div className={styles.logoGlow}></div>
 
           <Image
             src="/4c-logo.png"
             alt="4C Logo"
-            width={520}
-            height={520}
+            width={700}
+            height={700}
             priority
             className={styles.logo}
           />
-
         </div>
-
       </div>
-
-      <div className={styles.scrollIndicator}>
-
-        <span></span>
-
-        <p>Scroll</p>
-
-      </div>
-
     </section>
   );
 }
