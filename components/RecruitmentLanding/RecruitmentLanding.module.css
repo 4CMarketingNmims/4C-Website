@@ -198,27 +198,34 @@
 
   .container {
     grid-template-columns: 1fr;
-    text-align: center;
     gap: 2rem;
+    text-align: center;
     padding: 5rem 0;
   }
 
   .left {
-    order: 2;
+    order: 1;
     max-width: 100%;
   }
 
-.right {
-  order: 3;
-  min-height: 180px;
+  .right {
+    order: 2;
 
-  margin: 1.5rem 0;
+    min-height: auto;
 
-  transform: none;
-}
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .badge {
     margin-inline: auto;
+  }
+
+  .title {
+    font-size: clamp(3.8rem, 17vw, 5rem);
   }
 
   .description {
@@ -227,24 +234,20 @@
     font-size: 1rem;
   }
 
-  .logo {
-  width: 180px;
-  height: auto;
-}
-.logoGlow {
-  width: 260px;
-  height: 260px;
-
-  filter: blur(45px);
-}
-
-  .title {
-    font-size: clamp(3.6rem, 17vw, 4.8rem);
-  }
-
   .button {
     width: 100%;
     justify-content: center;
+  }
+
+  .logo {
+    width: 200px;
+    height: auto;
+  }
+
+  .logoGlow {
+    width: 300px;
+    height: 300px;
+    filter: blur(55px);
   }
 
 }
