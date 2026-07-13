@@ -164,6 +164,9 @@
 }
 
 .logo {
+  width: min(500px, 100%);
+  height: auto;
+
   object-fit: contain;
   z-index: 3;
 
@@ -245,5 +248,8 @@
     width:100%;
     justify-content:center;
   }
+  .logo{
+    width:min(360px,80vw);
+}
 
 }
