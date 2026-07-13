@@ -6,7 +6,7 @@ export const metadata = {
     "Join the Official Marketing Cell of NMIMS MPSTME.",
 };
 
-export default function Apply() {
+export default function ApplyPage() {
   return (
     <>
       <RecruitmentLanding />
