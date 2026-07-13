@@ -135,10 +135,6 @@
 }
 
 
-  filter: blur(90px);
-
-  z-index: 1;
-}
 
 .logo {
   width: min(500px, 100%);
