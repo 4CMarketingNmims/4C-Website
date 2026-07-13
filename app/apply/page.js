@@ -1,11 +1,15 @@
-import RecruitmentLanding from "@/components/RecruitmentLanding";
+import RecruitmentLanding from "@/components/RecruitmentLanding/RecruitmentLanding";
 
 export const metadata = {
   title: "Executive Recruitment | 4C NMIMS",
   description:
-    "Join the Official Marketing Cell of NMIMS MPSTME. Executive Recruitment 2026–27 is now open.",
+    "Join the Official Marketing Cell of NMIMS MPSTME.",
 };
 
-export default function ApplyPage() {
-  return <RecruitmentLanding />;
+export default function Apply() {
+  return (
+    <>
+      <RecruitmentLanding />
+    </>
+  );
 }
