@@ -49,16 +49,9 @@ Join the Marketing Cell of NMIMS MPSTME and create campaigns, experiences and ev
               />
             </svg>
           </Link>
-
-          <p className={styles.note}>
-            No prior experience required.
-            <br />
-            Just curiosity and the willingness to learn.
-          </p>
         </div>
 
         <div className={styles.right}>
-          <div className={styles.logoGlow}></div>
 
           <img
   src="/4clogo.png"
