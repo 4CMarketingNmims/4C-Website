@@ -61,7 +61,7 @@ export default function RecruitPage() {
           </span>
 
           <Image
-            src="/4clogo.webp"
+            src="/4clogo.png"
             alt="4C"
             width={40}
             height={40}
