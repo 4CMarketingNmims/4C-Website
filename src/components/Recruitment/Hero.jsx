@@ -28,7 +28,7 @@ export default function Hero() {
 
           <div className={styles.actions}>
             <Link
-              href="https://tally.so/r/5BDxqv"
+              href="https://4cnmims.in/recruit"
               target="_blank"
               className={styles.primary}
             >
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className={styles.logoGlow}></div>
 
           <Image
-            src="/4clogo.png"
+            src="/4c-logo.png"
             alt="4C NMIMS Logo"
             width={700}
             height={700}

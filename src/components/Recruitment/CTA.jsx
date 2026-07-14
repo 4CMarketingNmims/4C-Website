@@ -148,7 +148,7 @@ export default function CTA() {
           </p>
 
           <Link
-            href="https://tally.so/r/5BDxqv"
+            href="https://4cnmims.in/recruit"
             target="_blank"
             className={styles.primary}
           >
