@@ -2,15 +2,13 @@
 
 import Script from "next/script";
 
-export default function RecruitPage() {
+export default function Test() {
   return (
     <div
       style={{
-        minHeight: "100vh",
-        maxWidth: "900px",
+        maxWidth: "80rem",
         margin: "0 auto",
         padding: "32px 24px",
-        background: "#050608",
       }}
     >
       <iframe
@@ -19,9 +17,7 @@ export default function RecruitPage() {
         width="100%"
         height="800"
         frameBorder="0"
-        marginHeight={0}
-        marginWidth={0}
-        title="4C Executive Recruitment 2026-27"
+        title="Recruitment"
       />
 
       <Script
