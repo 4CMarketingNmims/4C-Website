@@ -44,7 +44,7 @@ export default function RecruitPage() {
         <div className="mb-16 text-center">
 
           <Image
-            src="/4clogo.webp"
+            src="/4c-logo.png"
             alt="4C Logo"
             width={72}
             height={72}
