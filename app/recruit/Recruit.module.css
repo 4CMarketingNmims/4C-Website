@@ -1,0 +1,33 @@
+.page{
+
+    min-height:100vh;
+
+    background:#050608;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:3rem 1.5rem;
+
+}
+
+.wrapper{
+
+    width:100%;
+
+    max-width:900px;
+
+}
+
+.form{
+
+    width:100%;
+
+    min-height:970px;
+
+    border:none;
+
+    display:block;
+
+}
