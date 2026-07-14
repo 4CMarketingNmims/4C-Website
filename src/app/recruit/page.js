@@ -46,8 +46,8 @@ export default function RecruitPage() {
           <Image
             src="/4c-logo.png"
             alt="4C Logo"
-            width={72}
-            height={72}
+            width={96}
+            height={96}
             className="mx-auto mb-8"
             priority
           />
