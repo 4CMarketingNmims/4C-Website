@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: "/apply",
-        destination: "https://beta.4cnmims.in/apply",
+        destination: "https://apply.4cnmims.in/apply",
         permanent: false,
       },
     ];
