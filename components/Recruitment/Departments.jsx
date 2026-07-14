@@ -55,17 +55,12 @@ const departments = [
 ];
 
 export default function Departments() {
-
-  const [active, setActive] = useState(departments[0]);
+  const [active, setActive] = useState(null);
 
   return (
-
     <section className={styles.section}>
-
       <div className={styles.container}>
-
         <div className={styles.heading}>
-
           <h2 className={styles.heroHeading}>
             YOUR PLACE AT 4C.
           </h2>
@@ -73,49 +68,54 @@ export default function Departments() {
           <p className={styles.intro}>
             Find the team where you'll make the biggest impact.
           </p>
-
         </div>
 
         <div className={styles.preview}>
+          {active ? (
+            <>
+              <h3
+                key={active.code}
+                className={styles.selectedTitle}
+              >
+                {active.title}
+              </h3>
 
-          <h3
-            key={active.code}
-            className={styles.selectedTitle}
-          >
-            {active.title}
-          </h3>
+              <p
+                key={active.code + "-description"}
+                className={styles.selectedDescription}
+              >
+                {active.description}
+              </p>
+            </>
+          ) : (
+            <>
+              <h3 className={styles.selectedTitle}>
+                Select a Department
+              </h3>
 
-          <p
-            key={active.code + "-description"}
-            className={styles.selectedDescription}
-          >
-            {active.description}
-          </p>
-
+              <p className={styles.selectedDescription}>
+                Hover over or tap any department below to explore its
+                responsibilities, opportunities and find where you can make
+                the biggest impact at 4C.
+              </p>
+            </>
+          )}
         </div>
 
         <div className={styles.grid}>
-
           {departments.map((department) => (
-
             <button
-
               key={department.code}
-
               type="button"
-
               className={`${styles.card} ${
-                active.code === department.code
+                active?.code === department.code
                   ? styles.active
                   : ""
               }`}
-
               onMouseEnter={() => setActive(department)}
               onFocus={() => setActive(department)}
               onClick={() => setActive(department)}
-
             >
-
               <span className={styles.code}>
                 {department.code}
               </span>
@@ -123,17 +123,10 @@ export default function Departments() {
               <span className={styles.departmentName}>
                 {department.title}
               </span>
-
             </button>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
-
   );
-
 }

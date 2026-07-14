@@ -1,0 +1,98 @@
+.recruit-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #050608;
+  padding: 80px 20px;
+}
+
+/* Background Grid */
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: .45;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Ambient Glows */
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.glow-left {
+  width: 520px;
+  height: 520px;
+  left: -220px;
+  top: -180px;
+  background: rgba(0, 153, 255, 0.16);
+}
+
+.glow-right {
+  width: 480px;
+  height: 480px;
+  right: -180px;
+  bottom: -160px;
+  background: rgba(0, 102, 255, 0.12);
+}
+
+/* Form Container */
+
+.recruit-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 22px;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 0 80px rgba(0,115,255,.12),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Safari-friendly iframe */
+
+.tally-frame {
+  display: block;
+  border: none;
+  width: 1px;
+  min-width: 100%;
+  background: transparent;
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+  .recruit-page{
+    padding:40px 12px;
+  }
+
+  .glow-left{
+    width:320px;
+    height:320px;
+  }
+
+  .glow-right{
+    width:280px;
+    height:280px;
+  }
+
+}
