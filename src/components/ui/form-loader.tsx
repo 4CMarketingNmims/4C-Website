@@ -15,7 +15,7 @@ export default function FormLoader() {
       />
 
       <h3 className="mt-6 text-xl font-semibold text-white">
-        4C Core Recruitment 2026–27
+        4C Executive Recruitment 2026–27
       </h3>
 
       <p className="mt-2 text-white/70">
