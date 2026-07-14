@@ -1,0 +1,197 @@
+.section{
+    padding:clamp(5rem,8vh,8rem) 0;
+}
+
+.container{
+    width:min(1280px,90vw);
+    margin:auto;
+}
+
+.layout{
+
+    display:grid;
+
+    grid-template-columns:1fr .9fr;
+
+    gap:5rem;
+
+    align-items:start;
+
+}
+
+.heading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    text-align:right;
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.heading h2{
+
+    display:flex;
+
+    flex-direction:column;
+
+    font-family:"Archivo Black",sans-serif;
+
+    font-size:clamp(3.5rem,6vw,6rem);
+
+    line-height:.88;
+
+    letter-spacing:-.05em;
+
+}
+
+.heading p{
+
+    margin-top:1.5rem;
+
+    max-width:360px;
+
+    color:rgba(255,255,255,.6);
+
+    line-height:1.8;
+
+}
+
+.contacts{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.person{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:2.4rem 0;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.person:last-child{
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.person h3{
+
+    font-size:2rem;
+
+    margin-bottom:.6rem;
+
+}
+
+.person p{
+
+    color:rgba(255,255,255,.55);
+
+}
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    padding:1rem 1.8rem;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    background:rgba(255,255,255,.02);
+
+    transition:.35s ease;
+
+}
+
+.button span{
+
+    transition:.35s ease;
+
+}
+
+.button:hover{
+
+    background:var(--blue);
+
+    border-color:var(--blue);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+      0 12px 30px rgba(39,119,255,.25);
+
+}
+
+.button:hover span{
+
+    transform:translate(4px,-4px);
+
+}
+
+@media(max-width:900px){
+
+.layout{
+
+    grid-template-columns:1fr;
+
+}
+
+.heading{
+
+    order:-1;
+
+    align-items:flex-start;
+
+    text-align:left;
+
+    position:relative;
+
+    top:auto;
+
+}
+
+.person{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:1.5rem;
+
+}
+
+.button{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}
