@@ -114,3 +114,11 @@
   filter: blur(150px);
   animation: pulse 20s infinite ease-in-out;
 }
+html,
+body {
+  background: #050608;
+}
+
+body {
+  overflow-x: hidden;
+}
