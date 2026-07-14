@@ -1,174 +1,227 @@
-.section{
-    padding:clamp(5rem,8vh,8rem) 0;
+.section {
+  padding: clamp(5rem, 8vh, 8rem) 0;
 }
 
-.container{
-    width:min(1280px,90vw);
-    margin:auto;
+.container {
+  width: min(1280px, 90vw);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+
+  align-items: start;
 }
 
-.layout{
+/* ==========================
+        RIGHT SIDE
+========================== */
 
-    display:grid;
-
-    grid-template-columns:1fr .9fr;
-
-    gap:5rem;
-
-    align-items:start;
-
+.right {
+  position: sticky;
+  top: 120px;
 }
 
-.heading{
+.heading {
+  font-family: "Archivo Black", sans-serif;
 
-    display:flex;
+  font-size: clamp(3.5rem, 6vw, 5.8rem);
 
-    flex-direction:column;
+  line-height: .88;
+  letter-spacing: -.055em;
 
-    align-items:flex-end;
-
-    text-align:right;
-
-    position:sticky;
-
-    top:120px;
-
+  text-transform: uppercase;
 }
 
-.heading h2{
+.subtitle {
+  margin-top: 1.6rem;
 
-    display:flex;
+  max-width: 420px;
 
-    flex-direction:column;
+  color: rgba(255,255,255,.62);
 
-    font-family:"Archivo Black",sans-serif;
+  font-size: 1.08rem;
 
-    font-size:clamp(3.5rem,6vw,6rem);
-
-    line-height:.88;
-
-    letter-spacing:-.05em;
-
+  line-height: 1.85;
 }
 
-.heading p{
+/* ==========================
+        LEFT SIDE
+========================== */
 
-    margin-top:1.5rem;
-
-    max-width:360px;
-
-    color:rgba(255,255,255,.6);
-
-    line-height:1.8;
-
+.left {
+  display: flex;
+  flex-direction: column;
 }
 
-.contacts{
+.contact {
 
-    display:flex;
+  padding: 2rem 0;
 
-    flex-direction:column;
+  border-top: 1px solid rgba(255,255,255,.08);
 
 }
 
-.person{
+.contact:last-child {
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:2.4rem 0;
-
-    border-top:1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 
 }
 
-.person:last-child{
+.details {
 
-    border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-.person h3{
-
-    font-size:2rem;
-
-    margin-bottom:.6rem;
+  display: flex;
+  flex-direction: column;
 
 }
 
-.person p{
+.details h3 {
 
-    color:rgba(255,255,255,.55);
+  font-size: 1.65rem;
+
+  font-weight: 600;
+
+  letter-spacing: -.02em;
 
 }
 
-.button{
+.details p {
 
-    display:inline-flex;
+  margin-top: .65rem;
+  margin-bottom: 1.5rem;
 
-    align-items:center;
+  color: rgba(255,255,255,.58);
 
-    gap:.8rem;
+  font-size: 1rem;
 
-    padding:1rem 1.8rem;
+}
 
-    border-radius:999px;
+/* ==========================
+      WHATSAPP BUTTON
+========================== */
 
-    text-decoration:none;
+.button {
 
-    color:white;
+  display: inline-flex;
+  align-items: center;
+  gap: .85rem;
 
-    border:1px solid rgba(255,255,255,.12);
+  width: fit-content;
 
-    background:rgba(255,255,255,.02);
+  padding: .95rem 1.4rem;
 
-    transition:.35s ease;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(255,255,255,.02);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 500;
+
+  transition:
+    background .35s ease,
+    border-color .35s ease,
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.whatsapp {
+
+  color: #25D366;
+
+  flex-shrink: 0;
+
+}
+
+.arrow {
+
+  transition: transform .35s ease;
+
+}
+
+.button:hover {
+
+  background: #25D366;
+
+  border-color: #25D366;
+
+  color: #050608;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 18px 40px rgba(37,211,102,.25);
+
+}
+
+.button:hover .whatsapp {
+
+  color: #050608;
+
+}
+
+.button:hover .arrow {
+
+  transform: translateX(5px);
+
+}
+/* ==========================
+        INTERACTION
+========================== */
+
+.contact{
+    transition:border-color .35s ease;
+}
+
+.contact:hover{
+
+    border-color:rgba(46,196,255,.25);
+
+}
+
+.details h3{
+
+    transition:color .35s ease;
+
+}
+
+.contact:hover h3{
+
+    color:#fff;
+
+}
+
+.button:active{
+
+    transform:translateY(0);
 
 }
 
 .button span{
 
-    transition:.35s ease;
+    white-space:nowrap;
 
 }
 
-.button:hover{
+/* ==========================
+          TABLET
+========================== */
 
-    background:var(--blue);
+@media (max-width:1100px){
 
-    border-color:var(--blue);
-
-    transform:translateY(-3px);
-
-    box-shadow:
-      0 12px 30px rgba(39,119,255,.25);
-
-}
-
-.button:hover span{
-
-    transform:translate(4px,-4px);
-
-}
-
-@media(max-width:900px){
-
-.layout{
+.container{
 
     grid-template-columns:1fr;
 
+    gap:4rem;
+
 }
 
-.heading{
-
-    order:-1;
-
-    align-items:flex-start;
-
-    text-align:left;
+.right{
 
     position:relative;
 
@@ -176,13 +229,79 @@
 
 }
 
-.person{
+.heading{
 
-    flex-direction:column;
+    font-size:clamp(3rem,8vw,4.8rem);
 
-    align-items:flex-start;
+}
 
-    gap:1.5rem;
+.subtitle{
+
+    max-width:560px;
+
+}
+
+.left{
+
+    width:100%;
+
+}
+
+}
+
+/* ==========================
+          MOBILE
+========================== */
+
+@media (max-width:768px){
+
+.section{
+
+    padding:4rem 0;
+
+}
+
+.container{
+
+    width:min(92vw,560px);
+
+}
+
+.heading{
+
+    font-size:clamp(2.5rem,13vw,3.8rem);
+
+    line-height:.92;
+
+}
+
+.subtitle{
+
+    margin-top:1rem;
+
+    font-size:1rem;
+
+}
+
+.contact{
+
+    padding:1.7rem 0;
+
+}
+
+.details h3{
+
+    font-size:1.35rem;
+
+}
+
+.details p{
+
+    margin-top:.55rem;
+
+    margin-bottom:1.2rem;
+
+    font-size:.95rem;
 
 }
 
@@ -191,6 +310,59 @@
     width:100%;
 
     justify-content:center;
+
+    padding:1rem 1.2rem;
+
+    gap:.8rem;
+
+}
+
+}
+
+/* ==========================
+        SMALL PHONES
+========================== */
+
+@media (max-width:480px){
+
+.heading{
+
+    font-size:2.2rem;
+
+}
+
+.details h3{
+
+    font-size:1.15rem;
+
+}
+
+.details p{
+
+    font-size:.9rem;
+
+}
+
+.button{
+
+    font-size:.92rem;
+
+}
+
+}
+
+/* ==========================
+      REDUCED MOTION
+========================== */
+
+@media (prefers-reduced-motion:reduce){
+
+.contact,
+.details h3,
+.button,
+.arrow{
+
+    transition:none;
 
 }
 
