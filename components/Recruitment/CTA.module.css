@@ -1,152 +1,458 @@
-.section {
-  padding: clamp(4rem, 8vh, 7rem) 0 7rem;
-}
+.section{
 
-.container {
-  width: min(900px, 90vw);
-
-  margin: 0 auto;
-
-  text-align: center;
-}
-
-.heading {
-  display: flex;
-  flex-direction: column;
-
-  font-family: "Archivo Black", sans-serif;
-
-  font-size: clamp(3.2rem, 8vw, 6.5rem);
-
-  line-height: .88;
-
-  letter-spacing: -.05em;
-}
-
-.heading span {
-  display: block;
-}
-
-.description {
-  margin: 2rem auto 0;
-
-  max-width: 520px;
-
-  color: rgba(255,255,255,.62);
-
-  font-size: clamp(1rem,1.1vw,1.15rem);
-
-  line-height: 1.8;
-}
-
-.button {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: .8rem;
-
-  margin-top: 3rem;
-
-  padding: 1.1rem 2.5rem;
-
-  border-radius: 999px;
-
-  border: 1px solid rgba(255,255,255,.12);
-
-  color: white;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-  transition: .35s ease;
+    padding:clamp(5rem,8vh,8rem) 0;
 
 }
 
-.button span{
-  transition:.3s;
-}
+.container{
 
-.button:hover{
+    width:min(1280px,90vw);
 
-  background:var(--blue);
-
-  border-color:var(--blue);
-
-  transform:translateY(-3px);
-
-  box-shadow:0 0 40px rgba(39,119,255,.35);
+    margin:0 auto;
 
 }
 
-.button:hover span{
+/* ===========================
+        DISCOVER
+=========================== */
 
-  transform:translateX(6px);
+.discover{
 
-}
+    display:grid;
 
-.follow{
+    grid-template-columns:1fr 420px;
 
-  margin-top:4.5rem;
+    gap:8rem;
 
-}
-
-.followText{
-
-  margin-bottom:1.2rem;
-
-  color:rgba(255,255,255,.5);
-
-  font-size:.95rem;
-
-  letter-spacing:.04em;
+    align-items:center;
 
 }
 
-.socials{
+.left{
 
-  display:flex;
+    display:flex;
 
-  justify-content:center;
-
-  gap:2.5rem;
+    align-items:center;
 
 }
 
-.socials a{
+.discoverTitle{
 
-  color:rgba(255,255,255,.68);
-
-  text-decoration:none;
-
-  font-size:1rem;
-
-  transition:.3s ease;
-
-}
-
-.socials a:hover{
-
-  color:white;
-
-}
-
-@media (max-width:768px){
-
-  .section{
-
-    padding:4rem 0;
-
-  }
-
-  .socials{
+    display:flex;
 
     flex-direction:column;
 
+    line-height:.86;
+
+    letter-spacing:-.055em;
+
+    text-transform:uppercase;
+
+    font-family:"Archivo Black",sans-serif;
+
+    font-size:clamp(4rem,8vw,7rem);
+
+}
+
+.discoverTitle span{
+
+    display:block;
+
+}
+
+/* ===========================
+        SOCIALS
+=========================== */
+
+.right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.4rem;
+
+}
+
+.social{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:1.45rem 1.7rem;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.02);
+
+    text-decoration:none;
+
+    color:#fff;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.social:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(46,196,255,.32);
+
+    background:rgba(46,196,255,.05);
+
+    box-shadow:
+        0 18px 55px rgba(39,119,255,.14);
+
+}
+
+.socialLeft{
+
+    display:flex;
+
+    align-items:center;
+
     gap:1rem;
 
-  }
+}
+
+.socialLeft span{
+
+    font-size:1.08rem;
+
+    font-weight:500;
+
+}
+
+.socialIcon{
+
+    width:22px;
+
+    height:22px;
+
+    opacity:.92;
+
+}
+
+.arrow{
+
+    transition:transform .35s ease;
+
+}
+
+.social:hover .arrow{
+
+    transform:translate(5px,-5px);
+
+}
+
+/* ===========================
+        DIVIDER
+=========================== */
+
+.divider{
+
+    width:100%;
+
+    height:1px;
+
+    margin:5rem 0;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* ===========================
+        CTA
+=========================== */
+
+.cta{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+/* ===========================
+        HEADING
+=========================== */
+
+.title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    line-height:.86;
+
+    letter-spacing:-.055em;
+
+    text-transform:uppercase;
+
+    font-family:"Archivo Black",sans-serif;
+
+    font-size:clamp(3.8rem,7vw,6rem);
+
+}
+
+.title span{
+
+    display:block;
+
+}
+
+.subtitle{
+
+    margin-top:1.8rem;
+
+    max-width:560px;
+
+    color:rgba(255,255,255,.62);
+
+    font-size:1.08rem;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+        BUTTON
+=========================== */
+
+.primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.9rem;
+
+    margin-top:2.8rem;
+
+    min-width:250px;
+
+    padding:1.2rem 2.4rem;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:1.02rem;
+
+    font-weight:600;
+
+    letter-spacing:-.01em;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2777ff,
+            #2ec4ff
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 14px 38px rgba(39,119,255,.28),
+        inset 0 1px 0 rgba(255,255,255,.18);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+
+}
+
+.primary svg{
+
+    transition:transform .35s ease;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(1.05);
+
+    box-shadow:
+        0 22px 60px rgba(39,119,255,.40);
+
+}
+
+.primary:hover svg{
+
+    transform:translateX(6px);
+
+}
+
+.primary:active{
+
+    transform:translateY(0);
+
+}
+
+/* ===========================
+        TABLET
+=========================== */
+
+@media (max-width:1024px){
+
+.discover{
+
+    grid-template-columns:1fr;
+
+    gap:3rem;
+
+}
+
+.left{
+
+    justify-content:center;
+
+}
+
+.discoverTitle{
+
+    text-align:center;
+
+}
+
+.right{
+
+    max-width:520px;
+
+    width:100%;
+
+    margin:0 auto;
+
+}
+
+.divider{
+
+    margin:4rem 0;
+
+}
+
+}
+
+/* ===========================
+        MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.section{
+
+    padding:4rem 0;
+
+}
+
+.container{
+
+    width:min(92vw,560px);
+
+}
+
+.discoverTitle{
+
+    font-size:clamp(3rem,14vw,4.8rem);
+
+}
+
+.social{
+
+    padding:1.25rem 1.4rem;
+
+}
+
+.socialLeft span{
+
+    font-size:1rem;
+
+}
+
+.title{
+
+    font-size:clamp(2.8rem,13vw,4.5rem);
+
+}
+
+.subtitle{
+
+    margin-top:1.3rem;
+
+    font-size:1rem;
+
+}
+
+.primary{
+
+    width:100%;
+
+    max-width:340px;
+
+}
+
+}
+
+/* ===========================
+        SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+.discoverTitle{
+
+    font-size:2.5rem;
+
+}
+
+.title{
+
+    font-size:2.4rem;
+
+}
+
+.social{
+
+    padding:1.15rem 1.2rem;
+
+}
+
+.socialIcon{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+.primary{
+
+    max-width:none;
+
+    padding:1.1rem 1.3rem;
+
+}
 
 }
