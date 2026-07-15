@@ -73,7 +73,6 @@ export default function Hero() {
 
         <a
           href="https://4cnmims.in/apply"
-          target="_blank"
           rel="noopener noreferrer"
           className={styles.applyButton}
           ref={subtitleRef}
