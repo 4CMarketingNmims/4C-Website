@@ -38,7 +38,7 @@ export const heroSection = {
 export const whatIsSection = {
   titlePrefix: 'WHAT IS',
   logoSrc: '/4clogo.png',
-  paragraph: "4C is the college's marketing committee — four functions, Connect, Collect, Commence, and Contest, working as one team. We plan the strategy, design the identity, and run the outreach behind every major event on campus, from the first conversation with an organizing team to the campaign that fills the room.",
+  paragraph: "4C is the Official Marketing Committee of NMIMS MPSTME, dedicated to fostering creativity, leadership, and innovation through marketing focused initiatives. Since 2008, we have provided students with opportunities to learn, compete, and grow by organizing flagship events, workshops, competitions, and industry interactions that bridge the gap between academics and the real world. Driven by our four core values—Collect, Connect, Commence, and Contest, we empower the next generation of marketers to build ideas, create impact, and lead with confidence.",
   rotatingWords: ['CONNECT', 'COLLECT', 'COMMENCE', 'CONTEST'],
   imageSrc: '/whatis.jpg'
 };
@@ -73,7 +73,7 @@ export const flagshipSection = {
   title: 'CONTEST',
   tagline: 'Inter-college marketing showdown',
   body:
-    'Contest is the event 4C builds its whole year around — a one-day inter-college competition where student teams pitch full marketing campaigns for a live brief in front of industry judges. It is proof of everything we practice the other eleven months: strategy, design, and storytelling under a clock.',
+    'Contest is the event 4C builds its whole year around a one-day inter-college competition where student teams pitch full marketing campaigns for a live brief in front of industry judges. It is proof of everything we practice the other eleven months: strategy, design, and storytelling under a clock.',
   stats: [
     { value: '120+', label: 'Participants' },
     { value: '18', label: 'Colleges' },
@@ -90,7 +90,7 @@ export const sponsorsSection = {
   emptySlots: [13, 37],
 
   // Kept for backward compatibility if needed by other components
-  eyebrow: 'Sponsors & partners',
+  eyebrow: 'Sponsors & Partners',
   title: 'BACKED BY BRANDS WHO BELIEVE IN STUDENT WORK',
   sponsors: [
     'Northbridge Foods',
@@ -106,7 +106,7 @@ export const aboutSection = {
   eyebrow: 'About us',
   title: 'WE TURN IDEAS INTO CAMPAIGNS',
   body:
-    '4C started as a three-person poster team after a department fest sold half the tickets it should have — not from a lack of interest, but a lack of notice. That favor turned into a standing committee within a year, and the college\u2019s default marketing partner within three. Today we run on four functions: Connect, Collect, Commence, and Contest, each owned by a sub-team that hands off to the next.',
+    '4C started as a three person poster team after a department fest sold half the tickets it should have not from a lack of interest, but a lack of notice. That favor turned into a standing committee within a year, and the college\u2019s default marketing partner within three. Today we run on four functions: Connect, Collect, Commence, and Contest, each owned by a sub-team that hands off to the next.',
   values: [
     {
       title: 'Brief first, brand second',
@@ -114,7 +114,7 @@ export const aboutSection = {
     },
     {
       title: 'Deadlines are a design constraint',
-      copy: 'We build systems — templates, checklists, contact lists — so quality never depends on luck.',
+      copy: 'We build systems: templates, checklists, contact lists  so quality never depends on luck.',
     },
     {
       title: 'Numbers, not vibes',
@@ -138,37 +138,37 @@ export const teamGroups = [
         name: 'Krish Sarkar',
         role: 'Secretary',
         image: '/team/krish-sarkar.jpeg',
-        contact: ['9892721055', 'krishsarkar03@gmail.com'],
+        contact: ['+919892721055', 'krishsarkar03@gmail.com'],
       },
       {
         name: 'Pratit Dedhia',
         role: 'Vice President - Operations',
         image: '/team/pratit-dedhia.jpeg',
-        contact: ['7021536282', 'dedhia.pratit@gmail.com'],
+        contact: ['+91 7021536282', 'dedhia.pratit@gmail.com'],
       },
       {
         name: 'Prerna Chauhan',
         role: 'Vice President - Social Media',
         image: '/team/prerna-chauhan.jpeg',
-        contact: ['9813933827', 'Prerna04chauhan@gmail.com'],
+        contact: ['+91 9813933827', 'Prerna04chauhan@gmail.com'],
       },
       {
         name: 'Yash Jain',
         role: 'Vice President - CRM',
         image: '/team/yash-jain.jpeg',
-        contact: ['9922755112', 'Yashjain2026@gmail.com'],
+        contact: ['+91 9922755112', 'Yashjain2026@gmail.com'],
       },
       {
         name: 'Madhav Sahi',
         role: 'Vice President - Outreach',
         image: '/team/madhav-sahi.jpeg',
-        contact: ['9870215599', 'madhavsahi19@gmail.com'],
+        contact: ['+91 9870215599', 'madhavsahi19@gmail.com'],
       },
       {
         name: 'Sylborn Furtado',
         role: 'Vice President - Creatives',
         image: '/team/sylborn-furtado.jpeg',
-        contact: ['8767448856', 'sylbornfurtado@gmail.com'],
+        contact: ['+91 8767448856', 'sylbornfurtado@gmail.com'],
       },
     ],
   },
@@ -282,10 +282,10 @@ export const events = [
 ];
 
 export const footerHeroSection = {
-  marqueeText: "Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence ",
+  marqueeText: "Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence - ",
   bigEmail: "contact@4cnmims.in",
   contacts: [
-    { name: "Aryan Thakkar", role: "President", phone: "+91 9163794042", email: "contact@4cnmims.in" },
+    { name: "Aryan Thakkar", role: "President", phone: "+91 9820448705", email: "contact@4cnmims.in" },
     { name: "Krish Sarkar", role: "Secretary", phone: "+91 9892721055", email: "marketing@4cnmims.in" },
     { name: "Madhav Sahi", role: "VP  Outreach", phone: "+91 9870215599", email: "outreach@4cnmims.in" },
   ],

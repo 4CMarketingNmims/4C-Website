@@ -5,6 +5,13 @@
   min-height: 470px;
   perspective: 1200px;
   overflow: hidden;
+  border-radius: 24px;
+  /* Safari/Chrome can fail to clip border-radius on backface-visibility:hidden
+     children inside a preserve-3d context, letting the flipped face render as a
+     hard-edged square that bleeds into neighboring cards. Forcing the clip on
+     this outer, non-3D-transformed container fixes that overlay bug. */
+  mask-image: radial-gradient(circle, #fff 100%, #000 100%);
+  -webkit-mask-image: -webkit-radial-gradient(circle, #fff 100%, #000 100%);
   container-type: size;
   container-name: flipcard;
 }

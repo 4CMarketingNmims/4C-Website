@@ -72,7 +72,7 @@ export default function Hero() {
         </h1>
 
         <a
-          href="https://tally.so/r/5BDxqv"
+          href="https://4cnmims.in/apply"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.applyButton}

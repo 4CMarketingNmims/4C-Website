@@ -4,46 +4,59 @@ import WhatIs4C from '@/components/WhatIs4C';
 import Mission from '@/components/Mission';
 import FlagshipEvent from '@/components/FlagshipEvent';
 import Sponsors from '@/components/Sponsors';
-import LiquidEther from '@/components/ui/LiquidEther';
+import HomeScroller from '@/components/HomeScroller';
 
 export default function Home() {
   return (
     <main style={{ backgroundColor: '#1a1a1a', position: 'relative' }}>
-      {/* LiquidEther background for the top section (made taller to ensure it covers Nav, hidden by bottom content) */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '140vh', zIndex: 0 }}>
-        <LiquidEther
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
+      {/* Nav is fixed/floating (see Nav.module.css), so it isn't part of the
+          normal document flow — it can live anywhere in the tree. Placing it
+          first keeps it on top of the Hero background without extra z-index
+          juggling. */}
+      <Nav />
+
+      {/* Hero background: the event-collage photo, darkened so it reads as
+          part of the site's dark ink theme instead of a bright standalone
+          image. Sized to exactly one viewport since Hero is now a plain
+          100vh section (Nav no longer eats height out of it). */}
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh', zIndex: 0, overflow: 'hidden' }}>
+        <img
+          src="/hero-bg.jpg"
+          alt=""
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center 30%',
+            filter: 'grayscale(20%) contrast(1.05) brightness(0.85)',
+          }}
+        />
+        {/* Dark gradient so the title/copy stay readable and the image
+            blends smoothly into the solid --ink background below it */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.5) 35%, rgba(20,20,20,0.75) 75%, #1a1a1a 100%)',
+          }}
         />
       </div>
 
-      {/* Hero sizes its own box to (100vh - Nav's known height) via a plain
-          CSS calc() in Hero.module.css, so Hero + Nav always add up to
-          exactly one screen with Nav flush on the bottom edge. Nav is a
-          plain sibling here (not nested inside Hero) so its sticky range
-          spans the whole page instead of just the first screen. */}
-      <Hero />
-      <Nav />
+      {/* HomeScroller is scoped only to the Home page's own sections, not
+          the whole layout, so its scroll state never leaks onto other
+          pages like About. */}
+      <HomeScroller>
+        <Hero />
 
-      {/* Solid background wrapper to cover up the overflowing LiquidEther background */}
-      <div style={{ position: 'relative', zIndex: 2, backgroundColor: '#1a1a1a' }}>
-        <WhatIs4C />
-        <Mission />
-        <FlagshipEvent />
-        <Sponsors />
-      </div>
+        {/* Solid background wrapper to cover up the overflowing background image */}
+        <div style={{ position: 'relative', zIndex: 2, backgroundColor: '#1a1a1a' }}>
+          <WhatIs4C />
+          <Mission />
+          <FlagshipEvent />
+          <Sponsors />
+        </div>
+      </HomeScroller>
     </main>
   );
 }

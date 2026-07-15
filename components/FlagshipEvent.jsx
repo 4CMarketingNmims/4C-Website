@@ -14,13 +14,10 @@ export default function FlagshipEvent() {
     <section className={styles.section} id="flagship">
       <div className={styles.layout}>
         
-        {/* Left Side: Logo Punch - click to view gallery */}
-        <Link href="/wingsandroots" className={styles.logoBlock}>
+        {/* Left Side: Logo Punch */}
+        <div className={styles.logoBlock}>
            <img src="/events/Wings and Roots (2).png" alt="Contest Logo" className={styles.punchLogo} />
-           <div className={styles.galleryOverlay}>
-             <span className={styles.galleryOverlayBtn}>VIEW GALLERY</span>
-           </div>
-        </Link>
+        </div>
 
         {/* Right Side: Content */}
         <div className={styles.textBlock}>
@@ -39,8 +36,8 @@ export default function FlagshipEvent() {
              ))}
            </div>
 
-           {/* Mobile Only Button */}
-           <Link href="/wingsandroots" className={styles.mobileGalleryBtn}>
+           {/* View Gallery Button */}
+           <Link href="/wingsandroots" className={styles.galleryBtn}>
              VIEW GALLERY!
            </Link>
         </div>

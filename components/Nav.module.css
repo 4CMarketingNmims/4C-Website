@@ -1,48 +1,29 @@
-.stickyWrap {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 100;
-}
-
+/* Fixed, floating pill nav — pinned to the top of the page at all times */
 .navBar {
-  position: relative;
-  width: 100%;
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: center;
-  
-  /* Initial state: a visible, highlighted grey bar */
-  background-color: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.25rem 2rem;
-  
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  gap: 1.5rem;
 
-.navBar.stuck {
-  background-color: rgba(20, 20, 20, 0.92); /* Solid dark bar once pinned to top */
+  background-color: rgba(20, 20, 20, 0.78);
   backdrop-filter: blur(16px);
-  border-top: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.5rem 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Cohesive depth */
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.55rem 0.6rem 0.55rem 1.15rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  max-width: calc(100vw - 2rem);
 }
 
 .navLogo {
-  display: block;
-  position: absolute;
-  left: 3rem;
-  height: 2.5rem;
-  width: max-content;
-  opacity: 0;
-  transform: translateX(-20px);
-  pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  height: 1.9rem;
+  flex-shrink: 0;
 }
 
 .navLogo img {
@@ -51,19 +32,10 @@
   object-fit: contain;
 }
 
-.navBar.stuck .navLogo {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
 .linkRow {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1280px;
-  gap: 0.9rem;
+  gap: 0.25rem;
 }
 
 .link {
@@ -73,41 +45,30 @@
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 0.6rem;
-  
-  /* Initial un-stuck state */
-  font-size: 1.6rem;
-  padding: 0.7rem 1.3rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s, color 0.2s;
+  font-size: 0.82rem;
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-.navBar.stuck .link {
-  /* Maintain the same size when stuck */
-}
-
-
 
 .link:hover {
   background-color: #2F4EFE;
 }
 
-.goldenHover:hover {
-  background-color: #FFD700;
-  color: #1a1a1a;
-}
-
+/* Hamburger trigger (mobile only) */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
-  z-index: 200;
-  position: absolute;
-  right: 2rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
 }
 
 .bar {
-  width: 30px;
+  width: 20px;
   height: 2px;
   background-color: white;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -115,47 +76,97 @@
 }
 
 .open1 {
-  transform: translateY(5px) rotate(45deg);
+  transform: translateY(4px) rotate(45deg);
 }
 
 .open2 {
-  transform: translateY(-5px) rotate(-45deg);
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Fullscreen mobile menu */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(18, 18, 18, 0.98);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menuOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mobileBrand {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 14vw, 6rem);
+  letter-spacing: -0.02em;
+  color: var(--paper, #f4f4f4);
+  text-transform: uppercase;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.mobileLink {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--paper, #f4f4f4);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: color 0.2s ease;
+}
+
+.mobileLink:hover {
+  color: var(--cyan, #2ec4ff);
 }
 
 @media (max-width: 1024px) {
+  .linkRow {
+    display: none;
+  }
+
   .hamburger {
     display: flex;
   }
-  
-  .linkRow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(26, 26, 26, 0.98);
-    backdrop-filter: blur(16px);
-    flex-direction: column;
-    justify-content: center;
-    gap: 3rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 100; /* Behind hamburger */
-  }
-  
-  .menuOpen {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  .link {
-    font-size: 2.5rem;
-    padding: 1rem 2rem;
-  }
-  
-  .navBar.stuck .link {
-    font-size: 2.5rem; /* Keep them massive in the menu */
-    padding: 1rem 2rem; /* Override stuck padding so it's vertically centered */
+
+  .navBar {
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    justify-content: space-between;
+    padding: 0.5rem 0.6rem 0.5rem 1rem;
+    max-width: none;
   }
 }

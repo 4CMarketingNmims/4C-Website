@@ -1,18 +1,10 @@
-/* Hero's box is sized to (100vh - Nav's real height), calculated from Nav's
-   own padding/font-size in Nav.module.css, so Hero + Nav always add up to
-   exactly one screen with Nav flush on the bottom edge — no gap, no JS,
-   no flash. The 1024px breakpoint mirrors Nav's own hamburger breakpoint,
-   where Nav is shorter (just the logo row + hamburger icon). */
+/* Nav is now position: fixed (floating pill, see Nav.module.css), so it no
+   longer sits in the document flow and doesn't need to be subtracted here.
+   Hero's box is just a plain full screen. */
 .heroBox {
-  min-height: calc(100vh - 5.9rem);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
-}
-
-@media (max-width: 1024px) {
-  .heroBox {
-    min-height: calc(100vh - 4.75rem);
-  }
 }

@@ -4,6 +4,13 @@ import Nav from '../../components/Nav';
 import { footerHeroSection } from '@/data/site';
 import styles from './ContactPage.module.css';
 
+// Individual contacts, shown below the general purpose-based inbox list
+const KEY_CONTACTS = [
+  { name: 'Aryan Thakkar', role: 'President', email: 'contact@4cnmims.in' },
+  { name: 'Madhav Sahi', role: 'Vice President - Outreach', email: 'outreach@4cnmims.in' },
+  { name: 'Yash Jain', role: 'Vice President - CRM', email: 'Yashjain2026@gmail.com' },
+];
+
 export default function ContactPage() {
   return (
     <>
@@ -30,6 +37,22 @@ export default function ContactPage() {
                   <div className={styles.emailRowInfo}>
                      <span className={styles.emailPurpose}>{item.purpose}</span>
                      <span className={styles.emailAddress}>{item.email}</span>
+                  </div>
+                  <div className={styles.emailRowIcon}>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* Key Contacts — reach individual people directly */}
+            <div className={styles.emailsList}>
+              <span className={styles.sectionLabel}>Key Contacts</span>
+              {KEY_CONTACTS.map((person) => (
+                <a key={person.email} href={`mailto:${person.email}`} className={styles.emailRow}>
+                  <div className={styles.emailRowInfo}>
+                     <span className={styles.emailPurpose}>{person.name}</span>
+                     <span className={styles.emailAddress}>{person.role} · {person.email}</span>
                   </div>
                   <div className={styles.emailRowIcon}>
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>

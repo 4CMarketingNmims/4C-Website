@@ -63,6 +63,17 @@
   flex-direction: column;
 }
 
+.sectionLabel {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan, #00e5ff);
+  padding-bottom: 1rem;
+}
+
 .emailRow {
   display: flex;
   justify-content: space-between;
