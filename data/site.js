@@ -38,7 +38,7 @@ export const heroSection = {
 export const whatIsSection = {
   titlePrefix: 'WHAT IS',
   logoSrc: '/4clogo.png',
-  paragraph: "4C is the Official Marketing Committee of NMIMS MPSTME, dedicated to fostering creativity, leadership, and innovation through marketing focused initiatives. Since 2008, we have provided students with opportunities to learn, compete, and grow by organizing flagship events, workshops, competitions, and industry interactions that bridge the gap between academics and the real world. Driven by our four core values—Collect, Connect, Commence, and Contest, we empower the next generation of marketers to build ideas, create impact, and lead with confidence.",
+  paragraph: "4C is the Official Marketing Committee of NMIMS MPSTME, dedicated to fostering creativity, leadership, and innovation through marketing-driven initiatives. Since 2008, we have empowered students through flagship events, workshops, competitions, and industry collaborations, bridging the gap between academics and the real world while inspiring the next generation of marketers.",
   rotatingWords: ['CONNECT', 'COLLECT', 'COMMENCE', 'CONTEST'],
   imageSrc: '/whatis.jpg'
 };
