@@ -1,0 +1,91 @@
+.section {
+  padding: 12vh 4vw 24vh; /* Added heavy bottom padding to prevent cards from getting stuck at the bottom */
+  background: #0b1e4d;
+  position: relative;
+}
+
+.layout {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3.5fr 6.5fr; /* Shifted left, gives cards far more width */
+  gap: 6vw;
+  align-items: flex-start;
+}
+
+.introPanel {
+  position: sticky;
+  top: 24vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.massiveTitle {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 120px); /* Slightly smaller but retains the heavy punch */
+  line-height: 0.85;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.scrollInstruct {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.1em;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding-bottom: 20vh;
+}
+
+.card {
+  position: sticky;
+  background: var(--ink);
+  border-radius: 40px;
+  padding: clamp(40px, 5vw, 80px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -20px 60px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.tag {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  color: var(--cyan);
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.cardTitle {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 6vw, 72px); /* Bigger card titles */
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 32px 0;
+}
+
+.copy {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(20px, 2vw, 32px); /* Bigger paragraph copy */
+  line-height: 1.5;
+  color: var(--paper-dim);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+  .introPanel { position: static; margin-bottom: 80px; }
+  .card { position: static; }
+  .stack { gap: 40px; padding-bottom: 0; }
+}
