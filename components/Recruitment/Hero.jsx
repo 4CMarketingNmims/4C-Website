@@ -29,7 +29,6 @@ export default function Hero() {
           <div className={styles.actions}>
             <Link
               href="https://4cnmims.in/recruit"
-              target="_blank"
               className={styles.primary}
             >
               <span>Apply Now</span>
