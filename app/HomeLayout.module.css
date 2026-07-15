@@ -1,0 +1,10 @@
+/* Nav is now position: fixed (floating pill, see Nav.module.css), so it no
+   longer sits in the document flow and doesn't need to be subtracted here.
+   Hero's box is just a plain full screen. */
+.heroBox {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}

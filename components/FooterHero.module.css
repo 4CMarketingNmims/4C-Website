@@ -1,0 +1,173 @@
+.footerWrap {
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* MARQUEE */
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4vh;
+  background: var(--blue);
+  padding: 0.5vh 0;
+}
+
+.marqueeTrack {
+  display: inline-flex;
+  animation: scrollMarquee 30s linear infinite;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marqueeText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(24px, 4vw, 60px);
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-right: 2vw;
+  line-height: 1;
+}
+
+/* ROSTER */
+.rosterContainer {
+  width: 100%;
+  padding: 0 4vw;
+}
+
+.roster {
+  display: flex;
+  flex-direction: column;
+}
+
+.interactiveRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 0;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contactName {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 4vw, 64px);
+  color: var(--paper);
+  text-transform: uppercase;
+  margin: 0;
+  transition: color 0.3s ease;
+  line-height: 0.9;
+}
+
+.contactRole {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(14px, 1.2vw, 18px);
+  color: var(--paper-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.detailGroup {
+  display: flex;
+  gap: 4vw;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.detailLink {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(18px, 2vw, 32px);
+  color: var(--paper-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detailLink:hover {
+  color: var(--paper);
+  transform: translateX(-10px);
+}
+
+/* Interactivity */
+.interactiveRow:hover .nameGroup {
+  transform: translateX(20px);
+}
+
+.interactiveRow:hover .contactName {
+  color: var(--cyan);
+}
+
+.interactiveRow:hover .contactRole {
+  color: var(--cyan);
+}
+
+.interactiveRow:hover .detailGroup {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  .interactiveRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .nameGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .detailGroup {
+    opacity: 1;
+    /* Always visible on mobile where hover doesn't exist */
+    transform: translateX(0);
+    pointer-events: auto;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .interactiveRow:hover .nameGroup {
+    transform: none;
+  }
+}
