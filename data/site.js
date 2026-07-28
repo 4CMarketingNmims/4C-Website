@@ -179,13 +179,13 @@ export const coreDepartments = [
     code: 'CRM',
     name: 'Corporate Relations & Marketing',
     heads: ['Arya Desai', 'Keval Shah'],
-    subHeads: ['Anushka Ghughe', 'Neil Kheterpal', 'Prisha Shah'],
+    subHeads: ['Anjali Agrawal', 'Neil Kheterpal', 'Prisha Shah', 'Mahuri Salpekar'],
   },
   {
     code: 'DC',
     name: 'Digital Creatives',
-    heads: ['Rithika Hodage', 'Seetansh'],
-    subHeads: ['Parv', 'Shreya Bhuia'],
+    heads: ['Rithika Hodage'],
+    subHeads: ['Parv Srivastav', 'Akshi Shah'],
   },
   {
     code: 'P',
@@ -228,7 +228,7 @@ export const coreDepartments = [
   {
     code: 'T&R',
     name: 'Technicals & Research',
-    heads: ['Aryan Kanungo', 'Vir Dharia'],
+    heads: ['Daksh Rathod', 'Vir Dharia'],
     subHeads: ['Ridhi Singh', 'Ashwin Upadhyay'],
   },
 ];
