@@ -205,7 +205,7 @@ export const coreDepartments = [
     isCoreMessage: true,
     coverImage: '/team/core-team-cover.jpg',
     message:
-      "The pillars every department leans on — the steady core that keeps 4C's teams aligned, on schedule, and moving as one.",
+      "The pillars every department leans on, the steady core that keeps 4C's teams aligned, on schedule, and moving as one.",
   },
   {
     code: 'LA',
@@ -216,8 +216,8 @@ export const coreDepartments = [
   {
     code: 'PR',
     name: 'Public Relations',
-    heads: ['Aniha Khajanchi', 'Kapeesh Godiyal'],
-    subHeads: ['Ashwini Doshi', 'Tarun Tiwari'],
+    heads: ['Aniha Khajanchi', 'Ashwini Doshi' , 'Kapeesh Godiyal'],
+    subHeads: [ 'Tarun Tiwari' , 'Risha Reddy'],
   },
   {
     code: 'SMCW',
@@ -228,7 +228,7 @@ export const coreDepartments = [
   {
     code: 'T&R',
     name: 'Technicals & Research',
-    heads: ['Daksh Rathod', 'Vir Dharia'],
+    heads: ['Daksh Rathod'],
     subHeads: ['Ridhi Singh', 'Ashwin Upadhyay'],
   },
 ];
