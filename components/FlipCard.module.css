@@ -44,6 +44,8 @@
 
 .front {
   background: linear-gradient(150deg, rgba(31, 93, 255, 0.08), rgba(122, 60, 255, 0.08));
+  transform: translateZ(0.01px);
+  -webkit-transform: translateZ(0.01px);
 }
 
 .memberImage {
@@ -80,8 +82,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  z-index: 10;
+  z-index: 1;
   min-height: 140px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0.02px);
+  -webkit-transform: translateZ(0.02px);
 }
 
 .frontIntro {
@@ -129,7 +135,8 @@
 
 .back {
   background: var(--ink-raised);
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(0.01px);
+  -webkit-transform: rotateY(180deg) translateZ(0.01px);
   justify-content: center;
   align-items: center;
   flex-direction: column;
