@@ -46,9 +46,6 @@ export default function FlipCard({ member, groupLabel }) {
           <span className={styles.backLabel}>{groupLabel}</span>
           {member.role && <h3 className={styles.backRole}>{member.role}</h3>}
           <p className={styles.backCopy}>
-            {member.introCopy ||
-              `Part of the ${groupLabel.toLowerCase()} team at 4C, helping bring
-            campus events to the audience they deserve.`}
           </p>
           {member.contact && (
             <div className={styles.contactList}>

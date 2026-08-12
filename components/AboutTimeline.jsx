@@ -6,7 +6,7 @@ const timelineData = [
   {
     year: "2008",
     subtitle: "Foundation",
-    title: "The beginning of 4C — four pillars coming together to build a student-led marketing community.",
+    title: "The beginning of 4C four pillars coming together to build a student led marketing community.",
     points: [
       "Connect — Building meaningful relationships",
       "Collect — Gathering insights and knowledge",
@@ -23,7 +23,7 @@ const timelineData = [
   {
     year: "2024",
     subtitle: "Expansion",
-    title: "Expansion year — 4C established key partnerships and launched mentorship programs connecting students with industry leaders.\n\nOur focus shifted to bridging creativity and technology, addressing modern marketing education gaps.",
+    title: "Expansion year 4C established key partnerships and launched mentorship programs connecting students with industry leaders.\n\nOur focus shifted to bridging creativity and technology, addressing modern marketing education gaps.",
     points: [
       "Mentorship Program",
       "Industry Connect",
