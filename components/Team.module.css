@@ -1,3 +1,16 @@
+.groupLabel {
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-top: 64px;    /* Pushes heading down away from cards above */
+  margin-bottom: 24px; /* Pushes cards below away from heading */
+  padding-left: 16px;
+  display: block;
+}
+
 .groupGrid {
   margin-top: 32px;
   display: grid;
@@ -24,4 +37,98 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(20px, 2.2vw, 32px);
   }
+}
+
+/* --- Previous Core Button & History Section --- */
+
+.historyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 48px;
+  margin-bottom: 64px;
+}
+
+.historyToggleBtn {
+  background: rgba(10, 15, 30, 0.6);
+  border: 1px solid var(--cyan);
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.historyToggleBtn:hover {
+  background: var(--cyan);
+  color: #000000;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.historyDropdown {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.historyYearBlock {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(12px);
+}
+
+.historyYearTitle {
+  font-family: 'Archivo', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #a855f7;
+  margin-bottom: 24px;
+}
+
+.historyDataGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .historyDataGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.historySubTitle {
+  font-family: 'Archivo', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+}
+
+.historyText {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.historyHighlight {
+  color: #ffffff;
+  font-weight: 700;
 }
