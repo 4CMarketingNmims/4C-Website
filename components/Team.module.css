@@ -36,7 +36,7 @@
 @media (min-width: 1101px) {
   .eightGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    column-gap: 28px;
+    column-gap: 40px;
     row-gap: 3px;
   }
 }
