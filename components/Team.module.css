@@ -15,7 +15,7 @@
   margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 32px;
   width: 100%;
 }
 
@@ -37,7 +37,7 @@
   .eightGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 28px;
-    row-gap: 32px;
+    row-gap: 3px;
   }
 }
 
