@@ -72,13 +72,12 @@ export default function Hero() {
         </h1>
 
         <a
-          href="https://4cnmims.in/apply"
-          target="_blank"
+          href="https://4cnmims.in/wnr"
           rel="noopener noreferrer"
           className={styles.applyButton}
           ref={subtitleRef}
         >
-          Apply for Executive Recruitment
+          Apply for Wings and Roots 5.0!
         </a>
 
         <div className={styles.statsRow} ref={statsRef}>

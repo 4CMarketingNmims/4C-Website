@@ -126,7 +126,7 @@ export const aboutSection = {
 export const teamGroups = [
   {
     id: 'lead',
-    label: 'Leadership',
+    label: 'The Super Core',
     members: [
       {
         name: 'Aryan Thakkar',
@@ -148,7 +148,7 @@ export const teamGroups = [
       },
       {
         name: 'Prerna Chauhan',
-        role: 'Vice President - Social Media',
+        role: 'Vice President - SMCW',
         image: '/team/prerna-chauhan.jpeg',
         contact: ['+91 9813933827', 'Prerna04chauhan@gmail.com'],
       },
@@ -172,6 +172,16 @@ export const teamGroups = [
       },
     ],
   },
+  {
+    id: 'crew',
+    label: 'Crew',
+    members: [
+      { name: 'Arnav Jain', role: 'Crew' },
+      { name: 'Nishant Das', role: 'Crew' },
+      { name: 'Ritwik Goyal', role: 'Crew' },
+      { name: 'Shaivi Mehta', role: 'Crew' }
+    ]
+  }
 ];
 
 export const coreDepartments = [
@@ -179,13 +189,13 @@ export const coreDepartments = [
     code: 'CRM',
     name: 'Corporate Relations & Marketing',
     heads: ['Arya Desai', 'Keval Shah'],
-    subHeads: ['Anushka Ghughe', 'Neil Kheterpal', 'Prisha Shah'],
+    subHeads: ['Anjali Agrawal', 'Neil Kheterpal', 'Prisha Shah', 'Mahuri Salpekar'],
   },
   {
     code: 'DC',
     name: 'Digital Creatives',
-    heads: ['Rithika Hodage', 'Seetansh'],
-    subHeads: ['Parv', 'Shreya Bhuia'],
+    heads: ['Rithika Hodage' , 'Parv Srivastav'],
+    subHeads: [ 'Akshi Shah'],
   },
   {
     code: 'P',
@@ -205,7 +215,7 @@ export const coreDepartments = [
     isCoreMessage: true,
     coverImage: '/team/core-team-cover.jpg',
     message:
-      "The pillars every department leans on — the steady core that keeps 4C's teams aligned, on schedule, and moving as one.",
+      "The pillars every department leans on, the steady core that keeps 4C's teams aligned, on schedule, and moving as one.",
   },
   {
     code: 'LA',
@@ -216,8 +226,8 @@ export const coreDepartments = [
   {
     code: 'PR',
     name: 'Public Relations',
-    heads: ['Aniha Khajanchi', 'Kapeesh Godiyal'],
-    subHeads: ['Ashwini Doshi', 'Tarun Tiwari'],
+    heads: ['Aniha Khajanchi', 'Ashwini Doshi' , 'Kapeesh Godiyal'],
+    subHeads: [ 'Tarun Tiwari' , 'Risha Reddy'],
   },
   {
     code: 'SMCW',
@@ -228,59 +238,10 @@ export const coreDepartments = [
   {
     code: 'T&R',
     name: 'Technicals & Research',
-    heads: ['Aryan Kanungo', 'Vir Dharia'],
+    heads: ['Daksh Rathod'],
     subHeads: ['Ridhi Singh', 'Ashwin Upadhyay'],
   },
 ];
-
-export const events = [
-  {
-    slug: 'contest',
-    name: 'Contest',
-    tagline: 'Inter-college marketing showdown',
-    date: 'March 14',
-    status: 'Flagship',
-    body:
-      'Our flagship one-day competition. Student teams from across the city pitch full campaigns for a live brief in front of industry judges.',
-  },
-  {
-    slug: 'founders-week',
-    name: "Founder's Week",
-    tagline: 'Campus-wide orientation campaign',
-    date: 'Aug 2–9',
-    status: 'Upcoming',
-    body:
-      "A week-long welcome campaign for incoming students — signage, social takeovers, and a campus trail introducing every department.",
-  },
-  {
-    slug: 'pitch-night',
-    name: 'Pitch Night',
-    tagline: 'Student venture showcase',
-    date: 'Oct 21',
-    status: 'Upcoming',
-    body:
-      "Outreach and on-ground promotion for the entrepreneurship cell's annual evening of student startup pitches.",
-  },
-  {
-    slug: 'spring-fest',
-    name: 'Spring Fest',
-    tagline: 'College-wide cultural festival',
-    date: 'Feb 2',
-    status: 'Past',
-    body:
-      'Full campaign for the year\u2019s biggest cultural fest — brand identity, a three-week social rollout, and on-ground activation.',
-  },
-  {
-    slug: 'alumni-meet',
-    name: 'Alumni Meet',
-    tagline: 'Annual alumni reunion',
-    date: 'Dec 6',
-    status: 'Past',
-    body:
-      "Invitations, RSVP tracking, and a same-day recap reel for the college's yearly alumni gathering.",
-  },
-];
-
 export const footerHeroSection = {
   marqueeText: "Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence — Collect — Connect — Contest — Commence - ",
   bigEmail: "contact@4cnmims.in",
@@ -308,7 +269,7 @@ export const footerSection = {
     { id: 'li', url: 'https://linkedin.com/in/4cnmims', brandColor: '#0A66C2', ariaLabel: 'LinkedIn' },
     { id: 'x', url: 'https://x.com/4cnmims', brandColor: '#333333', ariaLabel: 'X' },
   ],
-  builtBy: 'Built by the 4C web team.',
+  builtBy: 'Built by the 4C Technicals team',
   legalLinks: [
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms of Service', href: '/terms' },

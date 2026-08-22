@@ -1,171 +1,101 @@
-.intro {
-  padding: 0 3vw 8vh;
-}
-
-.barsBlock {
-  margin-top: 8vh;
-  max-width: 640px;
-}
-
-.barsLabel {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--violet);
-  margin-bottom: 24px;
-  display: block;
-}
-
-.group {
-  padding: 8vh 3vw;
-  border-top: 1px solid var(--line);
-}
-
-.groupOdd {
-  background: var(--ink-raised);
-}
-
 .groupLabel {
-  font-size: 13px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--cyan);
+  margin-top: 64px;    /* Pushes heading down away from cards above */
+  margin-bottom: 24px; /* Pushes cards below away from heading */
+  padding-left: 16px;
+  display: block;
 }
 
 .groupGrid {
   margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.coreSection {
-  padding: 10vh 3vw 14vh;
-  border-top: 1px solid var(--line);
-}
-
-.coreHeader {
-  max-width: 840px;
-}
-
-.coreEyebrow {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--violet);
-  margin: 0;
-}
-
-.coreTitle {
-  margin-top: 12px;
-  font-family: 'Archivo', sans-serif;
-  font-size: clamp(34px, 4vw, 54px);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--paper);
-}
-
-.coreCopy {
-  margin-top: 12px;
-  max-width: 760px;
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--paper-dim);
+  gap: clamp(28px, 4.5vw, 44px); /* Responsive spacing between cards */
 }
 
 @media (max-width: 1100px) {
   .groupGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 24px);
   }
 }
 
 @media (max-width: 720px) {
   .groupGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
 @media (min-width: 1101px) {
   .eightGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(20px, 2.2vw, 32px);
   }
 }
-/* --- Previous Core History Styles --- */
+
+/* --- Previous Core Button & History Section --- */
 
 .historyContainer {
-  margin-top: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  margin-top: 48px;
+  margin-bottom: 64px;
 }
 
 .historyToggleBtn {
-  background: transparent;
-  border: 1px solid rgba(154, 178, 255, 0.4);
-  color: var(--cyan);
-  padding: 14px 32px;
-  border-radius: 30px;
-  cursor: pointer;
+  background: rgba(10, 15, 30, 0.6);
+  border: 1px solid var(--cyan);
+  color: #ffffff;
   font-family: 'Archivo', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  cursor: pointer;
   transition: all 0.3s ease;
-  outline: none;
+  backdrop-filter: blur(8px);
 }
 
-.historyToggleBtn:hover,
-.historyToggleBtn:focus {
-  border-color: var(--cyan);
-  background: rgba(46, 196, 255, 0.1);
-  color: #fff;
+.historyToggleBtn:hover {
+  background: var(--cyan);
+  color: #000000;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
 }
 
 .historyDropdown {
-  margin-top: 32px;
   width: 100%;
   max-width: 1100px;
-  background: var(--ink-raised, rgba(7, 11, 22, 0.6));
-  border: 1px solid var(--line, rgba(154, 178, 255, 0.16));
-  border-radius: 20px;
-  padding: 40px;
-  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .historyYearBlock {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--line, rgba(154, 178, 255, 0.1));
-}
-
-.historyYearBlock:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(12px);
 }
 
 .historyYearTitle {
   font-family: 'Archivo', sans-serif;
-  font-size: clamp(24px, 2.5vw, 32px);
+  font-size: 2rem;
   font-weight: 800;
-  color: var(--violet);
-  margin: 0 0 24px 0;
+  color: #a855f7;
+  margin-bottom: 24px;
 }
 
 .historyDataGrid {
@@ -174,34 +104,31 @@
   gap: 40px;
 }
 
-.historySubTitle {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin: 0 0 16px 0;
-}
-
-.historyText {
-  margin: 0 0 12px 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--paper-dim);
-}
-
-.historyHighlight {
-  font-weight: 700;
-  color: var(--paper);
-}
-
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .historyDataGrid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .historyDropdown {
-    padding: 24px;
-  }
+}
+
+.historySubTitle {
+  font-family: 'Archivo', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 16px;
+}
+
+.historyText {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.historyHighlight {
+  color: #ffffff;
+  font-weight: 700;
 }
