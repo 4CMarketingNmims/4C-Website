@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bombae Square — About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0908;
+    --gold:#C89B5A;
+    --gold-bright:#F0C878;
+    --gold-deep:#8B6F3F;
+    --gold-pale:#E8D3A0;
+    --cream:#F4EDE4;
+    --cream-dim:rgba(244,237,228,0.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+  body{ background-color:var(--black); color:var(--cream); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 50% -10%, rgba(240,200,120,0.10), transparent 55%),
+      radial-gradient(rgba(200,155,90,0.16) 1px, transparent 1.6px),
+      repeating-linear-gradient(135deg, rgba(200,155,90,0.045) 0, rgba(200,155,90,0.045) 1px, transparent 1px, transparent 30px);
+    background-size: 100% 600px, 24px 24px, 42px 42px;
+    background-repeat: no-repeat, repeat, repeat;
+  }
+  .frame{ max-width:430px; margin:0 auto; min-height:100vh; position:relative; overflow:hidden; padding-top:env(safe-area-inset-top); }
+
+  /* ===== TRAIL ROUTE — dotted path winding through the hero, echoes the "citywide trail" concept ===== */
+  .route-layer{position:absolute;top:0;left:0;width:100%;height:640px;z-index:0;pointer-events:none;}
+  .route-layer svg{width:100%;height:100%;display:block;}
+  #routePath{stroke-dasharray:2 11;animation:dash-flow 7s linear infinite;}
+  @keyframes dash-flow{to{stroke-dashoffset:-130;}}
+  .route-layer .stop{animation:pin-pulse 3s ease-in-out infinite;}
+  .route-layer .stop:nth-child(3){animation-delay:0.6s;}
+  .route-layer .stop:nth-child(4){animation-delay:1.2s;}
+  .route-layer .stop:nth-child(5){animation-delay:1.8s;}
+  @keyframes pin-pulse{0%,100%{opacity:0.55;r:3.2;}50%{opacity:1;r:4.4;}}
+
+  /* ===== PILL NAV — matches reference shape: rounded full pill, logo left, links right ===== */
+  .nav-wrap{padding:16px 14px 0;position:relative;z-index:20;}
+  .pill-nav{
+    display:flex;align-items:center;justify-content:space-between;
+    background:rgba(20,17,14,0.6);
+    border:1px solid rgba(200,155,90,0.25);
+    border-radius:40px;
+    padding:9px 12px 9px 16px;
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+  }
+  .nav-logo{display:flex;align-items:center;gap:7px;}
+  .nav-logo-text{font-family:'Bebas Neue';font-size:14px;letter-spacing:1.5px;color:var(--cream);white-space:nowrap;}
+
+  .menu-icon{
+    width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;
+    background:transparent;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;
+    cursor:pointer;-webkit-appearance:none;appearance:none;
+  }
+  .menu-icon span{width:12px;height:1.5px;background:var(--gold-bright);display:block;transition:transform 0.25s ease, opacity 0.25s ease;}
+
+  /* ===== FULLSCREEN MENU OVERLAY ===== */
+  .menu-overlay{
+    position:fixed;inset:0;z-index:50;background:var(--black);
+    display:flex;flex-direction:column;align-items:center;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+    padding-top:env(safe-area-inset-top);
+  }
+  .menu-overlay.open{opacity:1;visibility:visible;transform:translateY(0);}
+  .menu-top{
+    width:100%;max-width:430px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:25px 20px 0;box-sizing:border-box;
+  }
+  .menu-top .nav-logo-text{font-size:14px;}
+  .menu-close{
+    width:36px;height:36px;border-radius:50%;border:none;background:transparent;
+    color:var(--cream);display:flex;align-items:center;justify-content:center;
+    cursor:pointer;-webkit-appearance:none;appearance:none;
+  }
+  .menu-close svg{width:20px;height:20px;}
+  .menu-links{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:46px;width:100%;
+  }
+  .menu-link{
+    font-family:'Bebas Neue';font-size:34px;letter-spacing:2px;color:var(--cream);
+    padding-bottom:6px;border-bottom:2px solid var(--gold);
+  }
+
+  /* ===== PIN ACCENTS — small map-pin confetti, on-theme with the trail concept ===== */
+  .gconfetti{position:absolute;z-index:2;animation:float 5s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,10deg));}50%{transform:translateY(-6px) rotate(calc(var(--r,10deg) + 6deg));}}
+  .pin{width:14px;height:18px;opacity:0.85;}
+  .cf1{top:100px;right:22px;--r:6deg;}
+  .cf2{top:250px;left:20px;--r:-8deg;}
+
+  .hero{position:relative;z-index:5;padding:34px 24px 0;text-align:center;}
+  .eyebrow{font-family:'Bebas Neue';font-size:14px;letter-spacing:5px;color:var(--gold);}
+  h1{font-family:'Bebas Neue';font-size:52px;line-height:0.85;letter-spacing:1px;margin-top:6px;}
+  h1 .l2{color:var(--gold-bright);}
+
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    background:var(--gold-bright);color:var(--black);font-size:10.5px;font-weight:700;letter-spacing:1.5px;
+    padding:7px 16px;border-radius:20px;transform:rotate(-2deg);
+    animation:pulse 3.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{transform:rotate(-2deg) scale(1);}50%{transform:rotate(-2deg) scale(1.04);}}
+
+  .desc{margin:18px auto 0;max-width:300px;font-size:14.5px;line-height:1.65;color:var(--cream-dim);}
+
+  /* ===== HERO IMAGE — gives the About page its own visual identity, no sunburst ===== */
+  .hero-photo{
+    position:relative;margin:26px 22px 0;height:190px;border-radius:14px;overflow:hidden;
+    box-shadow:0 14px 30px rgba(0,0,0,0.5);z-index:5;
+  }
+  .hero-photo img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:grayscale(1) sepia(0.35) contrast(1.08) brightness(0.55);
+  }
+  .hero-photo .tone{position:absolute;inset:0;mix-blend-mode:color;background:linear-gradient(155deg, var(--gold-deep), #0A0908 80%);opacity:0.6;}
+  .hero-photo .fade{position:absolute;inset:0;background:linear-gradient(180deg, transparent 45%, rgba(10,9,8,0.9) 100%);}
+  .hero-photo .cap{position:absolute;left:16px;bottom:14px;z-index:2;font-family:'Bebas Neue';font-size:12px;letter-spacing:2px;color:var(--gold-bright);}
+
+  /* ===== WHAT WE CELEBRATE — 2-col grid of spot-card tiles, last one spans full width ===== */
+  .celebrate-label{text-align:center;margin-top:34px;font-family:'Bebas Neue';font-size:12px;letter-spacing:3px;color:var(--gold-deep);position:relative;z-index:5;}
+  .celebrate-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 22px 0;position:relative;z-index:5;}
+  .spot-card.wide{grid-column:1 / -1;}
+  .spot-card{
+    position:relative;min-width:0;height:150px;border-radius:8px;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:13px;
+    box-shadow:0 12px 26px rgba(0,0,0,0.5);background:#0A0908;
+  }
+  .spot-card:nth-child(odd){transform:rotate(-2deg);}
+  .spot-card:nth-child(even){transform:rotate(1.5deg);}
+  .spot-card img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+    filter:grayscale(1) sepia(0.35) contrast(1.08) brightness(0.55);
+  }
+  .spot-card .tone{position:absolute;inset:0;z-index:1;mix-blend-mode:color;background:linear-gradient(155deg, var(--gold-deep), #0A0908 80%);opacity:0.6;}
+  .spot-card .fade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, transparent 35%, rgba(10,9,8,0.85) 100%);}
+  .spot-card .dot{position:absolute;top:12px;right:12px;width:7px;height:7px;border-radius:50%;z-index:2;background:var(--gold-pale);box-shadow:0 0 6px var(--gold-bright);}
+  .spot-card .name{position:relative;z-index:2;font-weight:700;font-size:14px;}
+  .spot-card .cat{position:relative;z-index:2;font-size:8.5px;letter-spacing:1.5px;color:var(--gold-bright);margin-top:3px;}
+
+  /* ===== STATS STRIP ===== */
+  .stats-row{display:flex;justify-content:space-around;margin:26px 24px 0;position:relative;z-index:5;}
+  .stat{text-align:center;}
+  .stat .num{font-family:'Bebas Neue';font-size:34px;color:var(--gold-bright);line-height:1;}
+  .stat .label{font-size:9px;letter-spacing:1.5px;color:var(--cream-dim);margin-top:4px;}
+
+  /* ===== BODY COPY BLOCK — closing narrative before CTA ===== */
+  .about-block{position:relative;z-index:5;padding:0 26px 0;margin-top:10px;}
+  .about-block h2{font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;color:var(--gold-bright);margin-bottom:12px;text-align:center;}
+  .about-block p{font-size:14px;line-height:1.7;color:var(--cream-dim);margin-bottom:14px;}
+  .about-block p strong{color:var(--cream);font-weight:700;}
+
+  /* ===== CTA ROW ===== */
+  .cta-row{display:flex;gap:12px;justify-content:center;margin-top:28px;padding:0 24px;position:relative;z-index:5;flex-wrap:wrap;}
+  .btn{
+    background:var(--gold-bright);color:var(--black);font-weight:700;font-size:13px;letter-spacing:1px;
+    padding:15px 26px;border-radius:30px;position:relative;display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn::before{
+    content:'';position:absolute;top:-6px;right:-6px;width:14px;height:14px;
+    background:var(--gold);clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);
+  }
+  .btn.outline{background:transparent;border:1.5px solid var(--gold-deep);color:var(--gold-bright);}
+  .btn.outline::before{display:none;}
+
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:30px 24px 24px;position:relative;z-index:5;color:var(--gold-deep);}
+  .divider .line{height:1px;background:var(--gold-deep);flex:1;opacity:0.5;}
+  .divider .x{font-size:13px;color:var(--gold);}
+
+  .bottom-space{height:44px;}
+  .photo-credit{text-align:center;font-size:9px;letter-spacing:0.5px;color:var(--cream-dim);opacity:0.5;margin-top:24px;position:relative;z-index:5;}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="route-layer">
+    <svg viewBox="0 0 430 640" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="routeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F0C878" stop-opacity="0.55"/>
+          <stop offset="1" stop-color="#8B6F3F" stop-opacity="0.12"/>
+        </linearGradient>
+      </defs>
+      <path id="routePath" d="M 356 74 C 300 150, 344 210, 246 252 S 118 336, 158 402 C 198 462, 84 496, 62 566" fill="none" stroke="url(#routeGrad)" stroke-width="2" stroke-linecap="round"/>
+      <circle class="stop" cx="356" cy="74" r="3.5" fill="#F0C878"/>
+      <circle class="stop" cx="246" cy="252" r="3.5" fill="#E8D3A0"/>
+      <circle class="stop" cx="158" cy="402" r="3.5" fill="#F0C878"/>
+      <circle class="stop" cx="62" cy="566" r="3.5" fill="#E8D3A0"/>
+    </svg>
+  </div>
+  <svg class="gconfetti pin cf1" viewBox="0 0 24 30" fill="none"><path d="M12 1c-5 0-9 3.8-9 9 0 6.5 9 19 9 19s9-12.5 9-19c0-5.2-4-9-9-9z" fill="#F0C878"/><circle cx="12" cy="10" r="3" fill="#0A0908"/></svg>
+  <svg class="gconfetti pin cf2" viewBox="0 0 24 30" fill="none" opacity="0.6"><path d="M12 1c-5 0-9 3.8-9 9 0 6.5 9 19 9 19s9-12.5 9-19c0-5.2-4-9-9-9z" fill="#8B6F3F"/><circle cx="12" cy="10" r="3" fill="#0A0908"/></svg>
+
+  <div class="nav-wrap">
+    <div class="pill-nav">
+      <div class="nav-logo">
+        <div class="nav-logo-text">Bombae Square</div>
+      </div>
+      <button class="menu-icon" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-top">
+      <div class="nav-logo-text">Bombae Square</div>
+      <button class="menu-close" id="menuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="menu-links">
+      <a class="menu-link">MAP</a>
+      <a class="menu-link">CONTACT</a>
+      <a class="menu-link" href="https://www.4cnmims.in/" target="_blank" rel="noopener">4C</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">ABOUT</div>
+    <h1>BOMBAE<br><span class="l2">SQUARE</span></h1>
+    <div class="badge">● CULTURAL SIDE OF 4C</div>
+    <p class="desc">A citywide trail celebrating Mumbai's religious, heritage, sightseeing, cultural and activity spots — one landmark at a time.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat"><div class="num">40</div><div class="label">SPOTS MAPPED</div></div>
+    <div class="stat"><div class="num">05</div><div class="label">CULTURE TRACKS</div></div>
+    <div class="stat"><div class="num">01</div><div class="label">CITY, MUMBAI</div></div>
+  </div>
+
+  <div class="hero-photo">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gateway%20of%20India%2C%20Mumbai.jpg" alt="Gateway of India, Mumbai" loading="lazy">
+    <div class="tone"></div><div class="fade"></div>
+    <div class="cap">MUMBAI, ONE LANDMARK AT A TIME</div>
+  </div>
+
+  <div class="celebrate-label">— WHAT WE CELEBRATE —</div>
+  <div class="celebrate-grid">
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shree%20Siddhivinayak%20Temple%20Mumbai.jpg" alt="Siddhivinayak Temple" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div>
+      <div class="name">Religious</div><div class="cat">FAITH & DEVOTION</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Elephanta%20Caves%20entrance.jpg" alt="Elephanta Caves" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div>
+      <div class="name">Heritage</div><div class="cat">OLD BOMBAY</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Chhatrapati%20Shivaji%20Terminus%20(CST).jpg" alt="Chhatrapati Shivaji Maharaj Terminus" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div>
+      <div class="name">Sightseeing</div><div class="cat">ICONIC LANDMARKS</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20play%20performance%20at%20Prithvi%20Theatre%2C%20Mumbai.jpg" alt="Prithvi Theatre performance" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div>
+      <div class="name">Culture</div><div class="cat">ART & PERFORMANCE</div>
+    </div>
+    <div class="spot-card wide">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Juhu%20beach%20(Arial).jpg" alt="Juhu Beach" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div>
+      <div class="name">Activities</div><div class="cat">CITY & SHORELINE</div>
+    </div>
+  </div>
+
+  <div class="divider"><div class="line"></div><div class="x">✦</div><div class="line"></div></div>
+
+  <div class="about-block">
+    <h2>WELCOME TO BOMBAE SQUARE</h2>
+    <p>Bombae Square is the cultural wing of 4C, built to celebrate creativity, talent and artistic expression through events, performances and experiences that bring the campus community together.</p>
+    <p>From the art lanes of Kala Ghoda to the old chawls of Girgaon, we've mapped 40 spots across the city where Mumbai's living culture shows up loudest — and we're inviting you to walk through it with us.</p>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn">VIEW THE MAP →</a>
+    <a class="btn outline">CONTACT US</a>
+  </div>
+
+  <div class="bottom-space"></div>
+</div>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const menuClose = document.getElementById('menuClose');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  function openMenu(){
+    menuOverlay.classList.add('open');
+    menuBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    menuOverlay.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuOverlay.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
+</body>
+</html>
