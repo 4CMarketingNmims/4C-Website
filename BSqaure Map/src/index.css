@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #F4EDE4;
+  background: #0A0908;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body { margin: 0; min-width: 320px; background: #0A0908; color: #F4EDE4; }
+#root { min-height: 100svh; }
