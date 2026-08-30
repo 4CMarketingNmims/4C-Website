@@ -85,7 +85,13 @@ export default function Events() {
             <section 
               key={event.slug}
               className="eventShowcaseSection"
-              onClick={() => router.push(`/events/${event.slug}`)}
+              onClick={() => {
+                if (event.slug === 'bombaesquare') {
+                  router.push('/events/bombaesquare/about.html');
+                } else {
+                  router.push(`/events/${event.slug}`);
+                }
+              }}
               style={{
                 position: 'relative',
                 width: '100%',
