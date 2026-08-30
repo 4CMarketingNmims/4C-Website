@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Bombae Square — Contact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --black: #0A0908;
+      --gold: #C89B5A;
+      --gold-bright: #F0C878;
+      --gold-deep: #8B6F3F;
+      --gold-pale: #E8D3A0;
+      --cream: #F4EDE4;
+      --cream-dim: rgba(244,237,228,0.55);
+    }
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+
+    /* =========================
+       MAIN FRAME
+    ========================= */
+
+    .frame {
+      width: 100%;
+      max-width: 430px;
+      min-height: 100vh;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(200,155,90,.10),
+          transparent 40%
+        ),
+        var(--black);
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      z-index: 50;
+
+      padding: 18px 16px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin-bottom: 12px;
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      color: var(--cream-dim);
+      text-transform: uppercase;
+    }
+
+    .back span {
+      color: var(--gold-bright);
+      font-size: 18px;
+    }
+
+    .pill-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 10px 12px 10px 18px;
+
+      border-radius: 40px;
+
+      border: 1px solid rgba(200,155,90,.3);
+
+      background: rgba(10,9,8,.65);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+
+    .menu-icon {
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+
+      border-radius: 50%;
+
+      border: 1px solid var(--gold);
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      display: block;
+      width: 14px;
+      height: 1px;
+
+      background: var(--gold-bright);
+    }
+
+
+    /* =========================
+       MENU OVERLAY
+    ========================= */
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+
+      z-index: 999;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      background: var(--black);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: .3s ease;
+    }
+
+    .menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-top {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 25px 20px;
+    }
+
+    .menu-close {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+
+      border: 1px solid var(--gold);
+
+      background: transparent;
+      color: var(--cream);
+
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .menu-links {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    .menu-link {
+      font-family: 'Bebas Neue', sans-serif;
+
+      font-size: 38px;
+      letter-spacing: 2px;
+
+      border-bottom: 2px solid var(--gold);
+
+      transition: .2s ease;
+    }
+
+    .menu-link:hover,
+    .menu-link.active {
+      color: var(--gold-bright);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+
+      min-height: 660px;
+
+      display: flex;
+      align-items: flex-end;
+
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      filter:
+        grayscale(1)
+        sepia(.35)
+        contrast(1.08)
+        brightness(.55);
+    }
+
+    .hero-tone {
+      position: absolute;
+      inset: 0;
+
+      mix-blend-mode: color;
+
+      background:
+        linear-gradient(
+          155deg,
+          var(--gold-deep),
+          #0A0908 80%
+        );
+
+      opacity: .6;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(10,9,8,.7),
+          rgba(10,9,8,.05) 35%,
+          rgba(10,9,8,.96)
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+
+      width: 100%;
+
+      padding: 0 24px 55px;
+    }
+
+    .badge {
+      display: inline-flex;
+
+      background: var(--gold-bright);
+      color: var(--black);
+
+      padding: 7px 15px;
+
+      border-radius: 20px;
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+
+      transform: rotate(-2deg);
+    }
+
+    .eyebrow {
+      margin-top: 24px;
+
+      font-family: 'Bebas Neue', sans-serif;
+
+      font-size: 14px;
+      letter-spacing: 4px;
+
+      color: var(--gold-bright);
+    }
+
+    .hero-title {
+      margin-top: 10px;
+
+      font-family: 'Bebas Neue', sans-serif;
+
+      font-size: clamp(90px, 28vw, 145px);
+
+      line-height: .75;
+    }
+
+    .hero-title span {
+      display: block;
+
+      color: var(--gold-bright);
+    }
+
+    .hero-description {
+      max-width: 420px;
+
+      margin-top: 28px;
+
+      padding-left: 14px;
+
+      border-left: 2px solid var(--gold-bright);
+
+      font-size: 12px;
+      line-height: 1.8;
+
+      color: var(--cream-dim);
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    .content {
+      position: relative;
+
+      width: 100%;
+
+      padding: 0 18px 60px;
+
+      background:
+        linear-gradient(
+          rgba(10,9,8,.88),
+          rgba(10,9,8,.98)
+        ),
+        center / cover fixed;
+    }
+
+    .content-inner {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @media screen and (max-width: 700px) {
+      .content-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    .section {
+      padding: 50px 0;
+
+      border-bottom:
+        1px solid rgba(200,155,90,.2);
+    }
+
+    .section-number {
+      font-size: 9px;
+      letter-spacing: 2px;
+
+      color: var(--gold-bright);
+
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+
+      font-size: 58px;
+      line-height: .82;
+    }
+
+    .section-title::after {
+      content: "";
+
+      display: block;
+
+      width: 45px;
+      height: 2px;
+
+      margin-top: 18px;
+
+      background: var(--gold);
+    }
+
+
+    /* =========================
+       GENERAL CONTACT
+    ========================= */
+
+    .contact-list {
+
+      width: 100%;
+
+      margin-top: 30px;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 16px;
+    }
+
+    .contact-card {
+
+      width: 100%;
+
+      min-height: 100px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 18px;
+
+      background: rgba(10,9,8,.82);
+
+      border:
+        1px solid rgba(240,200,120,.4);
+
+      box-shadow:
+        0 12px 30px rgba(0,0,0,.4);
+
+      transition: .3s ease;
+    }
+
+    .contact-card:nth-child(1) {
+      transform: rotate(-1.5deg);
+    }
+
+    .contact-card:nth-child(2) {
+      transform: rotate(1.5deg);
+    }
+
+    .contact-card:hover {
+
+      transform:
+        rotate(0deg)
+        translateY(-5px);
+
+      border-color:
+        var(--gold-bright);
+    }
+
+    .contact-symbol {
+
+      width: 48px;
+      height: 48px;
+
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      border:
+        1px solid var(--gold);
+
+      color:
+        var(--gold-bright);
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .contact-label {
+
+      font-family: 'Bebas Neue', sans-serif;
+
+      font-size: 25px;
+      line-height: .9;
+    }
+
+    .contact-email {
+
+      margin-top: 8px;
+
+      font-size: 10px;
+
+      color:
+        var(--gold-pale);
+
+      word-break: break-word;
+    }
+
+    .contact-arrow {
+
+      flex-shrink: 0;
+
+      font-size: 28px;
+
+      color:
+        var(--gold-bright);
+    }
+
+
+    /* =========================
+       PEOPLE GRID
+    ========================= */
+
+    .people-grid {
+
+      margin-top: 30px;
+
+      display: grid;
+
+      grid-template-columns: 1fr;
+
+      gap: 18px;
+    }
+
+    .person-card {
+
+      position: relative;
+
+      min-height: 260px;
+
+      overflow: hidden;
+
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      border:
+        1px solid rgba(240,200,120,.4);
+
+      background: #0A0908;
+
+      box-shadow:
+        0 15px 30px rgba(0,0,0,.45);
+
+      transition: .3s ease;
+    }
+
+    .person-card:nth-child(1) {
+      transform: rotate(-2deg);
+    }
+
+    .person-card:nth-child(2) {
+      transform: rotate(1.5deg);
+    }
+
+    .person-card:nth-child(3) {
+      transform: rotate(-1deg);
+    }
+
+    .person-card:hover {
+
+      transform:
+        rotate(0deg)
+        translateY(-7px);
+
+      border-color:
+        var(--gold-bright);
+    }
+
+    .person-bg {
+
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: .55;
+
+      filter:
+        grayscale(1)
+        sepia(.35)
+        contrast(1.08)
+        brightness(.5);
+    }
+
+    .person-tone {
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          155deg,
+          var(--gold-deep),
+          #0A0908 80%
+        );
+
+      mix-blend-mode: color;
+
+      opacity: .6;
+    }
+
+    .person-fade {
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(10,9,8,.96)
+        );
+    }
+
+    .person-content,
+    .person-email,
+    .person-arrow {
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .person-role {
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      color:
+        var(--gold-bright);
+    }
+
+    .person-name {
+
+      margin-top: 20px;
+
+      font-family:
+        'Bebas Neue', sans-serif;
+
+      font-size: 50px;
+
+      line-height: .8;
+    }
+
+    .person-email {
+
+      font-size: 10px;
+
+      color:
+        var(--gold-pale);
+
+      word-break: break-word;
+    }
+
+    .person-arrow {
+
+      position: absolute;
+
+      bottom: 14px;
+      right: 18px;
+
+      font-size: 24px;
+
+      color:
+        var(--gold-bright);
+    }
+
+
+    /* =========================
+       SOCIAL SECTION
+    ========================= */
+
+    .social-section {
+
+      position: relative;
+
+      min-height: 430px;
+
+      overflow: hidden;
+
+      padding: 55px 22px;
+    }
+
+    .social-bg {
+
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: .5;
+
+      filter:
+        grayscale(1)
+        sepia(.4)
+        contrast(1.1)
+        brightness(.45);
+    }
+
+    .social-tone {
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10,9,8,.96),
+          rgba(10,9,8,.55)
+        ),
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(10,9,8,.96)
+        );
+    }
+
+    .social-content {
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-description {
+
+      margin: 25px 0;
+
+      max-width: 440px;
+
+      font-size: 13px;
+      line-height: 1.8;
+
+      color:
+        var(--cream-dim);
+    }
+
+    .social-grid {
+
+      display: flex;
+
+      gap: 13px;
+
+      margin-bottom: 30px;
+    }
+
+    .social-link {
+
+      width: 52px;
+      height: 52px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      border:
+        1px solid var(--gold);
+
+      color:
+        var(--gold-bright);
+
+      transition: .25s ease;
+    }
+
+    .social-link:hover {
+
+      background:
+        var(--gold-bright);
+
+      color:
+        var(--black);
+
+      transform:
+        translateY(-4px);
+    }
+
+    .social-link svg {
+
+      width: 22px;
+      height: 22px;
+    }
+
+    .linkedin {
+
+      font-family: Arial, sans-serif;
+
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .x {
+
+      font-size: 20px;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .btn {
+
+      position: relative;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 20px;
+
+      padding: 16px 25px;
+
+      border-radius: 30px;
+
+      background:
+        var(--gold-bright);
+
+      color:
+        var(--black);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      transition: .25s ease;
+    }
+
+    .btn:hover {
+
+      transform:
+        translateY(-4px);
+    }
+
+
+    /* =========================
+       MUMBAI STRIP
+    ========================= */
+
+    .mumbai-strip {
+
+      position: relative;
+
+      height: 250px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+    .mumbai-strip img {
+
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      filter:
+        grayscale(1)
+        sepia(.5)
+        contrast(1.1)
+        brightness(.42);
+    }
+
+    .strip-tone {
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(10,9,8,.9),
+          rgba(10,9,8,.3),
+          rgba(10,9,8,.9)
+        );
+    }
+
+    .strip-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      text-align: center;
+    }
+
+    .strip-content p {
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      color:
+        var(--gold-bright);
+
+      margin-bottom: 12px;
+    }
+
+    .strip-content h2 {
+
+      font-family:
+        'Bebas Neue', sans-serif;
+
+      font-size: 65px;
+
+      line-height: .8;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      padding: 40px 20px;
+
+      text-align: center;
+
+      background:
+        var(--black);
+    }
+
+    footer strong {
+
+      font-family:
+        'Bebas Neue', sans-serif;
+
+      font-size: 42px;
+
+      letter-spacing: 3px;
+
+      color:
+        var(--gold-bright);
+    }
+
+    footer p {
+
+      margin-top: 8px;
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      color:
+        var(--gold-pale);
+    }
+
+
+    /* =====================================
+       TABLET + DESKTOP
+    ===================================== */
+
+    @media screen and (min-width: 701px) {
+
+      /* FULL SCREEN */
+
+      .frame {
+
+        width: 100% !important;
+
+        max-width: none !important;
+
+        margin: 0 !important;
+      }
+
+
+      /* NAV */
+
+      .nav-wrap {
+
+        padding:
+          22px
+          7vw
+          0;
+      }
+
+
+      /* HERO */
+
+      .hero {
+
+        min-height: 100vh;
+      }
+
+      .hero-content {
+
+        padding:
+          0
+          9vw
+          10vh;
+      }
+
+      .hero-title {
+
+        font-size:
+          clamp(
+            170px,
+            19vw,
+            280px
+          );
+      }
+
+      .hero-description {
+
+        font-size: 14px;
+
+        max-width: 520px;
+      }
+
+
+      /* CONTENT */
+
+      .content {
+
+        width: 100% !important;
+
+        max-width: none !important;
+
+        padding:
+          0
+          7vw
+          70px;
+      }
+
+
+      .section {
+
+        padding:
+          70px
+          0;
+      }
+
+
+      .section-title {
+
+        font-size:
+          clamp(
+            80px,
+            8vw,
+            130px
+          );
+      }
+
+
+      /* ==================================
+         GENERAL QUERIES + COLLABORATIONS
+
+         THIS FORCES THEM SIDE BY SIDE
+      ================================== */
+
+      .contact-list {
+
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(0, 1fr) !important;
+
+        grid-auto-flow: row;
+
+        gap: 30px !important;
+
+        align-items: stretch !important;
+
+        flex-direction: unset !important;
+      }
+
+
+      .contact-card {
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        min-height: 145px;
+
+        margin: 0 !important;
+      }
+
+
+      /* PEOPLE */
+
+      .people-grid {
+
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+
+        gap: 28px;
+      }
+
+      .person-card {
+
+        min-height: 330px;
+      }
+
+      .person-name {
+
+        font-size:
+          clamp(
+            42px,
+            4vw,
+            70px
+          );
+      }
+
+
+      /* SOCIAL */
+
+      .social-section {
+
+        min-height: 540px;
+
+        padding:
+          80px
+          9vw;
+      }
+
+      .social-section .section-title {
+
+        font-size:
+          clamp(
+            80px,
+            8vw,
+            130px
+          );
+      }
+
+
+      /* STRIP */
+
+      .mumbai-strip {
+
+        height: 350px;
+      }
+
+      .strip-content h2 {
+
+        font-size:
+          clamp(
+            90px,
+            10vw,
+            160px
+          );
+      }
+
+    }
+
+
+    /* =========================
+       VERY LARGE SCREENS
+    ========================= */
+
+    @media screen and (min-width: 1600px) {
+
+      .content {
+
+        padding-left: 12vw;
+        padding-right: 12vw;
+      }
+
+      .hero-content {
+
+        padding-left: 12vw;
+      }
+
+      .nav-wrap {
+
+        padding-left: 10vw;
+        padding-right: 10vw;
+      }
+
+    }
+
+
+    /* =====================================
+       FINAL FORCE OVERRIDE
+
+       MUST STAY AT THE VERY BOTTOM
+    ===================================== */
+
+    @media screen and (min-width: 701px) {
+
+      .content-inner {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 40px !important;
+      }
+
+      .contact-list {
+
+        display: grid !important;
+
+        grid-template-columns:
+          1fr 1fr !important;
+
+        grid-template-rows:
+          1fr !important;
+
+        width: 100% !important;
+
+        gap: 30px !important;
+      }
+
+      .contact-list > .contact-card {
+
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        grid-column: auto !important;
+
+        margin: 0 !important;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <div class="frame">
+
+
+    <!-- =========================
+         NAV
+    ========================= -->
+
+    <div class="nav-wrap">
+
+      <a
+        href="f1-landing-page-bs-connected.html"
+        class="back"
+      >
+        <span>←</span>
+        BACK TO BOMBAE SQUARE
+      </a>
+
+
+      <div class="pill-nav">
+
+        <div class="nav-logo-text">
+          BOMBAE SQUARE
+        </div>
+
+
+        <button
+          class="menu-icon"
+          id="menuBtn"
+          aria-label="Open Menu"
+        >
+
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <div
+      class="menu-overlay"
+      id="menuOverlay"
+    >
+
+      <div class="menu-top">
+
+        <div class="nav-logo-text">
+          BOMBAE SQUARE
+        </div>
+
+        <button
+          class="menu-close"
+          id="menuClose"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="menu-links">
+
+        <a
+          href="f1-landing-page-bs-connected.html"
+          class="menu-link"
+        >
+          HOME
+        </a>
+
+        <a
+          href="f3-the-map-bs-connected.html"
+          class="menu-link"
+        >
+          MAP
+        </a>
+
+        <a
+          href="f2-about-page-bs-connected.html"
+          class="menu-link"
+        >
+          ABOUT
+        </a>
+
+        <a
+          href="f4-contact-page-bs-connected.html"
+          class="menu-link active"
+        >
+          CONTACT
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+      <img
+        src="gateway-of-india.jpg"
+        alt="Gateway of India Mumbai"
+        class="hero-image"
+      >
+
+      <div class="hero-tone"></div>
+
+      <div class="hero-overlay"></div>
+
+
+      <div class="hero-content">
+
+        <div class="badge">
+          ✦ CULTURAL SIDE OF 4C
+        </div>
+
+
+        <div class="eyebrow">
+          LET'S CONNECT
+        </div>
+
+
+        <h1 class="hero-title">
+
+          SAY
+
+          <span>
+            HELLO.
+          </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+          Reach out for queries,
+          collaborations, opportunities,
+          or simply to become part
+          of the conversation.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTENT
+    ========================= -->
+
+    <main class="content">
+
+      <div class="content-inner">
+
+
+        <!-- GENERAL CONTACT -->
+
+        <section class="section">
+
+          <div class="section-number">
+            01 / 03
+          </div>
+
+
+          <h2 class="section-title">
+
+            DROP US
+            <br>
+            A LINE
+
+          </h2>
+
+
+          <div class="contact-list">
+
+
+            <!-- GENERAL QUERIES -->
+
+            <a
+              href="mailto:contact@4cnmims.in"
+              class="contact-card"
+            >
+
+              <div class="contact-symbol">
+
+                <svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="2"
+                  />
+
+                  <path
+                    d="m3 7 9 6 9-6"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div class="contact-info">
+
+                <div class="contact-label">
+                  GENERAL QUERIES
+                </div>
+
+                <div class="contact-email">
+                  contact@4cnmims.in
+                </div>
+
+              </div>
+
+
+              <div class="contact-arrow">
+                →
+              </div>
+
+            </a>
+
+
+            <!-- COLLABORATIONS -->
+
+            <a
+              href="mailto:outreach@4cnmims.in"
+              class="contact-card"
+            >
+
+              <div class="contact-symbol">
+                ✦
+              </div>
+
+
+              <div class="contact-info">
+
+                <div class="contact-label">
+                  COLLABORATIONS
+                </div>
+
+                <div class="contact-email">
+                  outreach@4cnmims.in
+                </div>
+
+              </div>
+
+
+              <div class="contact-arrow">
+                →
+              </div>
+
+            </a>
+
+
+          </div>
+
+        </section>
+
+
+        <!-- KEY CONTACTS -->
+
+        <section class="section">
+
+          <div class="section-number">
+            02 / 03
+          </div>
+
+
+          <h2 class="section-title">
+
+            KEY
+            <br>
+            CONTACTS
+
+          </h2>
+
+
+          <div class="people-grid">
+
+
+            <!-- ARYAN -->
+
+            <a
+              href="mailto:contact@4cnmims.in"
+              class="person-card"
+            >
+
+              <img
+                src="mumbai-sea-link.jpg"
+                alt="Mumbai"
+                class="person-bg"
+              >
+
+              <div class="person-tone"></div>
+
+              <div class="person-fade"></div>
+
+
+              <div class="person-content">
+
+                <div class="person-role">
+                  PRESIDENT
+                </div>
+
+                <div class="person-name">
+
+                  ARYAN
+                  <br>
+                  THAKKAR
+
+                </div>
+
+              </div>
+
+
+              <div class="person-email">
+                contact@4cnmims.in
+              </div>
+
+              <div class="person-arrow">
+                →
+              </div>
+
+            </a>
+
+
+            <!-- MADHAV -->
+
+            <a
+              href="mailto:outreach@4cnmims.in"
+              class="person-card"
+            >
+
+              <img
+                src="bandra-worli-sea-link.jpg"
+                alt="Mumbai Sea Link"
+                class="person-bg"
+              >
+
+              <div class="person-tone"></div>
+
+              <div class="person-fade"></div>
+
+
+              <div class="person-content">
+
+                <div class="person-role">
+
+                  VICE PRESIDENT
+                  <br>
+                  OUTREACH
+
+                </div>
+
+
+                <div class="person-name">
+
+                  MADHAV
+                  <br>
+                  SAHI
+
+                </div>
+
+              </div>
+
+
+              <div class="person-email">
+                outreach@4cnmims.in
+              </div>
+
+              <div class="person-arrow">
+                →
+              </div>
+
+            </a>
+
+
+            <!-- YASH -->
+
+            <a
+              href="mailto:Yashjain2026@gmail.com"
+              class="person-card"
+            >
+
+              <img
+                src="marine-drive.jpg"
+                alt="Marine Drive"
+                class="person-bg"
+              >
+
+              <div class="person-tone"></div>
+
+              <div class="person-fade"></div>
+
+
+              <div class="person-content">
+
+                <div class="person-role">
+
+                  VICE PRESIDENT
+                  <br>
+                  CRM
+
+                </div>
+
+
+                <div class="person-name">
+
+                  YASH
+                  <br>
+                  JAIN
+
+                </div>
+
+              </div>
+
+
+              <div class="person-email">
+                Yashjain2026@gmail.com
+              </div>
+
+              <div class="person-arrow">
+                →
+              </div>
+
+            </a>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+
+    <!-- =========================
+         SOCIAL
+    ========================= -->
+
+    <section class="social-section">
+
+      <img
+        src="bandra-worli-sea-link.jpg"
+        alt="Mumbai"
+        class="social-bg"
+      >
+
+      <div class="social-tone"></div>
+
+
+      <div class="social-content">
+
+        <div class="section-number">
+          03 / 03
+        </div>
+
+
+        <h2 class="section-title">
+
+          FIND US
+          <br>
+          EVERYWHERE
+
+        </h2>
+
+
+        <p class="social-description">
+
+          Follow our journey,
+          discover our events,
+          and stay connected with
+          everything happening
+          at 4C NMIMS.
+
+        </p>
+
+
+        <div class="social-grid">
+
+
+          <!-- INSTAGRAM -->
+
+          <a
+            href="https://www.instagram.com/4cnmims"
+            target="_blank"
+            class="social-link"
+            aria-label="Instagram"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+              />
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              />
+
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <!-- LINKEDIN -->
+
+          <a
+            href="https://linkedin.com/in/4cnmims"
+            target="_blank"
+            class="social-link linkedin"
+          >
+            in
+          </a>
+
+
+          <!-- X -->
+
+          <a
+            href="https://x.com/4cnmims"
+            target="_blank"
+            class="social-link x"
+          >
+            𝕏
+          </a>
+
+        </div>
+
+
+        <a
+          href="mailto:contact@4cnmims.in"
+          class="btn"
+        >
+
+          START A CONVERSATION
+
+          <span>
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CLOSING
+    ========================= -->
+
+    <section class="mumbai-strip">
+
+      <img
+        src="marine-drive.jpg"
+        alt="Mumbai Marine Drive"
+      >
+
+      <div class="strip-tone"></div>
+
+
+      <div class="strip-content">
+
+        <p>
+          FROM MUMBAI, WITH CONNECTION
+        </p>
+
+        <h2>
+
+          SEE YOU
+          <br>
+          AROUND.
+
+        </h2>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+      <strong>
+        BOMBAE SQUARE
+      </strong>
+
+      <p>
+        CULTURAL SIDE OF 4C · NMIMS
+      </p>
+
+    </footer>
+
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    const menuBtn =
+      document.getElementById('menuBtn');
+
+    const menuClose =
+      document.getElementById('menuClose');
+
+    const menuOverlay =
+      document.getElementById('menuOverlay');
+
+
+    menuBtn.addEventListener(
+      'click',
+      function () {
+
+        menuOverlay.classList.add('open');
+
+        document.body.style.overflow =
+          'hidden';
+
+      }
+    );
+
+
+    menuClose.addEventListener(
+      'click',
+      function () {
+
+        menuOverlay.classList.remove('open');
+
+        document.body.style.overflow =
+          '';
+
+      }
+    );
+
+
+    document
+      .querySelectorAll('.menu-link')
+      .forEach(function (link) {
+
+        link.addEventListener(
+          'click',
+          function () {
+
+            menuOverlay.classList.remove('open');
+
+            document.body.style.overflow =
+              '';
+
+          }
+        );
+
+      });
+
+  </script>
+
+
+</body>
+</html>
