@@ -306,33 +306,20 @@
     .about-block{max-width:1160px;}
     .cta-row{padding:0 120px;}
   }
-<script>
-  /* Replace lines 309-322 of about.html, 843-882 of contact.html, and 188-201 of f1-landing-page-bs-connected.html with this updated menu script */
-  const menuBtn = document.getElementById('menuBtn');
-  const menuClose = document.getElementById('menuClose');
-  const menuOverlay = document.getElementById('menuOverlay');
-
-  function openMenu() {
-    menuOverlay.classList.add('open');
-    menuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    menuOverlay.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
-  if (menuBtn) menuBtn.addEventListener('click', openMenu);
-  if (menuClose) menuClose.addEventListener('click', closeMenu);
-
-  if (menuOverlay) {
-    menuOverlay.querySelectorAll('.menu-link').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-  }
-</script>
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="route-layer">
+    <svg viewBox="0 0 430 640" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="routeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F0C878" stop-opacity="0.55"/>
+          <stop offset="1" stop-color="#8B6F3F" stop-opacity="0.12"/>
+        </linearGradient>
+      </defs>
+      <path id="routePath" d="M 356 74 C 300 150, 344 210, 246 252 S 118 336, 158 402 C 198 462, 84 496, 62 566" fill="none" stroke="url(#routeGrad)" stroke-width="2" stroke-linecap="round"/>
+      <circle class="stop" cx="356" cy="74" r="3.5" fill="#F0C878"/>
       <circle class="stop" cx="246" cy="252" r="3.5" fill="#E8D3A0"/>
       <circle class="stop" cx="158" cy="402" r="3.5" fill="#F0C878"/>
       <circle class="stop" cx="62" cy="566" r="3.5" fill="#E8D3A0"/>
@@ -374,9 +361,9 @@
       </button>
     </div>
     <div class="menu-links">
-      <a class="menu-link" href="/events/bombaesquare/f1-landing-page-bs-connected.html">HOME</a>
+      <a class="menu-link" href="/events/bombaesquare/index.html">HOME</a>
       <a class="menu-link" href="/events/bombaesquare/about.html">ABOUT</a>
-      <a class="menu-link" href="/events/bombaesquare/f3-the-map-bs-connected.html">MAP</a>
+      <a class="menu-link" href="/events/bombaesquare/map.html">MAP</a>
       <a class="menu-link" href="/events/bombaesquare/contact.html">CONTACT</a>
       <a class="menu-link" href="/">4C MAIN SITE</a>
     </div>
