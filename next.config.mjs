@@ -13,7 +13,7 @@ const nextConfig = {
         source: '/wnr',
         destination:
           'https://unstop.com/college-fests/wings-and-roots-50-narsee-monjee-institute-of-management-studies-nmims-mumbai-498354',
-        permanent: false,
+        permanent: true,
       },
     ];
   },
