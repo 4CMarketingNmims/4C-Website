@@ -2689,15 +2689,24 @@ practical_details:{
    MAP
 ===================================================== */
 
+// Mumbai geographical boundaries — keeps the map locked to Mumbai
+const mumbaiBounds = L.latLngBounds(
+  [18.88, 72.75], // South-West boundary
+  [19.25, 72.90]  // Dahisar / northern Mumbai
+);
+
 const map = L.map('map',{
   zoomControl:true,
-  attributionControl:true
+  attributionControl:true,
+  maxBounds:mumbaiBounds,
+  maxBoundsViscosity:1.0,
+  minZoom:10,
+  maxZoom:19
 });
 
-map.setView(
-  [19.0200,72.8500],
-  11
-);
+// Open focused on Mumbai and prevent zooming/panning to the rest of the world
+map.fitBounds(mumbaiBounds,{padding:[10,10]});
+map.setMaxBounds(mumbaiBounds);
 
 
 /* =====================================================
