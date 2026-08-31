@@ -87,7 +87,7 @@ export default function Events() {
               className="eventShowcaseSection"
               onClick={() => {
                 if (event.slug === 'bombaesquare') {
-                  router.push('public/events/bombaesquare/index.html');
+                  router.push('/events/bombaesquare/index.html');
                 } else {
                   router.push(`/events/${event.slug}`);
                 }
