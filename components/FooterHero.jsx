@@ -7,8 +7,8 @@ export default function FooterHero() {
   const pathname = usePathname();
   const contacts = footerHeroSection.contacts;
 
-  // Render ONLY on landing page ('/') and contact page ('/contact')
-  if (pathname !== '/' && pathname !== '/contact') {
+  // Render ONLY on landing page ('/')
+  if (pathname !== '/') {
     return null;
   }
 

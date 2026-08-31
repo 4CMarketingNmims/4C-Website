@@ -1,13 +1,13 @@
 export const brand = {
   name: '4C',
   full: 'Connect · Collect · Commence · Contest',
-  tagline: 'The marketing committee behind every campaign on campus.',
+  tagline: 'The marketing cell of NMIMS',
 };
 
 export const site = {
   brand: '4C',
   full: 'Connect · Collect · Commence · Contest',
-  tagline: 'The marketing committee behind every campaign on campus.',
+  tagline: '4C- The marketing cell of NMIMS',
 };
 
 export const nav = [
