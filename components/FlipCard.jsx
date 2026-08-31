@@ -46,6 +46,7 @@ export default function FlipCard({ member, groupLabel }) {
           <span className={styles.backLabel}>{groupLabel}</span>
           {member.role && <h3 className={styles.backRole}>{member.role}</h3>}
           <p className={styles.backCopy}>
+            {member.description}
           </p>
           {member.contact && (
             <div className={styles.contactList}>
