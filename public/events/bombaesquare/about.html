@@ -32,7 +32,7 @@
   .frame{ max-width:430px; margin:0 auto; min-height:100vh; position:relative; overflow:hidden; padding-top:env(safe-area-inset-top); }
   img{max-width:100%;}
 
-  /* ===== TRAIL ROUTE ===== */
+  /* ===== TRAIL ROUTE — dotted path winding through the hero, echoes the "citywide trail" concept ===== */
   .route-layer{position:absolute;top:0;left:0;width:100%;height:640px;z-index:0;pointer-events:none;}
   .route-layer svg{width:100%;height:100%;display:block;}
   #routePath{stroke-dasharray:2 11;animation:dash-flow 7s linear infinite;}
@@ -43,7 +43,7 @@
   .route-layer .stop:nth-child(5){animation-delay:1.8s;}
   @keyframes pin-pulse{0%,100%{opacity:0.55;r:3.2;}50%{opacity:1;r:4.4;}}
 
-  /* ===== PILL NAV ===== */
+  /* ===== PILL NAV — matches reference shape: rounded full pill, logo left, links right ===== */
   .nav-wrap{padding:16px 14px 0;padding-left:max(14px, env(safe-area-inset-left));padding-right:max(14px, env(safe-area-inset-right));position:relative;z-index:20;}
   .back{
     display:inline-flex;align-items:center;gap:7px;
@@ -108,18 +108,18 @@
   .menu-link{
     font-family:'Bebas Neue';font-size:34px;letter-spacing:2px;color:var(--cream);
     padding-bottom:6px;border-bottom:2px solid var(--gold);cursor:pointer;
-    text-decoration:none;
     transition:color 0.25s ease, letter-spacing 0.25s ease, border-color 0.25s ease;
   }
   .menu-link:hover{color:var(--gold-bright);letter-spacing:4px;border-color:var(--gold-bright);}
 
-  /* ===== PIN ACCENTS ===== */
+  /* ===== PIN ACCENTS — small map-pin confetti, on-theme with the trail concept ===== */
   .gconfetti{position:absolute;z-index:2;animation:float 5s ease-in-out infinite;}
   @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,10deg));}50%{transform:translateY(-6px) rotate(calc(var(--r,10deg) + 6deg));}}
   .pin{width:14px;height:18px;opacity:0.85;}
   .cf1{top:100px;right:22px;--r:6deg;}
   .cf2{top:250px;left:20px;--r:-8deg;}
 
+  /* extra decorative shapes, spread further down the page for a richer background */
   .shape{opacity:0.5;}
   .ring{width:20px;height:20px;}
   .diamond{width:13px;height:13px;}
@@ -149,7 +149,7 @@
 
   .desc{margin:18px auto 0;max-width:300px;font-size:14.5px;line-height:1.65;color:var(--cream-dim);}
 
-  /* ===== HERO IMAGE ===== */
+  /* ===== HERO IMAGE — gives the About page its own visual identity, no sunburst ===== */
   .hero-photo{
     position:relative;margin:26px 22px 0;height:190px;border-radius:14px;overflow:hidden;
     box-shadow:0 14px 30px rgba(0,0,0,0.5);z-index:5;
@@ -162,7 +162,7 @@
   .hero-photo .fade{position:absolute;inset:0;background:linear-gradient(180deg, transparent 45%, rgba(10,9,8,0.9) 100%);}
   .hero-photo .cap{position:absolute;left:16px;bottom:14px;z-index:2;font-family:'Bebas Neue';font-size:12px;letter-spacing:2px;color:var(--gold-bright);}
 
-  /* ===== WHAT WE CELEBRATE ===== */
+  /* ===== WHAT WE CELEBRATE — 2-col grid of spot-card tiles, last one spans full width ===== */
   .celebrate-label{text-align:center;margin-top:34px;font-family:'Bebas Neue';font-size:12px;letter-spacing:3px;color:var(--gold-deep);position:relative;z-index:5;}
   .celebrate-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 22px 0;position:relative;z-index:5;}
   .spot-card.wide{grid-column:1 / -1;}
@@ -193,11 +193,14 @@
   .spot-card .go{position:absolute;bottom:13px;right:13px;z-index:2;width:20px;height:20px;border-radius:50%;background:rgba(240,200,120,0.9);color:var(--black);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;opacity:0;transform:translateY(6px);transition:opacity 0.3s ease, transform 0.3s ease;}
   .spot-card:hover .go{opacity:1;transform:translateY(0);}
 
+  /* reveal-on-scroll — visible by default; JS opts elements INTO the hidden/animated state
+     so content never disappears if JS fails to run (e.g. Quick Look/file previews on iOS) */
   .reveal{opacity:1;transform:none;}
   html.has-js .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.3,1);}
   .reveal.in-view{opacity:1 !important;transform:none !important;}
   .celebrate-grid .spot-card.reveal{transition-delay:calc(var(--i,0) * 70ms);}
 
+  /* cursor spotlight — desktop only, purely decorative */
   .spotlight{position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:1;
     background:radial-gradient(circle, rgba(240,200,120,0.10) 0%, transparent 70%);
     transform:translate(-50%,-50%);opacity:0;transition:opacity 0.4s ease;will-change:transform;
@@ -211,7 +214,7 @@
   .stat:hover .num{text-shadow:0 0 18px rgba(240,200,120,0.55);}
   .stat .label{font-size:9px;letter-spacing:1.5px;color:var(--cream-dim);margin-top:4px;}
 
-  /* ===== BODY COPY BLOCK ===== */
+  /* ===== BODY COPY BLOCK — closing narrative before CTA ===== */
   .about-block{position:relative;z-index:5;padding:0 26px 0;margin-top:10px;}
   .about-block h2{font-family:'Bebas Neue';font-size:24px;letter-spacing:1px;color:var(--gold-bright);margin-bottom:12px;text-align:center;}
   .about-block p{font-size:14px;line-height:1.7;color:var(--cream-dim);margin-bottom:14px;}
@@ -222,7 +225,7 @@
   .btn{
     background:var(--gold-bright);color:var(--black);font-weight:700;font-size:13px;letter-spacing:1px;
     padding:15px 26px;border-radius:30px;position:relative;display:inline-flex;align-items:center;gap:8px;
-    cursor:pointer;border:none;text-decoration:none;transition:transform 0.25s cubic-bezier(.2,.8,.3,1), box-shadow 0.25s ease;
+    cursor:pointer;border:none;transition:transform 0.25s cubic-bezier(.2,.8,.3,1), box-shadow 0.25s ease;
   }
   .btn::before{
     content:'';position:absolute;top:-6px;right:-6px;width:14px;height:14px;
@@ -243,7 +246,9 @@
   .bottom-space{height:44px;}
   .photo-credit{text-align:center;font-size:9px;letter-spacing:0.5px;color:var(--cream-dim);opacity:0.5;margin-top:24px;position:relative;z-index:5;}
 
-  /* RESPONSIVE */
+  /* ============================================================
+     RESPONSIVE — TABLET
+     ============================================================ */
   @media (min-width:701px){
     .frame{max-width:900px;}
     .back{margin-left:2px;margin-bottom:14px;font-size:11.5px;}
@@ -264,6 +269,9 @@
     .cta-row{padding:0 44px;}
   }
 
+  /* ============================================================
+     RESPONSIVE — LAPTOP / DESKTOP
+     ============================================================ */
   @media (min-width:1100px){
     .frame{max-width:1800px;}
     .back{margin-bottom:16px;font-size:12px;}
@@ -291,6 +299,9 @@
     .btn{padding:19px 38px;font-size:15px;}
   }
 
+  /* ============================================================
+     RESPONSIVE — WIDE DESKTOP
+     ============================================================ */
   @media (min-width:1600px){
     .frame{max-width:2200px;}
     .back{margin-bottom:18px;font-size:12.5px;}
@@ -328,6 +339,7 @@
   <svg class="gconfetti pin cf1" viewBox="0 0 24 30" fill="none"><path d="M12 1c-5 0-9 3.8-9 9 0 6.5 9 19 9 19s9-12.5 9-19c0-5.2-4-9-9-9z" fill="#F0C878"/><circle cx="12" cy="10" r="3" fill="#0A0908"/></svg>
   <svg class="gconfetti pin cf2" viewBox="0 0 24 30" fill="none" opacity="0.6"><path d="M12 1c-5 0-9 3.8-9 9 0 6.5 9 19 9 19s9-12.5 9-19c0-5.2-4-9-9-9z" fill="#8B6F3F"/><circle cx="12" cy="10" r="3" fill="#0A0908"/></svg>
 
+  <!-- additional background shapes for a richer, more decorated backdrop -->
   <svg class="gconfetti shape ring cf3" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#C89B5A" stroke-width="2"/></svg>
   <svg class="gconfetti shape diamond cf4" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" transform="rotate(45 12 12)" fill="#F0C878"/></svg>
   <svg class="gconfetti shape sparkle cf5" viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" fill="#E8D3A0"/></svg>
@@ -338,7 +350,7 @@
   <svg class="gconfetti shape diamond cf10" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" transform="rotate(45 12 12)" fill="#E8D3A0"/></svg>
 
   <div class="nav-wrap">
-    <a href="/events/bombaesquare/index.html" class="back">
+    <a href="index.html" class="back">
       <span>←</span>
       Back to Bombay Square
     </a>
@@ -361,11 +373,9 @@
       </button>
     </div>
     <div class="menu-links">
-      <a class="menu-link" href="/events/bombaesquare/index.html">HOME</a>
-      <a class="menu-link" href="/events/bombaesquare/about.html">ABOUT</a>
-      <a class="menu-link" href="/events/bombaesquare/map.html">MAP</a>
-      <a class="menu-link" href="/events/bombaesquare/contact.html">CONTACT</a>
-      <a class="menu-link" href="/">4C MAIN SITE</a>
+      <a class="menu-link" href="map.html">MAP</a>
+      <a class="menu-link" href="contact.html">CONTACT</a>
+      <a class="menu-link" href="https://www.4cnmims.in/" target="_blank" rel="noopener">4C</a>
     </div>
   </div>
 
@@ -426,8 +436,8 @@
   </div>
 
   <div class="cta-row reveal">
-    <a class="btn" id="mapBtn" href="/events/bombaesquare/map.html">VIEW THE MAP →</a>
-    <a class="btn outline" id="contactBtn" href="/events/bombaesquare/contact.html">CONTACT US</a>
+    <a class="btn" id="mapBtn" href="f3-the-map-bs-connected.html">VIEW THE MAP →</a>
+    <a class="btn outline" id="contactBtn" href="contact.html">CONTACT US</a>
   </div>
 
   <div class="bottom-space"></div>
@@ -500,8 +510,7 @@
     card.addEventListener('click', go);
     card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
   });
-
-  /* ---------- cursor spotlight ---------- */
+  /* ---------- cursor spotlight, desktop pointer devices only ---------- */
   if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
     const spotlight = document.createElement('div');
     spotlight.className = 'spotlight';
