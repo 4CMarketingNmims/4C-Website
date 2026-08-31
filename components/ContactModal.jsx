@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { footerHeroSection } from '@/data/site';
 import { X } from 'lucide-react';
 import styles from './ContactModal.module.css';
 
