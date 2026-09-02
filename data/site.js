@@ -189,7 +189,7 @@ export const coreDepartments = [
     code: 'CRM',
     name: 'Corporate Relations & Marketing',
     heads: ['Arya Desai', 'Keval Shah'],
-    subHeads: ['Anjali Agrawal', 'Neil Kheterpal', 'Prisha Shah', 'Mahuri Salpekar'],
+    subHeads: ['Neil Kheterpal', 'Prisha Shah', 'Mahuri Salpekar'],
   },
   {
     code: 'DC',
@@ -233,7 +233,7 @@ export const coreDepartments = [
     code: 'SMCW',
     name: 'Social Media & Content Writing',
     heads: ['Disha Hemani', 'Henisha Vadhan'],
-    subHeads: ['Krishi Jain', 'Sanika'],
+    subHeads: ['Krishi Jain', 'Aniha Khajanchi'],
   },
   {
     code: 'T&R',
