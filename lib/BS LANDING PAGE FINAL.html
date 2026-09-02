@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bombae Square — Festival Burst Refined</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0908;
+    --gold:#C89B5A;
+    --gold-bright:#F0C878;
+    --gold-deep:#8B6F3F;
+    --gold-pale:#E8D3A0;
+    --cream:#F4EDE4;
+    --cream-dim:rgba(244,237,228,0.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background-color:var(--black);color:var(--cream);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background-image:radial-gradient(rgba(200,155,90,0.5) 1px, transparent 1.5px);
+    background-size:22px 22px;
+  }
+  .frame{max-width:430px;margin:0 auto;min-height:100vh;position:relative;overflow:hidden;}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px;position:relative;z-index:20;}
+  .logo-text{font-family:'Bebas Neue';font-size:20px;letter-spacing:1px;}
+  .logo-text span{color:var(--gold-bright);}
+  .menu-icon{
+    width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;
+    background:transparent;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;
+    cursor:pointer;-webkit-appearance:none;appearance:none;
+  }
+  .menu-icon span{width:12px;height:1.5px;background:var(--gold-bright);display:block;}
+
+  /* ===== FULLSCREEN MENU OVERLAY ===== */
+  .menu-overlay{
+    position:fixed;inset:0;z-index:50;background:var(--black);
+    display:flex;flex-direction:column;align-items:center;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+  }
+  .menu-overlay.open{opacity:1;visibility:visible;transform:translateY(0);}
+  .menu-top{
+    width:100%;max-width:430px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:25px 20px 0;box-sizing:border-box;
+  }
+  .menu-close{
+    width:36px;height:36px;border-radius:50%;border:none;background:transparent;
+    color:var(--cream);display:flex;align-items:center;justify-content:center;
+    cursor:pointer;-webkit-appearance:none;appearance:none;
+  }
+  .menu-close svg{width:20px;height:20px;}
+  .menu-links{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:46px;width:100%;
+  }
+  .menu-link{
+    font-family:'Bebas Neue';font-size:34px;letter-spacing:2px;color:var(--cream);
+    padding-bottom:6px;border-bottom:2px solid var(--gold);
+  }
+
+  /* SUNBURST — gold only, this is the loud element */
+  .burst{position:absolute;top:40px;left:50%;width:440px;height:440px;z-index:0;
+    animation:burst-spin 90s linear infinite;
+  }
+  @keyframes burst-spin{from{transform:translateX(-50%) rotate(0deg);}to{transform:translateX(-50%) rotate(360deg);}}
+  .burst .ray{position:absolute;top:50%;left:50%;width:1.5px;height:220px;background:linear-gradient(to top, rgba(200,155,90,0) 0%, rgba(200,155,90,0.4) 100%);transform-origin:bottom center;}
+
+  /* CREAM CONFETTI — small, sparse, low-opacity. secondary tone, not attention-grabbing */
+  .confetti{position:absolute;z-index:2;opacity:0.45;}
+  .c1{top:104px;left:22px;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:15px solid var(--cream-dim);transform:rotate(-18deg);}
+  .c2{top:150px;right:26px;width:11px;height:11px;background:var(--cream-dim);border-radius:2px;transform:rotate(24deg);}
+  .c3{bottom:210px;left:14px;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--cream-dim);}
+  .c4{top:64px;left:120px;width:7px;height:7px;background:var(--cream-dim);transform:rotate(45deg);}
+  .c5{bottom:180px;right:20px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid var(--cream-dim);transform:rotate(35deg);}
+
+  /* GOLD confetti - the dominant shape language */
+  .gconfetti{position:absolute;z-index:2;}
+  .g1{top:96px;right:16px;width:16px;height:16px;background:var(--gold-bright);clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);transform:rotate(10deg);}
+  .g2{bottom:230px;right:44px;width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:17px solid var(--gold);transform:rotate(40deg);}
+  .g3{top:56px;left:24px;width:12px;height:12px;background:var(--gold-deep);transform:rotate(45deg);}
+
+  .hero{position:relative;z-index:5;padding:22px 24px 0;text-align:center;}
+  .eyebrow{font-family:'Bebas Neue';font-size:14px;letter-spacing:5px;color:var(--gold);margin-bottom:4px;}
+  h1{font-family:'Bebas Neue';font-size:74px;line-height:0.82;letter-spacing:1px;color:var(--cream);}
+  h1 .l2{color:var(--gold-bright);}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;margin-top:18px;
+    background:var(--gold-bright);color:var(--black);font-size:10.5px;font-weight:700;letter-spacing:1.5px;
+    padding:7px 16px;border-radius:20px;transform:rotate(-2deg);
+  }
+  .desc{margin:22px auto 0;max-width:290px;font-size:14px;line-height:1.6;color:var(--cream-dim);}
+
+  .cards-stage{display:flex;gap:14px;padding:0 24px 10px;margin-top:36px;position:relative;z-index:5;overflow-x:auto;scroll-snap-type:x mandatory;}
+  .cards-stage::-webkit-scrollbar{display:none;}
+  .spot-card{
+    position:relative;min-width:142px;flex-shrink:0;height:186px;border-radius:8px;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:13px;
+    box-shadow:0 12px 26px rgba(0,0,0,0.5);
+    background:#0A0908;scroll-snap-align:start;
+  }
+  .spot-card:nth-child(odd){transform:rotate(-3deg);}
+  .spot-card:nth-child(even){transform:rotate(2.5deg);}
+  .spot-card img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+    filter:grayscale(1) sepia(0.35) contrast(1.08) brightness(0.55);
+  }
+  .spot-card .tone{position:absolute;inset:0;z-index:1;mix-blend-mode:color;background:linear-gradient(155deg, var(--gold-deep), #0A0908 80%);opacity:0.6;}
+  .spot-card .fade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, transparent 35%, rgba(10,9,8,0.85) 100%);}
+  .spot-card .num{position:absolute;top:10px;left:12px;z-index:2;font-family:'Bebas Neue';font-size:11px;letter-spacing:1px;color:var(--gold-bright);opacity:0.85;}
+  .spot-card .name{position:relative;z-index:2;font-weight:700;font-size:13.5px;line-height:1.15;}
+  .spot-card .cat{position:relative;z-index:2;font-size:8.5px;letter-spacing:1.5px;color:var(--gold-bright);margin-top:3px;}
+  .spot-card .dot{position:absolute;top:12px;right:12px;width:7px;height:7px;border-radius:50%;z-index:2;background:var(--gold-pale);box-shadow:0 0 6px var(--gold-bright);}
+  .scroll-hint{text-align:center;font-size:9px;letter-spacing:2px;color:var(--gold-deep);margin-top:6px;position:relative;z-index:5;}
+
+  /* gentle life: floating gold confetti + pulsing badge */
+  @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,10deg));}50%{transform:translateY(-6px) rotate(calc(var(--r,10deg) + 6deg));}}
+  @keyframes pulse{0%,100%{transform:rotate(-2deg) scale(1);}50%{transform:rotate(-2deg) scale(1.04);}}
+  @keyframes spin-slow{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
+  .gconfetti{animation:float 5s ease-in-out infinite;}
+  .g1{animation-delay:0s;--r:10deg;}
+  .g2{animation-delay:0.6s;--r:40deg;}
+  .g3{animation-delay:1.2s;--r:45deg;}
+  .badge{animation:pulse 3.4s ease-in-out infinite;}
+
+  .cta-wrap{padding:34px 24px 20px;display:flex;justify-content:center;position:relative;z-index:5;}
+  .btn{
+    background:var(--gold-bright);color:var(--black);font-weight:700;font-size:13px;letter-spacing:1px;
+    padding:16px 32px;border-radius:30px;position:relative;
+  }
+  .btn::before{content:'';position:absolute;top:-6px;right:-6px;width:14px;height:14px;background:var(--gold);clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);}
+
+  .tag-row{display:flex;justify-content:center;gap:14px;margin-top:26px;flex-wrap:wrap;position:relative;z-index:5;}
+  .tag{font-size:10.5px;font-weight:700;letter-spacing:0.5px;color:var(--cream-dim);}
+  .tag::before{content:'✦ ';color:var(--gold);}
+
+  .bottom-space{height:44px;}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="burst" id="burst"></div>
+  <div class="confetti c1"></div>
+  <div class="confetti c2"></div>
+  <div class="confetti c3"></div>
+  <div class="confetti c4"></div>
+  <div class="confetti c5"></div>
+  <div class="gconfetti g1"></div>
+  <div class="gconfetti g2"></div>
+  <div class="gconfetti g3"></div>
+
+  <nav>
+    <div class="logo-text">BOMBAE <span>SQ.</span></div>
+    <button class="menu-icon" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-top">
+      <div class="logo-text">BOMBAE <span>SQ.</span></div>
+      <button class="menu-close" id="menuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="menu-links">
+      <a class="menu-link">MAP</a>
+      <a class="menu-link">ABOUT</a>
+      <a class="menu-link">CONTACT</a>
+      <a class="menu-link" href="https://www.4cnmims.in/" target="_blank" rel="noopener">4C</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">4C PRESENTS</div>
+    <h1>BOMBAE<br><span class="l2">SQUARE</span></h1>
+    <div class="badge">● CULTURAL SIDE OF 4C</div>
+    <p class="desc">A citywide trail celebrating Mumbai's religious, heritage, sightseeing, cultural and activity spots — one landmark at a time.</p>
+  </div>
+
+  <div class="cards-stage">
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kala%20Ghoda%20Art%20District.jpg" alt="Kala Ghoda art district" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">01</div>
+      <div class="name">Kala Ghoda</div><div class="cat">ART DISTRICT</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandra%20Bandstand.jpg" alt="Bandra Bandstand promenade" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">02</div>
+      <div class="name">Bandstand</div><div class="cat">HERITAGE WALK</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20play%20performance%20at%20Prithvi%20Theatre%2C%20Mumbai.jpg" alt="Prithvi Theatre performance" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">03</div>
+      <div class="name">Prithvi Theatre</div><div class="cat">PERFORMANCE</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/NCPA%20building%2C%20Nariman%20Point%2C%20Mumbai.JPG" alt="NCPA building Nariman Point" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">04</div>
+      <div class="name">NCPA, Nariman Pt</div><div class="cat">CULTURE</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chhatrapati%20Shivaji%20Maharaj%20Vastu%20Sangrahalaya%20(%20prince%20of%20wales%20museum%20)%20Mumbai%20,%20Maharashtra%20,%20India.jpg" alt="CSMVS Museum building" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">05</div>
+      <div class="name">CSMVS Museum</div><div class="cat">SIGHTSEEING</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/27,%20Khotachiwadi%20-%20Baptista%20House%20(3864086721).jpg" alt="Khotachiwadi heritage houses" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">06</div>
+      <div class="name">Khotachiwadi</div><div class="cat">OLD BOMBAY</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mahim%20Dargah%201.jpg" alt="Mahim Dargah" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">07</div>
+      <div class="name">Mahim Dargah</div><div class="cat">RELIGIOUS</div>
+    </div>
+    <div class="spot-card">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gateway%20of%20India%20at%20night.jpg" alt="Gateway of India at night" loading="lazy">
+      <div class="tone"></div><div class="fade"></div><div class="dot"></div><div class="num">08</div>
+      <div class="name">Gateway of India</div><div class="cat">LANDMARK</div>
+    </div>
+  </div>
+
+  <div class="cta-wrap"><a class="btn">VIEW THE MAP →</a></div>
+
+  <div class="tag-row">
+    <div class="tag">RELIGIOUS</div><div class="tag">HERITAGE</div><div class="tag">SIGHTSEEING</div><div class="tag">CULTURE</div><div class="tag">ACTIVITIES</div>
+  </div>
+  <div class="bottom-space"></div>
+</div>
+<script>
+  const burst = document.getElementById('burst');
+  const rayCount = 32;
+  for(let i=0;i<rayCount;i++){
+    const ray = document.createElement('div');
+    ray.className='ray';
+    ray.style.transform = `translate(-50%,-100%) rotate(${(360/rayCount)*i}deg)`;
+    burst.appendChild(ray);
+  }
+
+  const menuBtn = document.getElementById('menuBtn');
+  const menuClose = document.getElementById('menuClose');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  function openMenu(){
+    menuOverlay.classList.add('open');
+    menuBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    menuOverlay.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  menuOverlay.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
+</body>
+</html>
