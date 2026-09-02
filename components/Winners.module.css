@@ -1,0 +1,161 @@
+.page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #f4f4f4;
+  margin: 0;
+  padding: 8rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.selectWrap,
+.resultsWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 860px;
+  width: 100%;
+  text-align: center;
+}
+
+.backButton {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  margin-bottom: 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: rgba(244, 244, 244, 0.85);
+  background: transparent;
+  border: 1px solid rgba(244, 244, 244, 0.25);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan, #2ec4ff);
+  color: var(--cyan, #2ec4ff);
+  background: rgba(46, 196, 255, 0.08);
+}
+
+.title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.6vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(244, 244, 244, 0.6);
+  margin: 0 0 2.5rem;
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.eventButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #0a0a0a;
+  background: var(--cyan, #2ec4ff);
+  border: 1px solid var(--cyan, #2ec4ff);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.eventButton:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: var(--cyan, #2ec4ff);
+  box-shadow: 0 0 24px rgba(46, 196, 255, 0.35);
+}
+
+.eventButton:active {
+  transform: translateY(0);
+}
+
+.teamList {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+  width: 100%;
+}
+
+.teamItem {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f4f4f4;
+  background: rgba(244, 244, 244, 0.05);
+  border: 1px solid rgba(244, 244, 244, 0.12);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+}
+
+.congratsMessage {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--cyan, #2ec4ff);
+  max-width: 640px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 6.5rem 1.25rem 3rem;
+  }
+
+  .title {
+    font-size: clamp(1.6rem, 6.5vw, 2.4rem);
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .eventButton {
+    width: 100%;
+  }
+
+  .teamList {
+    grid-template-columns: 1fr;
+  }
+}

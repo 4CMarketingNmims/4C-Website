@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import Link from 'next/link';
 import { heroSection } from '@/data/site';
 import styles from './Hero.module.css';
 
@@ -79,6 +80,10 @@ export default function Hero() {
             </div>
           ))}
         </div>
+
+        <Link href="/winners" className={styles.winnersButton}>
+          Wings &amp; Roots 5.0 Winners
+        </Link>
       </div>
 
       <button
