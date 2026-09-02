@@ -233,7 +233,7 @@ export const coreDepartments = [
     code: 'SMCW',
     name: 'Social Media & Content Writing',
     heads: ['Disha Hemani', 'Henisha Vadhan'],
-    subHeads: ['Krishi Jain', 'Aniha Khajanchi'],
+    subHeads: ['Krishi Jain', 'Avantika Bharti'],
   },
   {
     code: 'T&R',
