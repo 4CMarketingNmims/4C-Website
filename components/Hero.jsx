@@ -82,7 +82,7 @@ export default function Hero() {
         </div>
 
         <Link href="/winners" className={styles.winnersButton}>
-          Wings &amp; Roots 5.0 Winners
+          Wings &amp; Roots 5.0 Quialifiers
         </Link>
       </div>
 

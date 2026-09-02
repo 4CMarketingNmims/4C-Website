@@ -109,7 +109,7 @@ export default function WinnersPage() {
   if (view === 'brandstorm') {
     return (
       <main className={styles.page}>
-        {renderResults('BrandStorm Winners', brandStormWinners)}
+        {renderResults('BrandStorm Qualifiers', brandStormWinners)}
       </main>
     );
   }
@@ -117,7 +117,7 @@ export default function WinnersPage() {
   if (view === 'marketing-matrix') {
     return (
       <main className={styles.page}>
-        {renderResults('Marketing Matrix Winners', marketingMatrixWinners)}
+        {renderResults('Marketing Matrix Qualifiers', marketingMatrixWinners)}
       </main>
     );
   }
@@ -140,14 +140,14 @@ export default function WinnersPage() {
             className={styles.eventButton}
             onClick={() => setView('marketing-matrix')}
           >
-            Marketing Matrix Winners
+            Marketing Matrix Qualifiers
           </button>
           <button
             type="button"
             className={styles.eventButton}
             onClick={() => setView('brandstorm')}
           >
-            BrandStorm Winners
+            BrandStorm Qualifiers
           </button>
         </div>
       </div>
