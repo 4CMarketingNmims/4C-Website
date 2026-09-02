@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import Link from 'next/link';
 import { heroSection } from '@/data/site';
 import styles from './Hero.module.css';
 
@@ -71,16 +72,6 @@ export default function Hero() {
           ))}
         </h1>
 
-        <a
-          href="https://4cnmims.in/apply"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.applyButton}
-          ref={subtitleRef}
-        >
-          Apply for Executive Recruitment
-        </a>
-
         <div className={styles.statsRow} ref={statsRef}>
           {heroSection.stats.map((stat) => (
             <div key={stat.label} className={styles.statBlock}>
@@ -89,6 +80,10 @@ export default function Hero() {
             </div>
           ))}
         </div>
+
+        <Link href="/winners" className={styles.winnersButton}>
+          Wings &amp; Roots 5.0 Quialifiers
+        </Link>
       </div>
 
       <button

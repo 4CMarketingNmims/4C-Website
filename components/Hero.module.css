@@ -159,6 +159,37 @@
   white-space: nowrap;
 }
 
+.winnersButton {
+  margin-top: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cyan, #2ec4ff);
+  background: rgba(46, 196, 255, 0.08);
+  border: 1px solid var(--cyan, #2ec4ff);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.winnersButton:hover {
+  transform: translateY(-2px);
+  background: var(--cyan, #2ec4ff);
+  color: #0a0a0a;
+  box-shadow: 0 0 24px rgba(46, 196, 255, 0.35);
+}
+
+.winnersButton:active {
+  transform: translateY(0);
+}
+
 .scrollCue {
   margin-top: 3rem;
   display: flex;
@@ -243,6 +274,12 @@
 
   .statValue {
     font-size: 1.4rem;
+  }
+
+  .winnersButton {
+    margin-top: 1.75rem;
+    padding: 0.8rem 1.75rem;
+    font-size: 0.78rem;
   }
 
   .scrollCue {

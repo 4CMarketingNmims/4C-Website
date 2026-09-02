@@ -65,7 +65,12 @@ export default function Team() {
           className={`${styles.group} ${i % 2 === 1 ? styles.groupOdd : ''}`}
         >
           <p className={styles.groupLabel}>{group.label}</p>
-          <div className={`${styles.groupGrid} ${group.id === 'lead' ? styles.eightGrid : ''}`}>
+          
+          <div
+            className={`${styles.groupGrid} ${
+              group.id === 'lead' || group.id === 'crew' ? styles.eightGrid : ''
+            }`}
+          >
             {group.id === 'lead' && (
               <div data-flip-card>
                 <FlipCard
@@ -75,7 +80,7 @@ export default function Team() {
                     image: '/team/super-core-cover.jpg',
                     coverOnly: true,
                     introCopy:
-                      'The guiding force behind the committee — steering strategy, decisions, and direction for every campaign 4C runs.',
+                      'The guiding force behind the committee:steering strategy, decisions, and direction for every campaign 4C runs.',
                   }}
                   groupLabel={group.label}
                 />
@@ -89,7 +94,6 @@ export default function Team() {
           </div>
         </section>
       ))}
-
       <section className={styles.coreSection}>
         <CoreDepartmentDeck departments={coreDepartments} />
         
