@@ -1,0 +1,153 @@
+.section {
+  padding: clamp(3.5rem, 7vh, 6rem) 0;
+}
+
+.container{
+
+    width:min(1280px,90vw);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:42% 58%;
+
+    gap:4rem;
+
+    align-items:start;
+
+}
+
+.heading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:.88;
+
+    letter-spacing:-.05em;
+
+    font-family:"Archivo Black",sans-serif;
+
+    font-size:clamp(3.5rem,7vw,6rem);
+
+}
+
+.heading span{
+
+    display:block;
+
+}
+
+.description{
+
+    max-width:560px;
+
+    color:rgba(255,255,255,.62);
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+    margin-bottom:2.5rem;
+
+}
+
+.list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1.35rem 0;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.row:last-child{
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:0 0 15px var(--cyan);
+
+    flex-shrink:0;
+
+}
+
+.text{
+
+    font-size:1.15rem;
+
+    font-weight:500;
+
+}
+
+@media(max-width:900px){
+
+.container{
+
+    grid-template-columns:1fr;
+
+    gap:2.5rem;
+
+}
+
+.heading{
+
+    font-size:clamp(3rem,12vw,5rem);
+
+}
+
+.description{
+
+    margin-bottom:2rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.section{
+
+    padding:4rem 0;
+
+}
+
+.container{
+
+    width:min(92vw,540px);
+
+}
+
+.text{
+
+    font-size:1rem;
+
+}
+
+}

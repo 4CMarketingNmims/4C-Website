@@ -16,7 +16,7 @@ export default function FlagshipEvent() {
         
         {/* Left Side: Logo Punch */}
         <div className={styles.logoBlock}>
-           <img src="/events/Wings and Roots (2).png" alt="Contest Logo" className={styles.punchLogo} />
+           <img src="/wnrlogo.png" alt="Contest Logo" className={styles.punchLogo} />
         </div>
 
         {/* Right Side: Content */}

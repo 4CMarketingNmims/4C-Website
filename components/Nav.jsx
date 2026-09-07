@@ -2,20 +2,21 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import styles from './Nav.module.css';
 
 const LINKS = [
   { label: 'ABOUT', href: '/about' },
   { label: 'TEAM', href: '/team' },
   { label: 'EVENTS', href: '/events' },
-  { label: 'SPONSORS', href: '/#sponsors' },
+  { label: 'SPONSORS', href: '/sponsors' },
   { label: 'CONTACT', href: '/contact' },
 ];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   // Prevent scroll when the fullscreen mobile menu is open
   useEffect(() => {
@@ -25,12 +26,38 @@ export default function Nav() {
     };
   }, [isOpen]);
 
+  // Handle scrolling to hash sections on page mount or path change
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && pathname === '/') {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [pathname]);
+
   // Explicit, guaranteed navigation on top of the <Link>'s own handling.
   // If some other layer on the page (an overlay, a canvas effect, etc.) is
   // swallowing the click before Next.js's Link can intercept it, this
   // still fires because it's bound directly to this element's onClick.
   const goTo = (href) => (e) => {
-    if (href.startsWith('/#')) return; // let in-page anchor links behave normally
+    if (href.startsWith('/#')) {
+      setIsOpen(false);
+      if (pathname === '/') {
+        e.preventDefault();
+        const hash = href.split('#')[1];
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      return; // Let standard Link navigation handle it when pathname !== '/'
+    }
     e.preventDefault();
     setIsOpen(false);
     router.push(href);

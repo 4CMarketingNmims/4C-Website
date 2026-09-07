@@ -5,10 +5,12 @@ import styles from './FooterHero.module.css';
 
 export default function FooterHero() {
   const pathname = usePathname();
-const contacts = footerHeroSection.contacts;
+  const contacts = footerHeroSection.contacts;
 
-// Hide this component on both paths so it doesn't overlap or distort full-screen sections
-if (pathname === '/wingsandroots' || pathname === '/contact') return null;
+  // Render ONLY on landing page ('/')
+  if (pathname !== '/') {
+    return null;
+  }
 
   return (
     <footer id="footer-contact" className={styles.footerWrap}>

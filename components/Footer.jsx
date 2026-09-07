@@ -2,7 +2,9 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ensureGsap } from '@/lib/scrollAnim';
 import { site, bars, footerSection } from '@/data/site';
 import styles from './Footer.module.css';
@@ -18,6 +20,17 @@ export default function Footer() {
   const root = useRef(null);
   const sectionRef = useRef(null);
   const textRef = useRef(null);
+  const pathname = usePathname();
+
+  // Force GSAP ScrollTrigger to refresh dimensions whenever route changes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (typeof window !== 'undefined' && ScrollTrigger) {
+        ScrollTrigger.refresh();
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   useEffect(() => {
     ensureGsap();
