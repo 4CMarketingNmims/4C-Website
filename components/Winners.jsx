@@ -129,7 +129,7 @@ export default function WinnersPage() {
           ← Back to Home
         </Link>
 
-        <h1 className={styles.title}>Wings &amp; Roots 5.0 Winners</h1>
+        <h1 className={styles.title}>Wings &amp; Roots 5.0 Qualifiers</h1>
         <p className={styles.subtitle}>
           Select an event to view the qualified teams
         </p>
