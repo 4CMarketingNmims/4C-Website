@@ -176,10 +176,10 @@ export const teamGroups = [
     id: 'crew',
     label: 'Crew',
     members: [
-      { name: 'Arnav Jain', role: 'Crew' },
-      { name: 'Nishant Das', role: 'Crew' },
-      { name: 'Ritwik Goyal', role: 'Crew' },
-      { name: 'Shaivi Mehta', role: 'Crew' }
+      { name: 'Arnav Jain', role: 'Crew' , image: '/team/arnav.jpeg' },
+      { name: 'Nishant Das', role: 'Crew' , image: '/team/nishant.jpeg' },
+      { name: 'Ritwik Goyal', role: 'Crew' , image: '/team/ritwik.jpeg' },
+      { name: 'Shaivi Mehta', role: 'Crew' , image: '/team/shaivi.jpeg' }
     ]
   }
 ];
