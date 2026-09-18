@@ -247,7 +247,7 @@ export const coreDepartments = [
     name: 'Technicals & Research',
     heads: ['Daksh Rathod'],
     subHeads: ['Ridhi Singh', 'Ashwin Upadhyay'],
-    image: '/team/T&R.jpg',
+    image: '/team/T&R.jpeg',
   },
 ];
 export const footerHeroSection = {

@@ -63,6 +63,17 @@ function DepartmentCard({ department }) {
                 ))}
               </div>
             )
+          ) : department.image ? (
+            <>
+              <img
+                src={department.image}
+                alt={department.name}
+                className={styles.coverImage}
+              />
+              <div className={styles.deptNameOverlay}>
+                <h3 className={styles.departmentName}>{department.name}</h3>
+              </div>
+            </>
           ) : (
             <h3 className={styles.departmentName}>{department.name}</h3>
           )}
@@ -77,7 +88,7 @@ function DepartmentCard({ department }) {
                 <div className={styles.block}>
                   <span className={styles.blockLabel}>Heads</span>
                   <div className={styles.list}>
-                    {(department.heads ?? []).map((person) => (
+                    {department.heads.map((person) => (
                       <p key={person} className={styles.personName}>
                         {person}
                       </p>
@@ -88,7 +99,7 @@ function DepartmentCard({ department }) {
                 <div className={styles.block}>
                   <span className={styles.blockLabel}>Sub Heads</span>
                   <div className={styles.list}>
-                    {(department.subHeads ?? []).map((person) => (
+                    {department.subHeads.map((person) => (
                       <p key={person} className={styles.personName}>
                         {person}
                       </p>
