@@ -80,21 +80,8 @@ export default function Hero() {
             </div>
           ))}
         </div>
-
-        <Link href="/winners" className={styles.winnersButton}>
-          Wings &amp; Roots 5.0 Quialifiers
-        </Link>
       </div>
-
-      <button
-        type="button"
-        className={styles.scrollCue}
-        onClick={scrollToNext}
-        aria-label="Scroll down"
-      >
-        <span className={styles.scrollArrow}>↓</span>
-        <span className={styles.scrollLabel}>Scroll</span>
-      </button>
     </section>
   );
 }
+      
